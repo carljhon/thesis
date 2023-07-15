@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="birthPreview.css"> 
+
+    <title>3A Form Preview</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2 top1">
+            <div class="row subt1">
+                <div class="col-11">
+                    <h5>PANDI CERTIFICATION</h5>
+                </div>
+            </div>
+            <div class="row subt2">
+                <div class="col-12">
+                    <p>Menu</p>
+                </div>
+                <div class="col-12 menulist" id="birth">
+                    <a href="./createNew1AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 1A Birth Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="merraige">
+                    <a href="./createNew2AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 2A Death Certificate
+                    </a>
+                </div>
+                <div class="col-12 active" id="death">
+                    <i class="bi bi-award h4 login-button"></i> 3A Marriage Certificate
+                </div>
+                <div class="col-12 menulist" id="Chat" style="margin-top: 3rem;">
+                    <a href="./UserChat.html">
+                        <i class="bi bi-chat-right-dots"></i> Chat
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 top2">
+            <div class="row">
+                <div class="row t1 col-7">
+                    <div class="col-1">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </div>
+                    <div class="col-5">
+                        <h4>PANDI ONLINE LCR</h4>
+                    </div>
+                </div>
+                <div class="col-2 dropdown" style="margin-left: auto; margin-right: 5%; text-align: right;">
+                    <h4 class="dropbtn">
+                        <a href="/" class="bi bi-house-fill" style="margin-right: 1rem; color: green; font-size: 1.6vw;"></a> 
+                        <i class="bi bi-person-lines-fill" id="dropbtn" style="cursor: pointer; font-size: 1.6vw;"></i>
+                    </h4>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a class="menuCard" href="./accountUser.html"><i class="bi bi-person"></i> Account</a>
+                        <a class="menuCard" href="./documentUser.html"><i class="bi bi-folder2-open"></i> Documents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row t">
+                <div class="col-10 Form">
+                    <form id="a1Form" class="row inputCol3">
+
+                        <div class="col-12" style="text-align: left; margin-top: 1rem;">
+                            LCR Form No. 3A <br>
+                            (Marriage Available)
+                        </div>
+
+                        <div class="col-12">
+                            <p>
+                                Republic of the Philippines <br>
+                                <span class="h4">OFFICE OF MUNICIPAL CIVIL REGISTRAR</span> <br>
+                                Pandi, Bulacan
+                            </p>
+                            
+                        </div>
+                        
+                        <div class="col-12" style="text-align: right; padding-right: 3rem;">
+                            <p>Date: <span id="Now">m-d-y</span></p>
+                        </div>
+
+                        <div class="col-12" style="text-align: left">
+                            <p>TO WHOM IT MAY CONCERN:</p>
+                        </div>
+
+                        <div class="col-7" style="margin-left: auto; margin-right: auto;">
+                            We certify that, among others, the following facts of appear 
+                            <p style="text-align: left;">
+                                in our Register of <span style="font-weight: bold;">Marriage</span> on page_ of the book number_
+                            </p>
+                        </div>
+
+                        <div class="col-6" style="text-align: right; margin-top: 2rem;">
+                            <p>LCR Registry Number: </p>
+                            <p>Date of Registration:</p>
+                            <p>Name of Husband:</p>
+                            <p>Age:</p>
+                            <p>Civil Status:</p>
+                            <p>Nationality: </p>
+                            <p>Name of Mother: </p>
+                            <p>Name of Father:</p>
+                            <p>Name of Wife:</p>
+                            <p>Age:</p>
+                            <p>Civil Status:</p>
+                            <p>Nationality: </p>
+                            <p>Name of Mother: </p>
+                            <p>Name of Father:</p>
+                            <p>Date of Merriage:</p>
+                            <p>Place of Merriage:</p>
+                            <p>This Certification is issued to: </p>
+                            <p style="margin-right: 5rem;">Upon his/her request.</p>
+                        </div>
+                        <div class="col-6" style="text-align: left; margin-top: 2rem;">
+
+                            <p id="lcrRegistryNo">123</p>
+                            <p id="registrationDate">22-12-2000</p>
+                            <p id="husband_name">Aaron Avelino Sia</p>
+                            <p id="husband_age">23</p>
+                            <p id="husband_civil_status">Single</p>
+                            <p id="husband_nationality">Filipino</p>
+                            <p id="husband_mother">Daisery A Sia</p>
+                            <p id="husband_father">Juan Dela Cruz</p>
+                            <p id="wife_name">Sophia Bernas Roque</p>
+                            <p id="wife_age">22</p>
+                            <p id="wife_civil_status">Single</p>
+                            <p id="wife_nationality">Filipino</p>
+                            <p id="wife_mother">Marry P. Penduko</p>
+                            <p id="wife_father">Pedro T. Uniko</p>
+                            <p id="date_of_marriage">22-12-2000</p>
+                            <p id="place_of_marriage">Masuso, Pandi, Bulacan</p>
+                            <p id="issuedTo"></p>
+
+                        </div>
+
+                        <div class="col-12" style="text-align: right; padding-right: 2rem;">
+                            <span id="municipalRegistrar">asdfa</span>
+                            <p>Municipal Civil Registrar</p>
+                        </div>
+
+                    </form>
+
+                    <div class="btn">
+                        <button id="save">REGISTER FOR MARRIAGE CERTIFICATE</button>
+                        <button id="edit">EDIT INFORMATION</button>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- enryption and decryption -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
+<script>
+    const aTag = document.getElementsByTagName('a');
+    const menulist = document.getElementsByClassName('menulist')
+
+    const a1Form = document.getElementById('a1Form')
+
+    const edit = document.getElementById('edit')
+    const save = document.getElementById('save')
+
+    const Now = document.getElementById('Now')
+
+
+    // husband info
+    const lcrRegistryNo = document.getElementById('lcrRegistryNo')
+    const registrationDate = document.getElementById('registrationDate')
+    const husband_name = document.getElementById('husband_name')
+    const husband_age = document.getElementById('husband_age')
+    const husband_civil_status = document.getElementById('husband_civil_status')
+    const husband_nationality = document.getElementById('husband_nationality')
+    const husband_mother = document.getElementById('husband_mother')
+    const husband_father = document.getElementById('husband_father')
+    // wife info
+    const wife_name = document.getElementById('wife_name')
+    const wife_age = document.getElementById('wife_age')
+    const wife_civil_status = document.getElementById('wife_civil_status')
+    const wife_nationality = document.getElementById('wife_nationality')
+    const wife_mother = document.getElementById('wife_mother')
+    const wife_father = document.getElementById('wife_father')
+    // other info
+    const date_of_marriage = document.getElementById('date_of_marriage')
+    const place_of_marriage = document.getElementById('place_of_marriage')
+    
+    const issuedTo = document.getElementById('issuedTo')
+
+    // mouse over and out in person menu
+    const dropbtn = document.getElementById('dropbtn')
+    const dropdownContent = document.getElementById('dropdownContent')
+    const menuCard = document.getElementsByClassName('menuCard')
+    dropbtn.addEventListener('mouseover', ()=> { // toggle click
+        dropdownContent.style.display = 'block'
+    })
+    menuCard[1].addEventListener('mouseout', ()=> {
+        dropdownContent.style.display = 'none'
+    })
+
+    for(let i=0; i<menulist.length; i++){
+        menulist[i].addEventListener('mouseover', ()=>{
+            aTag[i].style.color = 'white'
+            menulist[i].style.background = 'gray'
+        })
+        menulist[i].addEventListener('mouseout', ()=>{
+            aTag[i].style.color = 'yellow'
+            menulist[i].style.background = 'none'
+        })
+    }
+
+    edit.addEventListener('click', ()=> {
+        window.location.href = './createNew3AForm.html'
+    });
+
+    // decryption
+    var decryptFormData_Marriage = CryptoJS.AES.decrypt(localStorage.getItem('formData_Marriage'), "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+    var decryptFormData1 = CryptoJS.AES.decrypt(localStorage.getItem('formData1'), "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+
+
+    // get save data from local storage
+    const formString1 = decryptFormData1
+    const formString = decryptFormData_Marriage
+    const formData = JSON.parse(formString)
+
+    Now.innerHTML = new Date().toLocaleDateString()
+
+    registrationDate.innerHTML = formData.date_of_registration
+    husband_name.innerHTML = `${formData.husband_fname} ${formData.husband_mname} ${formData.husband_lname}`
+    husband_age.innerHTML = formData.husband_age
+    husband_civil_status.innerHTML = formData.husband_civil_status
+    husband_nationality.innerHTML = formData.husband_nationality
+    husband_mother.innerHTML = `${formData.h_m_fname} ${formData.h_m_mname} ${formData.h_m_lname}`
+    husband_father.innerHTML = `${formData.h_f_fname} ${formData.h_f_mname} ${formData.h_f_lname}`
+
+    wife_name.innerHTML = `${formData.wife_fname} ${formData.wife_mname} ${formData.wife_lname}`
+    wife_age.innerHTML = formData.wife_age
+    wife_civil_status.innerHTML = formData.wife_civil_status
+    wife_nationality.innerHTML = formData.wife_nationality
+    wife_mother.innerHTML = `${formData.w_m_fname} ${formData.w_m_mname} ${formData.w_m_lname}`
+    wife_father.innerHTML = `${formData.w_f_fname} ${formData.w_f_mname} ${formData.w_f_lname}`
+
+    date_of_marriage.innerHTML = formData.date_of_marriage
+    place_of_marriage.innerHTML = formData.place_of_marriage
+
+    issuedTo.innerHTML = formData.issuedTo
+
+
+
+    save.addEventListener('click', ()=> {
+
+        (async () => {
+
+            const rawResponse = await fetch('api/3a', {
+                    method: 'POST',
+                    headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                    },
+                    body: formString1
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    alert('Documents successfully uploaded')
+                    window.location.href = './documentUser.html'
+                } else if(content.message == 'duplicated'){
+                    alert('You Already Requested it')
+                } else {
+                    alert('Document not uploaded!!')
+                }
+        })()
+        return false
+    })
+
+</script>
+
+</html>

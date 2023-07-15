@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="aboutUs.css"> 
+
+    <title>About Us</title>
+</head>
+<body>
+    <div class="row top">
+        <div class="col-7 reg">
+            <h3>Pandi Local Civil Registry</h3>
+        </div>
+        <div class="col-1 home">
+            <a href="./index.html"><b>Home</b></a>
+        </div>
+        <div class="col-1 about">
+            <a href="./aboutUs.html"><b>About Us</b></a>
+        </div>
+        <div class="col-1 faq">
+            <a href="./faq.html"><b>FAQ</b></a>
+        </div>
+        <div class="col-1 log" id="log">
+            <a id="login" href="./login.html"><b>Login</b></a>
+        </div>
+
+        <div class="col-12 space"></div>
+
+    </div>
+
+    <hr>
+
+    <div class="row bg">
+        <div class="col-12 about">
+            <h1>Get to know us</h1>
+        </div>
+
+        <div class="col-2 History bg2">
+            <i class="bi bi-geo-alt-fill"></i>
+            <h6>Location</h6>
+            <p>Matatagpuan ang Munisipyo ng Pandi sa <b>S. Osmena St.Brgy. Poblacion, Pandi, Philippines</b></p>
+        </div>
+        <div class="col-2 LCR bg2">
+            <i class="bi bi-people"></i>
+            <h6>LCR Cause</h6>
+            <p>Ginawa ang Online Local Civil Registry, para mapadali ang pag reregister ng isang sertipikasyon.
+                Ginawa ito upang makaiwas sa pagpila sa isang registrar.</p>
+        </div>
+        <div class="col-2 howOur bg2">
+            <i class="bi bi-building"></i>
+            <h6>How our system made</h6>
+            <p>Sa pagtutulungan ng bawat researcher, nag-isip kami ng mas madaliang paraan kung paano mapadali ang pag reregister isa opisina 
+                ng Local Civil Registry. Ito ang dahilan kung bakit kami nakagawa nag Online Local Civil Registry.</p>
+        </div>
+    </div>
+    
+
+</body>
+<script>
+    const log = document.getElementById('log')
+    const login = document.getElementById('login')
+
+    if(sessionStorage.username != undefined){
+        login.innerHTML = sessionStorage.username
+        login.href = './documentUser.html'
+    }
+
+    log.addEventListener('mouseover', ()=> {
+        log.style.backgroundImage = 'linear-gradient(to bottom right, green, black)';
+    })
+    log.addEventListener('mouseout', ()=> {
+        log.style.backgroundImage = 'linear-gradient(to bottom right, yellow, green)';
+    })
+
+</script>
+</html>

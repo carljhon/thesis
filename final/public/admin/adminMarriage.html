@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="adminuseraccount.css"> 
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-12 nav1">
+            <div class="row">
+                <div class="col-9 navbar1">
+                    <a href="./adminChat.html">CHAT</a>
+                    <a href="./adminUserAccount.html">USER ACCOUNTS</a>
+                    <a href="./adminBirth.html">BIRTH CERTIFICATE</a>
+                    <a href="./adminDeath.html">DEATH CERTIFICATE</a>
+                    <a href="" id="active">MARRIAGE CERTIFICATE</a>
+                    <a href="./Reports.html">REPORTS</a>
+                    <a href="./adminFAQ.html">FAQ</a>
+                </div>
+                <div class="col-3" style="text-align: center;">
+                    <form id="search">
+                        <input type="text" name="search" id="searchInput" style="padding-top: .5rem; padding-bottom: .5rem; padding-left: 1.5rem; padding-right: 1.5rem; border-radius: 2rem; border: solid 1px white;" placeholder="Search">
+                        <i class="bi bi-binoculars h2" id="searchBtn" style="color: yellow; cursor: pointer;"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2 panel">
+            <div class="row" style="font-size: 80%;">
+              <div class="col-5 selection" style="margin-left: 1rem;" id="notApprove">
+                <b>Pending</b>
+              </div>
+              <div class="col-5 selection" id="approve">
+                <b>Approve</b>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-3 panel">
+            <div class="row" style="font-size: 80%;">
+              <div class="col-2 selection" id="successMenu" style="margin-right: .5vw; margin-left: .5vw;">
+                <b>Success</b>
+              </div>
+              <div class="col-2 selection" id="rejectMenu" style="margin-right: .5vw;">
+                <b>Rejected</b>
+              </div>
+              <div class="col-2 selection" id="expiredMenu">
+                <b>Expired</b>
+              </div>
+              <div class="col-5 selection" id="wrongDoxMenu">
+                <b>Wrong Documents</b>
+              </div>
+            </div>
+        </div>
+
+
+        <!-- contents -->
+        <div class="col-11 contents" id="menuS">
+            <div class="row">
+
+              <div class="col-7" id="notApproveDiv" style="height: 70vh; overflow-x: hidden; overflow-y: scroll;">
+                
+                <div class="row" id="table2"></div>
+
+              </div>
+
+              <div class="col-7" id="approveDiv" style="height: 70vh; overflow-x: hidden; overflow-y: scroll; display: none;">
+                
+                <div class="row" id="table1"></div>
+
+              </div>
+  
+              <div class="col-5 card2" id="supportingDoxs">
+                <h5 style="margin-top: 1rem;">Supporting Documents</h5>
+                <img src="" alt="" width="40%" id="" class="card2img" data-bs-toggle="modal" data-bs-target="#clickSupportingImage">
+                <img src="" alt="" width="40%" id="" class="card2img" data-bs-toggle="modal" data-bs-target="#clickSupportingImage">
+                <img src="" alt="" width="40%" id="" class="card2img" data-bs-toggle="modal" data-bs-target="#clickSupportingImage">
+                <img src="" alt="" width="40%" id="" class="card2img" data-bs-toggle="modal" data-bs-target="#clickSupportingImage">
+                <img src="" alt="" width="40%" id="" class="card2img" data-bs-toggle="modal" data-bs-target="#clickSupportingImage">
+                <img src="" alt="" width="40%" id="" class="card2img" data-bs-toggle="modal" data-bs-target="#clickSupportingImage">
+                <img src="" alt="" width="40%" id="" class="card2img" data-bs-toggle="modal" data-bs-target="#clickSupportingImage">
+                <img src="" alt="" width="40%" id="" class="card2img" data-bs-toggle="modal" data-bs-target="#clickSupportingImage">
+                <img src="" alt="" width="40%" id="" class="card2img" data-bs-toggle="modal" data-bs-target="#clickSupportingImage">
+              </div>
+            </div>
+        </div>
+
+        <!-- contents / reject -->
+        <div class="col-11 contents divTables" id='rejcetDiv'>
+            <table id="tableReject" style="width: 150%;">
+                <tr>
+                    <th>ID</th>
+                    <th>Husband Name</th>
+                    <th>Age</th>
+                    <th>Civil Status</th>
+                    <th>Nationality</th>
+                    <th>Wife Name</th>
+                    <th>Age</th>
+                    <th>Civil Status</th>
+                    <th>Nationality</th>
+                    <th>Registration Date</th>
+                    <th>Merriage Date</th>
+                    <th>Merriage Place</th>
+                    <th>Issued To</th>
+                </tr>
+            </table>
+        </div>
+
+        <!-- contents / wrong documents -->
+        <div class="col-11 contents divTables" id='wrongDoxDiv'>
+            <table id="tableWrongDox" style="width: 150%;">
+                <tr>
+                    <th>ID</th>
+                    <th>Registration Date</th>
+                    <th>Husband Name</th>
+                    <th>Age</th>
+                    <th>Civil Status</th>
+                    <th>Nationality</th>
+                    <th>Wife Name</th>
+                    <th>Age</th>
+                    <th>Civil Status</th>
+                    <th>Nationality</th>
+                    <th>Merriage Date</th>
+                    <th>Merriage Place</th>
+                    <th>Issued To</th>
+                </tr>
+            </table>
+        </div>
+
+        <!-- contents / success -->
+        <div class="col-11 contents divTables" id='successDiv'>
+            <table id="tableSuccess" style="width: 150%;">
+                <tr>
+                    <th>ID</th>
+                    <th>Husband Name</th>
+                    <th>Age</th>
+                    <th>Civil Status</th>
+                    <th>Nationality</th>
+                    <th>Wife Name</th>
+                    <th>Age</th>
+                    <th>Civil Status</th>
+                    <th>Nationality</th>
+                    <th>Merriage Date</th>
+                    <th>Merriage Place</th>
+                    <th>Issued To</th>
+                </tr>
+            </table>
+        </div>
+
+        <!-- contents / expired  -->
+        <div class="col-11 contents divTables" id='expiredDiv'>
+            <table id="tableExpired" style="width: 150%;">
+                <tr>
+                    <th>ID</th>
+                    <th>Registration Date</th>
+                    <th>Husband Name</th>
+                    <th>Age</th>
+                    <th>Civil Status</th>
+                    <th>Nationality</th>
+                    <th>Wife Name</th>
+                    <th>Age</th>
+                    <th>Civil Status</th>
+                    <th>Nationality</th>
+                    <th>Merriage Date</th>
+                    <th>Merriage Place</th>
+                    <th>Issued To</th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- The Modal for approve request -->
+    <div class="modal fade" id="approveModal">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>APPROVE <span class="h6">REQUEST</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <div style="box-shadow: 5px 10px 18px #888888;">
+                    <p style="text-align: center !important; padding: 1rem;">
+                        Set Schedule for our client request
+                    </p>
+                </div>
+                <br>
+                <form id="setUpSchedule" >
+                    <label for="sched">Schedule:</label>
+                    <input type="datetime-local" id="sched" name="sched" >
+                </form>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnSend">Send</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for reject -->
+    <div class="modal fade" id="rejectBtn">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>REJECT <span class="h6">REQUEST</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p>Are you sure you want to reject this request? click <span style="font-weight: bold;">Yes</span> if reject and <span style="font-weight: bold;">Close</span> if not
+                </p>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnYes_reject">Yes</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for wrong Dox -->
+    <div class="modal fade" id="wrongDox">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>WRONG <span class="h6">DOCUMENTS</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p>Are you sure this request has a wrong documents? click <span style="font-weight: bold;">Yes</span> if has a wrong documents and <span style="font-weight: bold;">Close</span> if not
+                </p>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnYes_wrongDox">Yes</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for done -->
+    <div class="modal fade" id="doneModal">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>DONE <span class="h6">REQUEST</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p>Are you sure this request is already done? click <span style="font-weight: bold;">Yes</span> if Done and <span style="font-weight: bold;">Close</span> if not
+                </p>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnYes">Yes</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for clicked supporing image -->
+    <div class="modal fade" id="clickSupportingImage">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>SUPPORTING <span class="h6">IMAGE</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p id="imageName"></p>
+                <img src="" alt="" id="viewImage" width="100%">
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for view more -->
+    <div class="modal fade" id="viewMore">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+    
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <form id="a1Form" class="row inputCol3">
+
+                    <div class="col-12" style="text-align: left; margin-top: 1rem;">
+                        LCR Form No. 3A <br>
+                        (Marriage Available)
+                    </div>
+
+                    <div class="col-12">
+                        <p>
+                            Republic of the Philippines <br>
+                            <span class="h4">OFFICE OF MUNICIPAL CIVIL REGISTRAR</span> <br>
+                            Pandi, Bulacan
+                        </p>
+                        
+                    </div>
+                    
+                    <div class="col-12" style="text-align: right; padding-right: 3rem;">
+                        <p>Date: <span id="Now">m-d-y</span></p>
+                    </div>
+
+                    <div class="col-12" style="text-align: left">
+                        <p>TO WHOM IT MAY CONCERN:</p>
+                    </div>
+
+                    <div class="col-7" style="margin-left: auto; margin-right: auto;">
+                        We certify that, among others, the following facts of appear in our Register of <span style="font-weight: bold;">Marriage</span>
+                    </div>
+
+                    <div class="col-6" style="text-align: right; margin-top: 2rem;">
+                        <p>LCR Registry Number: </p>
+                        <p>Date of Registration:</p>
+                        <p>Name of Husband:</p>
+                        <p>Age:</p>
+                        <p>Civil Status:</p>
+                        <p>Nationality: </p>
+                        <p>Name of Mother: </p>
+                        <p>Name of Father:</p>
+                        <p>Name of Wife:</p>
+                        <p>Age:</p>
+                        <p>Civil Status:</p>
+                        <p>Nationality: </p>
+                        <p>Name of Mother: </p>
+                        <p>Name of Father:</p>
+                        <p>Date of Marriage:</p>
+                        <p>Place of Marriage:</p>
+                        <p>This Certification is issued to: </p>
+                        <p style="margin-right: 5rem;">Upon his/her request.</p>
+                    </div>
+                    <div class="col-6" style="text-align: left; margin-top: 2rem;">
+                        <p id="lcrRegistryNo_2a"></p>
+                        <p id="registrationDate_2a"></p>
+                        <p id="husband_name"></p>
+                        <p id="husband_age"></p>
+                        <p id="husband_civil_status"></p>
+                        <p id="husband_nationality"></p>
+                        <p id="husband_mother">  </p>
+                        <p id="husband_father"> </p>
+                        <p id="wife_name">  </p>
+                        <p id="wife_age"></p>
+                        <p id="wife_civil_status"></p>
+                        <p id="wife_nationality"></p>
+                        <p id="wife_mother"></p>
+                        <p id="wife_father"> </p>
+                        <p id="date_of_marriage"></p>
+                        <p id="place_of_marriage"></p>
+                        <p id="issuedTo_2a"></p>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-12" style="text-align: right; padding-right: 2rem;">
+                <span id="municipalRegistrar">Aaron Sia</span>
+                <p>Municipal Civil Registrar</p>
+            </div>
+    
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+    
+</body>
+
+<!-- Bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script> // div display
+    const notApprove = document.getElementById('notApprove')
+    const approve1 = document.getElementById('approve')
+    const successMenu = document.getElementById('successMenu')
+    const rejectMenu = document.getElementById('rejectMenu')
+    const wrongDoxMenu = document.getElementById('wrongDoxMenu')
+    const expiredMenu = document.getElementById('expiredMenu')
+
+    const notApproveDiv = document.getElementById('notApproveDiv')
+    const approveDiv = document.getElementById('approveDiv')
+    const successDiv = document.getElementById('successDiv')
+    const rejcetDiv = document.getElementById('rejcetDiv')
+    const wrongDoxDiv = document.getElementById('wrongDoxDiv')
+    const expiredDiv = document.getElementById('expiredDiv')
+
+    const menuS = document.getElementById('menuS')
+
+    function divDisplay(){
+
+        if(approveDiv.style.display === 'none'){
+            notApprove.classList.add('selected')
+
+            rejcetDiv.style.display = 'none'
+            wrongDoxDiv.style.display = 'none'
+            successDiv.style.display = 'none'
+            expiredDiv.style.display = 'none'
+        }
+
+        notApprove.addEventListener('click', ()=> {
+            menuS.style.display = 'block'
+
+            approveDiv.style.display = 'none'
+            notApproveDiv.style.display = 'block'
+            notApprove.classList.add('selected')
+            approve1.classList.remove('selected')
+
+            rejcetDiv.style.display = 'none'
+            wrongDoxDiv.style.display = 'none'
+            rejectMenu.classList.remove('selected')
+            wrongDoxMenu.classList.remove('selected')
+
+            successDiv.style.display = 'none'
+            expiredDiv.style.display = 'none'
+            successMenu.classList.remove('selected')
+            expiredMenu.classList.remove('selected')
+        })
+
+        approve1.addEventListener('click', ()=> {
+            menuS.style.display = 'block'
+
+            approveDiv.style.display = 'block'
+            notApproveDiv.style.display = 'none'
+            approve1.classList.add('selected')
+            notApprove.classList.remove('selected')
+
+            rejcetDiv.style.display = 'none'
+            wrongDoxDiv.style.display = 'none'
+            rejectMenu.classList.remove('selected')
+            wrongDoxMenu.classList.remove('selected')
+
+            successDiv.style.display = 'none'
+            expiredDiv.style.display = 'none'
+            successMenu.classList.remove('selected')
+            expiredMenu.classList.remove('selected')
+        })
+
+        rejectMenu.addEventListener('click', ()=> {
+            approve1.classList.remove('selected')
+            notApprove.classList.remove('selected')
+            rejectMenu.classList.add('selected')
+            wrongDoxMenu.classList.remove('selected')
+
+            menuS.style.display = 'none'
+            rejcetDiv.style.display = 'block'
+            wrongDoxDiv.style.display = 'none'
+
+            successDiv.style.display = 'none'
+            expiredDiv.style.display = 'none'
+            successMenu.classList.remove('selected')
+            expiredMenu.classList.remove('selected')
+        })
+
+        wrongDoxMenu.addEventListener('click', ()=> {
+            approve1.classList.remove('selected')
+            notApprove.classList.remove('selected')
+            rejectMenu.classList.remove('selected')
+            wrongDoxMenu.classList.add('selected')
+
+            menuS.style.display = 'none'
+            rejcetDiv.style.display = 'none'
+            wrongDoxDiv.style.display = 'block'
+
+            successDiv.style.display = 'none'
+            expiredDiv.style.display = 'none'
+            successMenu.classList.remove('selected')
+            expiredMenu.classList.remove('selected')
+        })
+        
+        successMenu.addEventListener('click', ()=> {
+            approve1.classList.remove('selected')
+            notApprove.classList.remove('selected')
+            rejectMenu.classList.remove('selected')
+            successMenu.classList.add('selected')
+
+            menuS.style.display = 'none'
+            rejcetDiv.style.display = 'none'
+            successDiv.style.display = 'block'
+
+            wrongDoxDiv.style.display = 'none'
+            expiredDiv.style.display = 'none'
+            wrongDoxMenu.classList.remove('selected')
+            expiredMenu.classList.remove('selected')
+        })
+
+        expiredMenu.addEventListener('click', ()=> {
+            approve1.classList.remove('selected')
+            notApprove.classList.remove('selected')
+            rejectMenu.classList.remove('selected')
+            expiredMenu.classList.add('selected')
+
+            menuS.style.display = 'none'
+            rejcetDiv.style.display = 'none'
+            expiredDiv.style.display = 'block'
+
+            wrongDoxDiv.style.display = 'none'
+            successDiv.style.display = 'none'
+            wrongDoxMenu.classList.remove('selected')
+            successMenu.classList.remove('selected')
+        })
+    }
+</script>
+
+<script> // when approve
+
+    // approve
+    const approve = document.getElementsByClassName('approve')
+    const btnSend = document.getElementById('btnSend')
+
+    const sched = document.getElementById('sched')
+
+    let getTheDate = new Date().toISOString()
+    let getTheDate_1 = new Date(getTheDate)
+    getTheDate_1.setDate(getTheDate_1.getDate() + parseInt(1))
+
+    let subID = ''
+
+    function approveBtn() { // approve
+        for(let i = 0; i < approve.length; i++){
+            approve[i].addEventListener('click', ()=> {
+                subID = approve[i].id
+                sched.setAttribute('min', getTheDate_1.toISOString().slice(0, 16))
+                sched.setAttribute('value', getTheDate_1.toISOString().slice(0, 16))
+            })
+        }
+    } function approveBtnSend () {
+        btnSend.addEventListener('click', ()=> {
+
+            const sched = document.getElementById('sched').value;
+
+            (async ()=> {
+                const rawResponse = await fetch('api/admin-approve-set-schedule-3a', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': "application/json"
+                    },
+                    body: `schedule=${sched}&id=${subID}`
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    location.reload()
+                }
+            })()
+        })
+    }
+</script>
+
+<script> // when done
+
+    const doneRequest = document.getElementsByClassName('done')
+    const btnYes = document.getElementById('btnYes')
+
+    let subID_done = ''
+
+    function doneBtn() { // done
+        for(let i = 0; i < doneRequest.length; i++){
+            doneRequest[i].addEventListener('click', ()=> {
+                subID_done = doneRequest[i].id
+            })
+        }
+    } function doneBtnYes () {
+        btnYes.addEventListener('click', ()=> {
+
+            (async ()=> {
+                const rawResponse = await fetch('api/admin-done-3a', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': "application/json"
+                    },
+                    body: `id=${subID_done}`
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    location.reload()
+                }
+            })()
+        })
+    }
+</script>
+
+<script> // reject
+    const reject = document.getElementsByClassName('reject')
+    const btnYes_reject = document.getElementById('btnYes_reject')
+    var subID_reject = 0
+
+    function rejectBtn() { // reject
+        for(let i = 0; i < reject.length; i++){
+            reject[i].addEventListener('click', ()=> {
+                subID_reject = reject[i].id
+            })
+        }
+    } function rejectBtnYes() {
+        btnYes_reject.addEventListener('click', ()=> {
+            (async ()=> {
+                const rawResponse = await fetch('api/send-proced-3a', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: `proced=Reject&id=${subID_reject}`
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    location.reload()
+                }
+            })()
+        })
+    }
+</script>
+
+<script> // wrong dox
+    const wrongDox = document.getElementsByClassName('wrongDox')
+    const btnYes_wrongDox = document.getElementById('btnYes_wrongDox')
+    var subID_wrongDox = 0
+
+    function wrongDoxBtn() { // wrong Dox
+        for(let i = 0; i < wrongDox.length; i++){
+            wrongDox[i].addEventListener('click', ()=> {
+                subID_wrongDox = wrongDox[i].id
+            })
+        }
+    } function wrongDoxBtnYes() {
+        btnYes_wrongDox.addEventListener('click', ()=> {
+            (async ()=> {
+                const rawResponse = await fetch('api/send-proced-3a', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: `proced=WrongDox&id=${subID_wrongDox}`
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    location.reload()
+                }
+            })()
+        })
+    }
+</script>
+
+<script> // click img cards
+    const imgCards  = document.getElementsByClassName('card2img')
+    const viewImage = document.getElementById('viewImage')
+    const imageName = document.getElementById('imageName')
+
+    function selectImgCards(){
+        for(let p = 0; p < imgCards.length; p++){
+            imgCards[p].addEventListener('click', ()=> {
+                imageName.innerText = imgCards[p].alt
+                viewImage.src = imgCards[p].src
+
+                viewImage.addEventListener('contextmenu', (e)=> {
+                    e.preventDefault()
+                })
+            })
+
+            imgCards[p].addEventListener('contextmenu', (e)=> {
+                e.preventDefault()
+            })
+        }
+    }
+</script>
+
+<script> // click div cards
+    const cards = document.getElementsByClassName('card1')
+
+    const imageContent = document.getElementsByTagName('img') // new element
+
+    function selectCards(){
+        
+        for (let i = 0; i < cards.length; i++){
+            cards[i].addEventListener('click', ()=> {
+
+                for(let j in imagesForSupprotingDox){
+                    if(cards[i].id == imagesForSupprotingDox[j].id){
+                    
+                        // loop the values from imagesForSupportingDox[j]
+                        Object.entries(imagesForSupprotingDox[j]).forEach(([key,value], index)=> {
+                            if(key != 'id'){
+                                imageContent[index].src = value
+                                imageContent[index].id = imagesForSupprotingDox[j].id
+                                imageContent[index].alt = key
+                            }
+                        })
+
+                    }
+                }
+
+                selectImgCards() // for selecting supporting image
+            })
+        }
+    }
+</script>
+
+<script> // when viewMore or viewImage click
+
+    // view more
+    const viewMore = document.getElementsByClassName('viewMore')
+    // husband info
+    const lcrRegistryNo_2a = document.getElementById('lcrRegistryNo_2a')
+    const registrationDate_2a = document.getElementById('registrationDate_2a')
+    const husband_name = document.getElementById('husband_name')
+    const husband_age = document.getElementById('husband_age')
+    const husband_civil_status = document.getElementById('husband_civil_status')
+    const husband_nationality = document.getElementById('husband_nationality')
+    const husband_mother = document.getElementById('husband_mother')
+    const husband_father = document.getElementById('husband_father')
+    // wife info
+    const wife_name = document.getElementById('wife_name')
+    const wife_age = document.getElementById('wife_age')
+    const wife_civil_status = document.getElementById('wife_civil_status')
+    const wife_nationality = document.getElementById('wife_nationality')
+    const wife_mother = document.getElementById('wife_mother')
+    const wife_father = document.getElementById('wife_father')
+    // other info
+    const date_of_marriage = document.getElementById('date_of_marriage')
+    const place_of_marriage = document.getElementById('place_of_marriage')
+    
+    const issuedTo_2a = document.getElementById('issuedTo_2a')
+
+    function viewMoreClick (){
+        for(let i = 0; i < viewMore.length; i++){
+            viewMore[i].addEventListener('click', ()=> {
+
+                for(let j in subContentGlobal){
+
+                    if(viewMore[i].id == subContentGlobal[j].id){
+
+                        lcrRegistryNo_2a.innerHTML = subContentGlobal[j].id
+                        registrationDate_2a.innerHTML = subContentGlobal[j].date_of_registration
+                        // husband
+                        husband_name.innerHTML = `${subContentGlobal[j].h_fname} ${subContentGlobal[j].h_mname} ${subContentGlobal[j].h_lname}`
+                        husband_age.innerHTML = subContentGlobal[j].h_age
+                        husband_civil_status.innerHTML = subContentGlobal[j].h_civil_status
+                        husband_nationality.innerHTML = subContentGlobal[j].h_nationality
+                        husband_mother.innerHTML = `${subContentGlobal[j].h_m_fname} ${subContentGlobal[j].h_m_mname} ${subContentGlobal[j].h_m_lname}`
+                        husband_father.innerHTML = `${subContentGlobal[j].h_f_fname} ${subContentGlobal[j].h_f_mname} ${subContentGlobal[j].h_f_lname}`
+                        // wife
+                        wife_name.innerHTML = `${subContentGlobal[j].w_fname} ${subContentGlobal[j].w_mname} ${subContentGlobal[j].w_lname}`
+                        wife_age.innerHTML = subContentGlobal[j].w_age
+                        wife_civil_status.innerHTML = subContentGlobal[j].w_civil_status
+                        wife_nationality.innerHTML = subContentGlobal[j].w_nationality
+                        wife_mother.innerHTML = `${subContentGlobal[j].w_m_fname} ${subContentGlobal[j].w_m_mname} ${subContentGlobal[j].w_m_lname}`
+                        wife_father.innerHTML = `${subContentGlobal[j].w_f_fname} ${subContentGlobal[j].w_f_mname} ${subContentGlobal[j].w_f_lname}`
+                        // other
+                        date_of_marriage.innerHTML = subContentGlobal[j].date_of_marriage
+                        place_of_marriage.innerHTML = subContentGlobal[j].place_of_marriage
+
+                        issuedTo_2a.innerHTML = subContentGlobal[j].issued_to
+
+                    }
+                }
+            })
+        }
+    }
+
+</script>
+
+<script> // peding Lists
+    function pendingList(dataContent, husbandName, wifeName){
+        if(dataContent.schedule == ''){ // pending
+
+            table2.innerHTML += `
+                <div class="col-5 card1" id="${dataContent.id}">
+                    <h5>ID: ${dataContent.id}</h5>
+                    <div style="margin-top: 5%; margin-left: 3%;">
+                        <span><b>HUSBAND: </b> ${husbandName}</span> <br>
+                        <span><b>WIFE: </b> ${wifeName}</span> <br>
+                        <span><b>DATE OF MARRIAGE: </b> ${dataContent.date_of_marriage}</span> <br>
+                        <span><b>PLACE OF MARRIAGE: </b> ${dataContent.place_of_marriage}</span> <br>
+                        <span><b>ISSUED TO: </b> ${dataContent.issued_to}</span>
+                    </div>
+                    <br>
+                    <div class="btn1">
+                        <button style="border: 1px solid green; color: green;" class="approve" id="${dataContent.id}" data-bs-toggle="modal" data-bs-target="#approveModal">APPROVE REQUEST</button>
+                        <button style="border: 1px solid red; color: red;" class="reject" id="${dataContent.id}" data-bs-toggle="modal" data-bs-target="#rejectBtn">REJECT REQUEST</button>
+                        <button style="border: 1px solid rgb(183, 183, 0); color: rgb(170, 170, 0)" class="wrongDox" id="${dataContent.id}" data-bs-toggle="modal" data-bs-target="#wrongDox">WRONG DOCUMENTS</button>
+                        <button style="border: 1px solid gray;" data-bs-toggle="modal" data-bs-target="#viewMore" class="viewMore" id="${dataContent.id}">PREVIEW REQUEST</button>
+                    </div>
+                </div>
+            `
+
+        } 
+    }
+</script>
+
+<script> // approve Lists
+    function approveList(dataContent, husbandName, wifeName, currentDate){
+        if (dataContent.schedule != '' && dataContent.done == '') { // approve
+
+            // expiration on cert
+            (async()=> {
+                const sched = new Date(dataContent.schedule).getDate()
+                const current = parseInt(currentDate) - 3;
+
+                if(current == sched){
+                    const rawResponse = await fetch('api/send-proced-3a', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        }, 
+                        body: `proced=Expired&id=${dataContent.id}`
+                    })
+                    const content = await rawResponse.json();
+
+                    if(content.success == true){
+                        alert(`ID: ${dataContent.id} has expired`)
+                    }
+                }
+            })();
+
+            table.innerHTML += `
+                <div class="col-5 card1" id="${dataContent.id}">
+                    <h5>ID: ${dataContent.id}</h5>
+                    <div style="margin-top: 5%; margin-left: 3%;">
+                        <span><b>HUSBAND: </b> ${husbandName}</span> <br>
+                        <span><b>WIFE: </b> ${wifeName}</span> <br>
+                        <span><b>DATE OF MARRIAGE: </b> ${dataContent.date_of_marriage}</span> <br>
+                        <span><b>PLACE OF MARRIAGE: </b> ${dataContent.place_of_marriage}</span> <br>
+                        <span><b>ISSUED TO: </b> ${dataContent.issued_to}</span>
+                    </div>
+                    <br>
+                    <div class="btn1">
+                        <button style="border: 1px solid green; color: green;" class="done" id="${dataContent.id}" data-bs-toggle="modal" data-bs-target="#doneModal"><b>DONE</b></button>
+                        <button style="border: 1px solid gray;" data-bs-toggle="modal" data-bs-target="#viewMore" class="viewMore" id="${dataContent.id}"><b>PREVIEW REQUEST</b></button>
+                    </div>
+                </div>
+            `
+        }
+    }
+</script>
+
+<script> // reject Lists
+    function rejectList(dataContent){
+        if (dataContent.proced == 'Reject') { // reject
+
+            const husbandName = `${dataContent.h_fname} ${dataContent.h_mname} ${dataContent.h_lname}`
+            const wifeName = `${dataContent.w_fname} ${dataContent.w_mname} ${dataContent.w_lname}`
+
+            var row = tableReject.insertRow(1)
+            row.id = dataContent.id
+            row.classList.add('viewMore')
+            row.setAttribute('data-bs-toggle', 'modal')
+            row.setAttribute('data-bs-target', '#viewMore')
+            row.innerHTML += `
+                <tr>
+                    <td>${dataContent.id}</td>
+                    <td>${husbandName}</td>
+                    <td>${dataContent.h_age}</td>
+                    <td>${dataContent.h_civil_status}</td>
+                    <td>${dataContent.h_nationality}</td>
+                    <td>${wifeName}</td>
+                    <td>${dataContent.w_age}</td>
+                    <td>${dataContent.w_civil_status}</td>
+                    <td>${dataContent.w_nationality}</td>
+                    <td>${dataContent.date_of_registration}</td>
+                    <td>${dataContent.date_of_marriage}</td>
+                    <td>${dataContent.place_of_marriage}</td>
+                    <td>${dataContent.issued_to}</td>
+                </tr>
+            `
+        }
+    }
+</script>
+
+<script> // wrong documents Lists
+    function wrongDoxList(dataContent){
+        if (dataContent.proced == 'WrongDox') { // wrong
+
+            const husbandName = `${dataContent.h_fname} ${dataContent.h_mname} ${dataContent.h_lname}`
+            const wifeName = `${dataContent.w_fname} ${dataContent.w_mname} ${dataContent.w_lname}`
+
+            var row = tableWrongDox.insertRow(1)
+            row.id = dataContent.id
+            row.classList.add('viewMore')
+            row.setAttribute('data-bs-toggle', 'modal')
+            row.setAttribute('data-bs-target', '#viewMore')
+            row.innerHTML += `
+                <tr>
+                    <td>${dataContent.id}</td>
+                    <td>${husbandName}</td>
+                    <td>${dataContent.h_age}</td>
+                    <td>${dataContent.h_civil_status}</td>
+                    <td>${dataContent.h_nationality}</td>
+                    <td>${wifeName}</td>
+                    <td>${dataContent.w_age}</td>
+                    <td>${dataContent.w_civil_status}</td>
+                    <td>${dataContent.w_nationality}</td>
+                    <td>${dataContent.date_of_registration}</td>
+                    <td>${dataContent.date_of_marriage}</td>
+                    <td>${dataContent.place_of_marriage}</td>
+                    <td>${dataContent.issued_to}</td>
+                </tr>
+            `
+        }
+    }
+</script>
+
+<script> // success Lists
+    function successList(dataContent){
+        if (dataContent.done == 'True') {
+
+            const husbandName = `${dataContent.h_fname} ${dataContent.h_mname} ${dataContent.h_lname}`
+            const wifeName = `${dataContent.w_fname} ${dataContent.w_mname} ${dataContent.w_lname}`
+
+            var row = tableSuccess.insertRow(1)
+            row.id = dataContent.id
+            row.classList.add('viewMore')
+            row.setAttribute('data-bs-toggle', 'modal')
+            row.setAttribute('data-bs-target', '#viewMore')
+            row.innerHTML += `
+                <tr>
+                    <td>${dataContent.id}</td>
+                    <td>${husbandName}</td>
+                    <td>${dataContent.h_age}</td>
+                    <td>${dataContent.h_civil_status}</td>
+                    <td>${dataContent.h_nationality}</td>
+                    <td>${wifeName}</td>
+                    <td>${dataContent.w_age}</td>
+                    <td>${dataContent.w_civil_status}</td>
+                    <td>${dataContent.w_nationality}</td>
+                    <td>${dataContent.date_of_registration}</td>
+                    <td>${dataContent.date_of_marriage}</td>
+                    <td>${dataContent.place_of_marriage}</td>
+                    <td>${dataContent.issued_to}</td>
+                </tr>
+            `
+        }
+    }
+</script>
+
+<script> // expired Lists
+    function expiredList(dataContent){
+        if (dataContent.proced == 'Expired') {
+
+            const husbandName = `${dataContent.h_fname} ${dataContent.h_mname} ${dataContent.h_lname}`
+            const wifeName = `${dataContent.w_fname} ${dataContent.w_mname} ${dataContent.w_lname}`
+
+            var row = tableExpired.insertRow(1)
+            row.id = dataContent.id
+            row.classList.add('viewMore')
+            row.setAttribute('data-bs-toggle', 'modal')
+            row.setAttribute('data-bs-target', '#viewMore')
+            row.innerHTML += `
+                <tr>
+                    <td>${dataContent.id}</td>
+                    <td>${husbandName}</td>
+                    <td>${dataContent.h_age}</td>
+                    <td>${dataContent.h_civil_status}</td>
+                    <td>${dataContent.h_nationality}</td>
+                    <td>${wifeName}</td>
+                    <td>${dataContent.w_age}</td>
+                    <td>${dataContent.w_civil_status}</td>
+                    <td>${dataContent.w_nationality}</td>
+                    <td>${dataContent.date_of_registration}</td>
+                    <td>${dataContent.date_of_marriage}</td>
+                    <td>${dataContent.place_of_marriage}</td>
+                    <td>${dataContent.issued_to}</td>
+                </tr>
+            `
+        }
+    }
+</script>
+
+<script> // search List
+    function searchList(contentData){
+
+        searchBtn.addEventListener('click', ()=> { // when search click
+            let searchArray = searchInput.value.toLocaleLowerCase().split(' ')
+
+            while(tableReject.rows.length > 1){ // romoving all rows in reject
+                tableReject.deleteRow(1)
+            }
+
+            while(tableWrongDox.rows.length > 1){ // romoving all rows in wrongDox
+                tableWrongDox.deleteRow(1)
+            }
+
+            setTimeout(viewMoreClick, 100)
+            setTimeout(selectCards, 100)
+
+            setTimeout(approveBtn, 100)
+            setTimeout(approveBtnSend, 100)
+
+            setTimeout(rejectBtn, 100)
+            setTimeout(rejectBtnYes, 100)
+
+            setTimeout(wrongDoxBtn, 100)
+            setTimeout(wrongDoxBtnYes, 100)
+
+            setTimeout(doneBtn, 100)
+            setTimeout(doneBtnYes, 100)
+
+            table.innerHTML = ''
+            table2.innerHTML = ''
+
+            for(let j in searchArray){
+                for(let y in contentData){
+
+                    let dataContent = contentData[y]
+
+                    const husbandName = `${contentData[y].h_fname} ${contentData[y].h_mname} ${contentData[y].h_lname}`
+                    const wifeName = `${contentData[y].w_fname} ${contentData[y].w_mname} ${contentData[y].w_lname}`
+
+                    // search data
+                    let searchHusbandName = husbandName.toLocaleLowerCase().includes(searchArray[j])
+                    let searchWifeName = wifeName.toLocaleLowerCase().includes(searchArray[j])
+                    let searchMarriagePlace = contentData[y].place_of_marriage.toLocaleLowerCase().includes(searchArray[j])
+                    let searchMarriageDate = contentData[y].date_of_marriage.toLocaleLowerCase().includes(searchArray[j])
+                    let searchIssuedTo = contentData[y].issued_to.toLocaleLowerCase().includes(searchArray[j])
+                    let searchID = contentData[y].id
+
+                    // search filter
+                    if(searchID == searchArray[j] || searchHusbandName || searchWifeName || searchMarriageDate || searchMarriagePlace || searchIssuedTo){
+                        if(contentData[y].proced == 'True'){
+                            pendingList(dataContent, husbandName, wifeName)
+                            approveList(dataContent, husbandName, wifeName)
+                        }
+                        rejectList(dataContent)
+                        wrongDoxList(dataContent)
+                        expiredList(dataContent)
+                        successList(dataContent)
+                    }
+                }
+            }
+
+        })
+    }
+</script>
+
+<script> // printing function
+    function printingFunction(contentData){
+
+        const searchInput = document.getElementById('searchInput')
+        const searchBtn = document.getElementById('searchBtn')
+
+        let currentDate = new Date().getDate()
+
+        searchList(contentData) // printing search list
+
+        for(let i in contentData){
+
+            let dataContent = contentData[i]
+
+            imagesForSupprotingDox.push({
+                "Husband Birth Certificate": contentData[i].h_birth_certificate,
+                "Husband Cenomar": contentData[i].h_cenomar,
+                "Husband Cedula": contentData[i].h_cedula,
+                "Husband Barangay Certificate": contentData[i].h_barangay_certificate,
+                "Wife Valid ID": contentData[i].w_valid_id,
+                "Wife Birth Certificate": contentData[i].w_birth_certificate,
+                "Wife Cenomar": contentData[i].w_cenomar,
+                "Wife Cedula": contentData[i].w_cedula,
+                "Wife Barangay Certificate": contentData[i].w_barangay_certificate,
+                "Wife Valid ID": contentData[i].w_valid_id,
+                id: contentData[i].id
+            }) // adding object to array
+
+            subContentGlobal.push(contentData[i])
+
+            if(contentData[i].proced === 'True'){ // have supporting dox
+
+                const husbandName = `${contentData[i].h_fname} ${contentData[i].h_mname} ${contentData[i].h_lname}`
+                const wifeName = `${contentData[i].w_fname} ${contentData[i].w_mname} ${contentData[i].w_lname}`
+
+                pendingList(dataContent, husbandName, wifeName)
+                approveList(dataContent, husbandName, wifeName, currentDate)
+            }
+
+            rejectList(dataContent)
+            wrongDoxList(dataContent)
+            expiredList(dataContent)
+            successList(dataContent)
+        }
+    }
+</script>
+
+<script> // main
+    const image = document.getElementById('image')
+    const blockBtn = document.getElementsByClassName('blockBtn')
+
+    const supportingDoxs = document.getElementById('supportingDoxs') // not approve
+    const supportingDoxs2 = document.getElementById('supportingDoxs2') // for approve
+
+    var imagesForSupprotingDox = []
+    var subContentGlobal = []
+
+    const tableReject = document.getElementById('tableReject')
+    const tableWrongDox= document.getElementById('tableWrongDox')
+    const tableSuccess = document.getElementById('tableSuccess')
+    const tableExpired = document.getElementById('tableExpired')
+    const table2 = document.getElementById('table2')
+    const table = document.getElementById('table1');
+
+    (async () => {
+        const rawResponse = await fetch('api/get-all-documents-3a', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        const content = await rawResponse.json();
+
+        printingFunction(content.data)
+
+        approveBtn()
+        approveBtnSend()
+
+        rejectBtn()
+        rejectBtnYes()
+
+        wrongDoxBtn()
+        wrongDoxBtnYes()
+
+        doneBtn()
+        doneBtnYes()
+
+        viewMoreClick()
+
+        divDisplay()
+
+        selectCards()
+    })()
+</script>
+
+</html>

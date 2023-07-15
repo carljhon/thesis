@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="createNew1AForm.css"> 
+
+    <!-- recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <title>3A Form</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2 top1" style="font-size: 1.2vw;">
+            <div class="row subt1">
+                <div class="col-11">
+                    <h5>PANDI CERTIFICATION</h5>
+                </div>
+            </div>
+            <div class="row subt2">
+                <div class="col-12">
+                    <p>Menu</p>
+                </div>
+                <div class="col-12 menulist" id="birth">
+                    <a href="./createNew1AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 1A Birth Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="merraige">
+                    <a href="./createNew2AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 2A Death Certificate
+                    </a>
+                </div>
+                <div class="col-12 active" id="death">
+                    <i class="bi bi-award h4 login-button"></i> 3A Marriage Certificate
+                </div>
+                <div class="col-12 menulist" id="Chat" style="margin-top: 3rem;">
+                    <a href="./UserChat.html">
+                        <i class="bi bi-chat-right-dots"></i> Chat
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 top2">
+            <div class="row">
+                <div class="row t1 col-7">
+                    <div class="col-1">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </div>
+                    <div class="col-5">
+                        <h4 style="font-size: 1.6vw;">PANDI ONLINE LCR</h4>
+                    </div>
+                </div>
+                <div class="col-2 dropdown" style="margin-left: auto; margin-right: 5%; text-align: right;">
+                    <h4 class="dropbtn">
+                        <a href="/" class="bi bi-house-fill" style="margin-right: 1rem; color: green; font-size: 1.6vw;"></a> 
+                        <i class="bi bi-person-lines-fill" id="dropbtn" style="cursor: pointer; font-size: 1.6vw;"></i>
+                    </h4>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a class="menuCard" href="./accountUser.html"><i class="bi bi-person"></i> Account</a>
+                        <a class="menuCard" href="./documentUser.html"><i class="bi bi-folder2-open"></i> Documents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row t">
+                <div class="col-10 Form">
+                    <form id="a2" class="row inputCol3">
+
+                        <!--Husband-->
+                        <div class="separator">Husband Information</div>
+
+                        <div class="col-4">
+                            <label for="">First Name</label><br>
+                            <input type="text" name="h_fname" id="h_fname" size="34" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Middle Name</label><br>
+                            <input type="text" name="h_mname" id="h_mname" size="34" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Last Name</label><br>
+                            <input type="text" name="h_lname" id="h_lname" size="34" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Age</label><br>
+                            <input type="text" name="h_age" id="h_age" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Nationality</label><br>
+                            <input type="text" name="h_nationality" id="h_nationality" style="width: 100%;" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Civil Status</label><br>
+                            <input type="text" name="h_civilStatus" id="h_civilStatus" style="width: 100%;" required>
+                        </div>
+
+                        <!-- husband mother -->
+                        <div class="col-4">
+                            <label for="">Mother First Name</label><br>
+                            <input type="text" name="h_m_fname" id="h_m_fname" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Mother MI</label><br>
+                            <input type="text" name="h_m_mname" id="h_m_mname" style="width: 100%;" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Mother Last Name</label><br>
+                            <input type="text" name="h_m_lname" id="h_m_lname" style="width: 100%;" required>
+                        </div>
+
+                        <!-- husband father -->
+                        <div class="col-4">
+                            <label for="">Father First Name</label><br>
+                            <input type="text" name="h_f_fname" id="h_f_fname" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Father MI</label><br>
+                            <input type="text" name="h_f_mname" id="h_f_mname" style="width: 100%;" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Father Last Name</label><br>
+                            <input type="text" name="h_f_lname" id="h_f_lname" style="width: 100%;" required>
+                        </div>
+
+
+                        <!--Wife -->
+                        <div class="separator">Wife Information</div>
+
+                        <div class="col-4">
+                            <label for="">First Name</label><br>
+                            <input type="text" name="w_fname" id="w_fname" size="34" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Middle Name</label><br>
+                            <input type="text" name="w_mname" id="w_mname" size="34" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Last Name</label><br>
+                            <input type="text" name="w_lname" id="w_lname" size="34" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Age</label><br>
+                            <input type="text" name="w_age" id="w_age" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Nationality</label><br>
+                            <input type="text" name="w_nationality" id="w_nationality" style="width: 100%;" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Civil Status</label><br>
+                            <input type="text" name="w_civilStatus" id="w_civilStatus" style="width: 100%;" required>
+                        </div>
+
+                        <!-- wife mother -->
+                        <div class="col-4">
+                            <label for="">Mother First Name</label><br>
+                            <input type="text" name="w_m_fname" id="w_m_fname" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Mother MI</label><br>
+                            <input type="text" name="w_m_mname" id="w_m_mname" style="width: 100%;" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Mother Last Name</label><br>
+                            <input type="text" name="w_m_lname" id="w_m_lname" style="width: 100%;" required>
+                        </div>
+                        <!-- wife father -->
+                        <div class="col-4">
+                            <label for="">Father First Name</label><br>
+                            <input type="text" name="w_f_fname" id="w_f_fname" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Father MI</label><br>
+                            <input type="text" name="w_f_mname" id="w_f_mname" style="width: 100%;" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Father Last Name</label><br>
+                            <input type="text" name="w_f_lname" id="w_f_lname" style="width: 100%;" required>
+                        </div>
+
+
+                        <!--Other-->
+                        <div class="separator">Other Information</div>
+
+                        <div class="col-6">
+                            <label for="">Date of Registration</label><br>
+                            <input type="date" name="date_of_registration" id="date_of_registration" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Date of Marriage</label><br>
+                            <input type="date" name="date_of_marriage" id="date_of_marriage" style="width: 100%;" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="">Place of Marriage</label><br>
+                            <input type="text" name="place_of_marriage" id="place_of_marriage" required>
+                        </div>
+
+                        <div style="margin-top: 1rem;" class="g-recaptcha" data-sitekey="6LfS-TYmAAAAAMrEPCWBottdfIPx9ygvXIUbgOH8"></div>
+
+                        <div class="btn">
+                            <button id="submit1">SAVE INFORMATION</button>
+                            <button>CANCEL</button>
+                        </div>
+
+                    </form>
+
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- enryption and decryption -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
+<script>
+    const aTag = document.getElementsByTagName('a');
+    const menulist = document.getElementsByClassName('menulist');
+
+    const a2 = document.getElementById('a2');
+    const submitButton = document.getElementById('submit1');
+
+
+    // husband data
+    const husband_fname = document.getElementById('h_fname')
+    const husband_mname = document.getElementById('h_mname')
+    const husband_lname = document.getElementById('h_lname')
+    const husband_age = document.getElementById('h_age')
+    const husband_nationality = document.getElementById('h_nationality')
+    const husband_civil_status = document.getElementById('h_civilStatus')
+    const h_m_fname = document.getElementById('h_m_fname') // husband mother fisrtname
+    const h_m_mname = document.getElementById('h_m_mname')
+    const h_m_lname = document.getElementById('h_m_lname')
+    const h_f_fname = document.getElementById('h_f_fname') // husband father firstname
+    const h_f_mname = document.getElementById('h_f_mname')
+    const h_f_lname = document.getElementById('h_f_lname')
+    // wife data
+    const wife_fname = document.getElementById('w_fname')
+    const wife_mname = document.getElementById('w_mname')
+    const wife_lname = document.getElementById('w_lname')
+    const wife_age = document.getElementById('w_age')
+    const wife_nationality = document.getElementById('w_nationality')
+    const wife_civil_status = document.getElementById('w_civilStatus')
+    const w_f_fname = document.getElementById('w_f_fname') // wife father firstname
+    const w_f_mname = document.getElementById('w_f_mname')
+    const w_f_lname = document.getElementById('w_f_lname')
+    const w_m_fname = document.getElementById('w_m_fname') // wife mother firstname
+    const w_m_mname = document.getElementById('w_m_mname')
+    const w_m_lname = document.getElementById('w_m_lname')
+    // other information
+    const date_of_registration = document.getElementById('date_of_registration')
+    const date_of_marriage = document.getElementById('date_of_marriage')
+    const place_of_marriage = document.getElementById('place_of_marriage')
+
+
+    // mouse over and out in person menu
+    const dropbtn = document.getElementById('dropbtn')
+    const dropdownContent = document.getElementById('dropdownContent')
+    const menuCard = document.getElementsByClassName('menuCard')
+    dropbtn.addEventListener('mouseover', ()=> { // toggle click
+        dropdownContent.style.display = 'block'
+    })
+    menuCard[1].addEventListener('mouseout', ()=> {
+        dropdownContent.style.display = 'none'
+    })
+
+    var decryptFullname = ''
+    var decryptFormData_Marriage = ''
+
+    try{
+        // decrypt fullname
+        var decryptFullname = CryptoJS.AES.decrypt(sessionStorage.fullname, "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+        var decryptFormData_Marriage = CryptoJS.AES.decrypt(localStorage.getItem('formData_Marriage'), "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+    }catch(err){
+        decryptFullname = sessionStorage.fullname
+        decryptFormData_Marriage = localStorage.getItem('formData_Marriage')
+    }
+
+    // get save data from local storage
+    const formString = decryptFormData_Marriage
+    const formData = JSON.parse(formString)
+
+    if(formString != undefined && sessionStorage.id == formData.issuedToId){ // restore data from preview inputs
+
+        // husband
+        husband_fname.value = formData.husband_fname
+        husband_mname.value = formData.husband_mname
+        husband_lname.value = formData.husband_lname
+        husband_age.value = formData.husband_age
+        husband_nationality.value = formData.husband_nationality
+        husband_civil_status.value = formData.husband_civil_status
+        h_f_fname.value = formData.h_f_fname // husband father firstname
+        h_f_mname.value = formData.h_f_mname
+        h_f_lname.value = formData.h_f_lname
+        h_m_fname.value = formData.h_m_fname // husband mother firstname
+        h_m_mname.value = formData.h_m_mname
+        h_m_lname.value = formData.h_m_lname
+
+        // wife
+        wife_fname.value = formData.wife_fname
+        wife_mname.value = formData.wife_mname
+        wife_lname.value = formData.wife_lname
+        wife_age.value = formData.wife_age
+        wife_nationality.value = formData.wife_nationality
+        wife_civil_status.value = formData.wife_civil_status
+        w_f_fname.value = formData.w_f_fname // wife father firstname
+        w_f_mname.value = formData.w_f_mname
+        w_f_lname.value = formData.w_f_lname
+        w_m_fname.value = formData.w_m_fname // wife mother firstname
+        w_m_mname.value = formData.w_m_mname
+        w_m_lname.value = formData.w_m_lname
+
+        //other information
+        date_of_registration.value = formData.date_of_registration
+        date_of_marriage.value = formData.date_of_marriage
+        place_of_marriage.value = formData.place_of_marriage
+    }
+
+
+    var captchaIsFilled = false
+
+    function onloadCallback() {
+        /* Place your recaptcha rendering code here */
+        var ll = grecaptcha.getResponse()
+
+        if(ll.length != 0){
+            captchaIsFilled = true
+        }
+    }
+
+    submitButton.addEventListener('click', ()=> { //save form data from local storage
+
+        a2.addEventListener('submit', (event) => event.preventDefault())
+
+        setTimeout(onloadCallback, 100)
+
+        if(captchaIsFilled == true){
+            const formData2 = new URLSearchParams(new FormData(a2)).toString()
+            
+            window.location.href = './marriagePreview.html'
+    
+            const formData1 = new FormData(a2)
+    
+            const sendToLocalStorage = `
+                {
+                    "husband_fname": "${formData1.get('h_fname')}",
+                    "husband_mname": "${formData1.get('h_mname')}",
+                    "husband_lname": "${formData1.get('h_lname')}",
+                    "husband_age": "${formData1.get('h_age')}",
+                    "husband_nationality": "${formData1.get('h_nationality')}",
+                    "husband_civil_status": "${formData1.get('h_civilStatus')}",
+                    "h_m_fname": "${formData1.get('h_m_fname')}",
+                    "h_m_mname": "${formData1.get('h_m_mname')}",
+                    "h_m_lname": "${formData1.get('h_m_lname')}",
+                    "h_f_fname": "${formData1.get('h_f_fname')}",
+                    "h_f_mname": "${formData1.get('h_f_mname')}",
+                    "h_f_lname": "${formData1.get('h_f_lname')}",
+    
+                    "wife_fname": "${formData1.get('w_fname')}",
+                    "wife_mname": "${formData1.get('w_mname')}",
+                    "wife_lname": "${formData1.get('w_lname')}",
+                    "wife_age": "${formData1.get('w_age')}",
+                    "wife_nationality": "${formData1.get('w_nationality')}",
+                    "wife_civil_status": "${formData1.get('w_civilStatus')}",
+                    "w_m_fname": "${formData1.get('w_m_fname')}",
+                    "w_m_mname": "${formData1.get('w_m_mname')}",
+                    "w_m_lname": "${formData1.get('w_m_lname')}",
+                    "w_f_fname": "${formData1.get('w_f_fname')}",
+                    "w_f_mname": "${formData1.get('w_f_mname')}",
+                    "w_f_lname": "${formData1.get('w_f_lname')}",
+    
+                    "date_of_registration": "${formData1.get('date_of_registration')}",
+                    "date_of_marriage": "${formData1.get('date_of_marriage')}",
+                    "place_of_marriage": "${formData1.get('place_of_marriage')}",
+    
+                    "issuedTo": "${decryptFullname}",
+                    "issuedToId": "${sessionStorage.id}"
+                }
+            `
+            let formdata1 = formData2+"&issuedto="+decryptFullname+"&issuedToId="+sessionStorage.id
+    
+            // encrypt form data
+            var encryptFormdata_Merriage = CryptoJS.AES.encrypt(sendToLocalStorage, "Secret Passphrase");
+            var encryptFormdata1 = CryptoJS.AES.encrypt(formdata1, "Secret Passphrase");
+    
+            localStorage.setItem('formData_Marriage', encryptFormdata_Merriage)
+            localStorage.setItem('formData1', encryptFormdata1)
+
+        }
+
+
+    })
+
+    for(let i=0; i<menulist.length; i++){
+        menulist[i].addEventListener('mouseover', ()=>{
+            aTag[i].style.color = 'white'
+            menulist[i].style.background = 'gray'
+        })
+        menulist[i].addEventListener('mouseout', ()=>{
+            aTag[i].style.color = 'yellow'
+            menulist[i].style.background = 'none'
+        })
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="birthPreview.css"> 
+
+    <title>1A Form Preview</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2 top1">
+            <div class="row subt1">
+                <div class="col-11">
+                    <h5>PANDI CERTIFICATION</h5>
+                </div>
+            </div>
+            <div class="row subt2">
+                <div class="col-12">
+                    <p>Menu</p>
+                </div>
+                <div class="col-12 active" id="birth">
+                    <i class="bi bi-award h4 login-button"></i> 1A Birth Certificate
+                </div>
+                <div class="col-12 menulist" id="death">
+                    <a href="./createNew2AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 2A Death Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="marriage">
+                    <a href="./createNew3AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 3A Marriage Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="Chat" style="margin-top: 3rem;">
+                    <a href="./UserChat.html">
+                        <i class="bi bi-chat-right-dots"></i> Chat Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 top2">
+            <div class="row">
+                <div class="row t1 col-7">
+                    <div class="col-1">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </div>
+                    <div class="col-5">
+                        <h4>PANDI ONLINE LCR</h4>
+                    </div>
+                </div>
+                <div class="col-2 dropdown" style="margin-left: auto; margin-right: 5%; text-align: right;">
+                    <h4 class="dropbtn">
+                        <a href="/" class="bi bi-house-fill" style="margin-right: 1rem; color: green; font-size: 1.6vw;"></a> 
+                        <i class="bi bi-person-lines-fill" id="dropbtn" style="cursor: pointer; font-size: 1.6vw;"></i>
+                    </h4>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a class="menuCard" href="./accountUser.html"><i class="bi bi-person"></i> Account</a>
+                        <a class="menuCard" href="./documentUser.html"><i class="bi bi-folder2-open"></i> Documents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row t">
+                <div class="col-10 Form">
+                    <form id="a1Form" class="row inputCol3">
+
+                        <div class="col-12" style="text-align: left; margin-top: 1rem;">
+                            LCR Form No. 1A <br>
+                            (Birth Available)
+                        </div>
+
+                        <div class="col-12">
+                            <p>
+                                Republic of the Philippines <br>
+                                <span class="h4">OFFICE OF MUNICIPAL CIVIL REGISTRAR</span> <br>
+                                Pandi, Bulacan
+                            </p>
+                            
+                        </div>
+                        
+                        <div class="col-12" style="text-align: right; padding-right: 3rem;">
+                            <p>Date: <span id="Now">m-d-y</span></p>
+                        </div>
+
+                        <div class="col-12" style="text-align: left">
+                            <p>TO WHOM IT MAY CONCERN:</p>
+                        </div>
+
+                        <div class="col-7" style="margin-left: auto; margin-right: auto;">
+                            We certify that, among others, the following facts of appear in our Register of <span style="font-weight: bold;">Birth</span>
+                        </div>
+
+                        <div class="col-6" style="text-align: right; margin-top: 2rem;">
+                            <p>LCR Registry Number: </p>
+                            <p>Date of Registration:</p>
+                            <p>Name of Child:</p>
+                            <p>Sex:</p>
+                            <p>Place of Birth: </p>
+                            <p>Date of Birth: </p>
+                            <p>Name of Mother: </p>
+                            <p>Nationality:</p>
+                            <p>Name of Father:</p>
+                            <p>Nationality: </p>
+                            <p>Date of Marriage:</p>
+                            <p>Place of Marriage:</p>
+                            <p>This Certification is issued to:</p>
+                            <p style="margin-right: 5rem;">Upon his/her request.</p>
+                        </div>
+                        <div class="col-6" style="text-align: left; margin-top: 2rem;">
+                            <p id="lcrRegistryNo">asdf</p>
+                            <p id="registrationDate">asdfasd</p>
+                            <p id="childName"></p>
+                            <p id="gender"></p>
+                            <p id="birthPlace"></p>
+                            <p id="birthday"></p>
+                            <p id="motherName"></p>
+                            <p id="mNationality"></p>
+                            <p id="fatherName"></p>
+                            <p id="fNationality"></p>
+                            <p id="merriageDate"></p>
+                            <p id="merriagePlace"></p>
+                            <p id="issuedTo"></p>
+                        </div>
+
+                        <div class="col-12" style="text-align: right; padding-right: 2rem;">
+                            <span id="municipalRegistrar">Aaron Sia</span>
+                            <p>Municipal Civil Registrar</p>
+                        </div>
+                        <div class="col-12" style="text-align: left;">
+                            <p>VERIFIED BY: <span id="verifiedBy"></span></p>
+                        </div>
+                        
+                        
+                        <div class="col-12" style="text-align: left;">
+                            <p>Note: This Certification is not valid if it has mark of erasure or alteration of any entry</p>
+                        </div>
+
+                    </form>
+
+                    <div class="btn">
+                        <button id="save">REGISTER FOR BIRTH CERTIFICATE</button>
+                        <button id="edit">EDIT INFORMATION</button>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- enryption and decryption -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
+
+<script>
+    const aTag = document.getElementsByTagName('a');
+    const menulist = document.getElementsByClassName('menulist')
+
+    const a1Form = document.getElementById('a1Form')
+
+    const edit = document.getElementById('edit')
+    const save = document.getElementById('save')
+
+    const Now = document.getElementById('Now')
+    const lcrRegistryNo = document.getElementById('lcrRegistryNo')
+    const registrationDate = document.getElementById('registrationDate')
+    const childName = document.getElementById('childName')
+    const gender = document.getElementById('gender')
+    const birthPlace = document.getElementById('birthPlace')
+    const birthday = document.getElementById('birthday')
+    const motherName = document.getElementById('motherName')
+    const mNationality = document.getElementById('mNationality')
+    const fatherName = document.getElementById('fatherName')
+    const fNationality = document.getElementById('fNationality')
+    const merriageDate = document.getElementById('merriageDate')
+    const merriagePlace = document.getElementById('merriagePlace')
+    const issuedTo = document.getElementById('issuedTo')
+
+    // mouse over and out in person menu
+    const dropbtn = document.getElementById('dropbtn')
+    const dropdownContent = document.getElementById('dropdownContent')
+    const menuCard = document.getElementsByClassName('menuCard')
+    dropbtn.addEventListener('mouseover', ()=> { // toggle click
+        dropdownContent.style.display = 'block'
+    })
+    menuCard[1].addEventListener('mouseout', ()=> {
+        dropdownContent.style.display = 'none'
+    })
+
+    for(let i=0; i<menulist.length; i++){
+        menulist[i].addEventListener('mouseover', ()=>{
+            aTag[i].style.color = 'white'
+            menulist[i].style.background = 'gray'
+        })
+        menulist[i].addEventListener('mouseout', ()=>{
+            aTag[i].style.color = 'yellow'
+            menulist[i].style.background = 'none'
+        })
+    }
+
+    edit.addEventListener('click', ()=> {
+        window.location.href = './createNew1AForm.html'
+    });
+
+
+    // decrypt fullname
+    var decryptFullname = CryptoJS.AES.decrypt(sessionStorage.fullname, "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+    var decryptFormData = CryptoJS.AES.decrypt(localStorage.getItem('formData'), "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+    var decryptFormData1 = CryptoJS.AES.decrypt(localStorage.getItem('formData1'), "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+
+    // get save data from local storage
+    const formString1 = decryptFormData1
+    const formString = decryptFormData
+    const formData = JSON.parse(formString)
+
+
+    Now.innerHTML = new Date().toLocaleDateString()
+
+    registrationDate.innerHTML = formData.date_of_registration
+    childName.innerHTML = `${formData.child_fname} ${formData.child_mname} ${formData.child_lname}`
+    gender.innerHTML = formData.gender
+    birthPlace.innerHTML = formData.place_of_birth
+    birthday.innerHTML = formData.birthday
+    motherName.innerHTML = `${formData.m_fname} ${formData.m_mname} ${formData.m_lname}`
+    mNationality.innerHTML = formData.m_nationality
+    fatherName.innerHTML = `${formData.f_fname} ${formData.f_mname} ${formData.f_lname}`
+    fNationality.innerHTML = formData.f_nationality
+    merriageDate.innerHTML = formData.date_of_merriage
+    merriagePlace.innerHTML = formData.place_of_merriage
+    issuedTo.innerHTML = formData.issuedTo
+
+    save.addEventListener('click', ()=> {
+        (async () => {
+
+            const rawResponse = await fetch('api/a1', {
+                    method: 'POST',
+                    headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                    },
+                    body: formString1
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    alert('Documents successfully uploaded')
+                    window.location.href = './documentUser.html'
+                } else if(content.message == 'duplicated'){
+                    alert('You Already Requested it')
+                }
+        })()
+        return false
+    })
+
+</script>
+
+</html>

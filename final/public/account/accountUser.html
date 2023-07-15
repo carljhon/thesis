@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="accountUser.css"> 
+
+    <title>Account</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2 top1">
+            <div class="row subt1">
+                <div class="col-11">
+                    <h5>PANDI CERTIFICATION</h5>
+                </div>
+            </div>
+            <div class="row subt2">
+                <div class="col-12">
+                    <p>Menu</p>
+                </div>
+                <div class="col-12 menulist" id="birth">
+                    <a href="./createNew1AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 1A Birth Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="death">
+                    <a href="./createNew2AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 2A Death Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="merraige">
+                    <a href="./createNew3AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 3A Marriage Certificate
+                    </a>
+                </div>
+
+                <div class="col-12 menulist" id="Chat" style="margin-top: 3rem;">
+                    <a href="./UserChat.html">
+                        <i class="bi bi-chat-right-dots"></i> Chat Admin
+                    </a>
+                </div>
+
+                <div class="col-12" style="text-align: center; margin-top: 30%;">
+                    <button class="logout" id="logout">LOG OUT</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 top2">
+            <div class="row">
+                <div class="row t1 col-7">
+                    <div class="col-1">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </div>
+                    <div class="col-5">
+                        <h4 style="font-size: 1.6vw;">PANDI ONLINE LCR</h4>
+                    </div>
+                </div>
+                <div class="col-2 dropdown" style="margin-left: auto; margin-right: 5%; text-align: right;">
+                    <h4 class="dropbtn">
+                        <a href="/" class="bi bi-house-fill" style="margin-right: 1rem; color: green; font-size: 1.6vw;"></a> 
+                        <i class="bi bi-person-lines-fill" id="dropbtn" style="cursor: pointer; font-size: 1.6vw;"></i>
+                    </h4>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a class="menuCard" href="./accountUser.html"><i class="bi bi-person"></i> Account</a>
+                        <a class="menuCard" href="./documentUser.html"><i class="bi bi-folder2-open"></i> Documents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row t">
+                    <div class="col-5 Form">
+                        <img src="./man.png" id="profile" alt="" width="30%" style="border-radius: 50%; margin-left: auto; margin-right: auto; display: block; margin-bottom: 2rem; margin-top: 2rem;">
+                        <div class="row">
+                            <div class="col-12" style="text-align: left; margin-bottom: 10%;" id="personalData1">
+                                <p>First Name:</p>
+                                <p>Last Name:</p>
+                                <p>Middle Name:</p>
+                                <p>Date of Birth:</p>
+                                <p>Gender:</p>
+                                <p>Address:</p>
+                                <p>Email:</p>
+                                <p>Username:</p>
+                                <p>Contact:</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-6 signupForm">
+                        <form id="updateAccount">
+                            <div class="signup">
+                                <i class="bi bi-person"></i> <input type="text" name="lname" id="lname" placeholder="Lastname" disabled><br>
+                                <i class="bi bi-person"></i> <input type="text" name="fname" id="fname" placeholder="Firstname" disabled><br>
+                                <i class="bi bi-person"></i> <input type="text" name="mname" id="mname" placeholder="Middle Name" disabled><br>
+                                <i class="bi bi-calendar2"></i> <input type="date" name="bday" id="bday" disabled><br>
+
+                                <i class="bi bi-gender-ambiguous"></i> 
+                                <select name="gender" id="gender" disabled>
+                                    <option value="female">Female</option>
+                                    <option value="male">Male</option>
+                                </select> <br>
+                                
+                                <i class="bi bi-geo-alt"></i> <input type="text" name="add" id="add" placeholder="Address" disabled><br>
+                                <i class="bi bi-envelope"></i> <input type="email" name="email" id="email" placeholder="Email" disabled><br>
+                                <i class="bi bi-person"></i> <input type="text" name="username" id="username" placeholder="Username" disabled><br>
+                                <i class="bi bi-key"></i> <input type="password" name="pass" id="pass" placeholder="Password"  disabled><br>
+                                <i class="bi bi-telephone"></i> <input type="text" name="phone" id="phone" placeholder="Contact"  disabled><br>
+                                <button type="button" class="roundButton loginButton login-button" id="save"><b>SAVE</b></button>
+                                <button type="button" class="roundButton loginButton login-button" id="edit"><b>EDIT</b></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- enryption and decryption -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
+<script>
+    const aTag = document.getElementsByTagName('a');
+    const menulist = document.getElementsByClassName('menulist');
+    const edit = document.getElementById('edit')
+    const save = document.getElementById('save')
+    const logout = document.getElementById('logout')
+    const updateAccount = document.getElementById('updateAccount')
+
+    const personalData1 = document.getElementById('personalData1')
+    const profile = document.getElementById('profile')
+
+    const lname = document.getElementById('lname')
+    const mname = document.getElementById('mname')
+    const fname = document.getElementById('fname')
+    const bday = document.getElementById('bday')
+    const gender = document.getElementById('gender')
+    const address = document.getElementById('add')
+    const email = document.getElementById('email')
+    const username1 = document.getElementById('username')
+    const password1 = document.getElementById('pass')
+    const contact = document.getElementById('phone')
+
+    // mouse over and out in person menu
+    const dropbtn = document.getElementById('dropbtn')
+    const dropdownContent = document.getElementById('dropdownContent')
+    const menuCard = document.getElementsByClassName('menuCard')
+    dropbtn.addEventListener('mouseover', ()=> { // toggle click
+        dropdownContent.style.display = 'block'
+    })
+    menuCard[1].addEventListener('mouseout', ()=> {
+        dropdownContent.style.display = 'none'
+    })
+
+
+    for(let i=0; i<menulist.length; i++){
+        menulist[i].addEventListener('mouseover', ()=>{
+            aTag[i].style.color = 'white'
+            menulist[i].style.background = 'gray'
+        })
+        menulist[i].addEventListener('mouseout', ()=>{
+            aTag[i].style.color = 'yellow'
+            menulist[i].style.background = 'none'
+        })
+    }
+
+
+
+
+    let x = false // for edit toggle
+    let y = true // for save toggle
+
+    function ableDisable(enable, disable){
+        lname.disabled = enable
+        fname.disabled = enable
+        mname.disabled = enable
+        bday.disabled = enable
+        gender.disabled = enable
+        address.disabled = enable
+        email.disabled = enable
+        password1.disabled = enable
+        contact.disabled = enable
+        x = disable
+        y = enable
+    }
+
+    edit.addEventListener('click', ()=> {
+        if(x == false){
+            if(confirm('Are you sure you want to edit?') == true){
+                ableDisable(false, true)
+            }
+        }
+    })
+
+    // Avoid refresh
+    updateAccount.addEventListener('submit', (event) => event.preventDefault())
+
+    save.addEventListener('click', () => {
+        if(y == false){
+            if(confirm('Are you sure you want to save?') == true){
+
+                (async () => {
+                    const formData = new URLSearchParams(new FormData(updateAccount)).toString()
+
+                    const rawResponse = await fetch('api/updateAccount', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: `${formData}&id=${sessionStorage.id}`
+                    })
+                    const content = await rawResponse.json();
+
+                    if(content.success === true){
+                        const updatePass = content.data.updatePass
+
+                        var encryptPass = CryptoJS.AES.encrypt(updatePass, "Secret Passphrase");
+                        var encryptFullname = CryptoJS.AES.encrypt(content.data.fullname, "Secret Passphrase"); // encrypt full name
+
+                        sessionStorage.setItem('password', encryptPass)
+                        sessionStorage.setItem('fullname', encryptFullname)
+                        alert('Account updated!!')
+                        location.reload()
+                    }
+                })();
+
+                ableDisable(true, false)
+            }
+        } else {
+            alert('click edit first')
+        }
+    })
+
+    logout.addEventListener('click', ()=> {
+        if (confirm("Do you want to logout?")) {
+            sessionStorage.removeItem('username')
+            sessionStorage.removeItem('password')
+            sessionStorage.removeItem('id')
+            sessionStorage.removeItem('fullname')
+            window.location.href = '/'
+        }
+    });
+
+    (async () => {
+        // const formData = new URLSearchParams(new FormData(loginForm)).toString()
+
+        // decrypt fullname
+        var decryptPassword = CryptoJS.AES.decrypt(sessionStorage.password, "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+
+        const username = sessionStorage.username
+        const password = decryptPassword
+
+        const rawResponse = await fetch('api/getAccount', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: `username=${username}&pass=${password}`
+        })
+        const content = await rawResponse.json();
+
+        if(content.success === true){
+
+            if(content.data.gender == 'female'){ // change profile pic
+                profile.src = 'woman.png'
+            } else {
+                profile.src = 'man.png'
+            }
+
+            // update left side of personal data
+            personalData1.innerHTML = ` 
+
+                <p><b>FULLNAME: </b> ${content.data.fname}</p>
+                <p><b>LASTNAME: </b> ${content.data.lname}</p>
+                <p><b>MIDDLE NAME: </b> ${content.data.mname}</p>
+                <p><b>DATE OF BIRTH: </b> ${content.data.bday}</p>
+                <p><b>GENDER: </b> ${content.data.gender}</p>
+                <p><b>ADDRESS: </b> ${content.data.address}</p>
+                <p><b>EMAIL: </b> ${content.data.email}</p>
+                <p><b>USERNAME: </b> ${content.data.username}</p>
+                <p><b>CONTACT NUMBER: </b> ${content.data.contact}</p>
+                
+            `
+
+            // update right side of personal data
+            fname.value = content.data.fname
+            mname.value = content.data.mname
+            lname.value = content.data.lname
+            gender.value = content.data.gender
+            bday.value = content.data.bday
+            address.value = content.data.address
+            email.value = content.data.email
+            username1.value = content.data.username
+            password1.value = content.data.password
+            contact.value = content.data.contact
+
+        } else {
+            alert('Invalid Username and Password!!')
+        }
+    })()
+
+</script>
+
+</html>

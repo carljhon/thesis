@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="documentUser.css"> 
+
+    <title>User's Documents</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2 top1" style="font-size: 1.2vw;">
+            <div class="row subt1" >
+                <div class="col-11">
+                    <h5>PANDI CERTIFICATION</h5>
+                </div>
+            </div>
+            <div class="row subt2">
+                <div class="col-12">
+                    <p>Menu</p>
+                </div>
+                <div class="col-12 menulist" id="birth">
+                    <a href="./createNew1AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 1A Birth Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="merraige">
+                    <a href="./createNew2AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 2A Death Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="death">
+                    <a href="./createNew3AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 3A Marriage Certificate
+                    </a>
+                </div>
+
+                <div class="col-12 active" id="Chat" style="margin-top: 3rem;">
+                    <i class="bi bi-chat-right-dots"></i> Chat
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-10 top2">
+            <div class="row" >
+                <div class="row t1 col-7">
+                    <div class="col-1">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </div>
+                    <div class="col-5">
+                        <h4 style="font-size: 1.6vw;">PANDI ONLINE LCR</h4>
+                    </div>
+                </div>
+                <div class="col-2 dropdown" style="margin-left: auto; margin-right: 5%; text-align: right;">
+                    <h4 class="dropbtn">
+                        <a href="/" class="bi bi-house-fill" style="margin-right: 1rem; color: green; font-size: 1.6vw;"></a> 
+                        <i class="bi bi-person-lines-fill" id="dropbtn" style="cursor: pointer; font-size: 1.6vw;"></i>
+                    </h4>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a class="menuCard" href="./accountUser.html"><i class="bi bi-person"></i> Account</a>
+                        <a class="menuCard" href="./documentUser.html"><i class="bi bi-folder2-open"></i> Documents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row t" style="height: 80vh;">
+                    <div class="row col-10" style="border: 1px solid black; border-radius: 25px; margin: 0 auto 0 auto;">
+                        <div class="col-12 chatContent">
+                            <div class="12" style="text-align: center; margin: 1rem 0 0 0;">
+                                <i class="bi bi-headset" style="font-size: 5rem;"></i>
+                                <h5>Welcome <span id="usernameWelcome"></span></h5>
+                                <span>do you want to contact admin for any reason? just chat here</span>
+                            </div>
+                            <div class="col-7" style="margin: 0 auto 1rem auto;"><hr></div>
+
+
+                            <div class="row" id="chatDisplay">
+                                <div class="col-7 sender" style="margin-left: auto;">
+                                    <div>alsjdlfjasf asdf  asdf asdf asd fasdf nasf as df asdf as dfa sdf a sfd asdf as df as df asdf as df asd  asdf a sdf as df asd fa sdfas</div>
+                                </div>
+                                <div class="col-7 receiver">
+                                    <div>alsjdlfjasf asdf  asdf asdf asd fasdf nasf as df asdf as dfa sdf a sfd asdf as df as df asdf as df asd  asdf a sdf as df asd fa sdfas</div>
+                                </div>
+                                <div class="col-7 receiver">
+                                    <div>alsjdlfjasf asdf</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="text" id="sendInput" class="col-5" style="margin: 5px 0 1% auto; padding: 1% 0 1% 0; border-radius: 50px;">
+                        <button class="col-1" id="sendBtn" style="margin: 5px 5% 1% 1rem; border: 2px solid green; color: green; border-radius: 50px;">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!-- Bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script> // receive chats
+
+    // websocket
+    const socket = new WebSocket(location.href.replace("http", "ws")) 
+    socket.onopen = () => console.log('Socket connected');
+    socket.onerror = err => console.error(err);
+
+    socket.addEventListener('message', (e)=> {
+        const recievedFromServer = JSON.parse(e.data)
+        
+        if(recievedFromServer.sender_id == 1236540987 && recievedFromServer.receiver_id == sessionStorage.id){
+            chatDisplay.innerHTML += `
+                <div class="col-7 receiver">
+                    <div>${recievedFromServer.chat}</div>
+                </div>
+            `
+        } else if (recievedFromServer.sender_id == sessionStorage.id){
+            chatDisplay.innerHTML += `
+                <div class="col-7 sender" style="margin-left: auto;">
+                    <div>${recievedFromServer.chat}</div>
+                </div>
+            `
+        }
+    })
+
+    async function chatDisplayContents (){ // display chat
+
+        const rawResponse = await fetch('api/receive-chat', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: `sender_id=${adminId}&receiver_id=${ClintID}`
+        })
+        const content = await rawResponse.json();
+
+
+        // remove contents before adding contents
+        chatDisplay.innerHTML = ''
+
+        for(let j in content.data){
+            if(content.data[j].sender_id == adminId){
+
+                chatDisplay.innerHTML += `
+                    <div class="col-7 receiver">
+                        <div>${content.data[j].message}</div>
+                    </div>
+                `
+            } else if (content.data[j].receiver_id == ClintID){
+                chatDisplay.innerHTML += `
+                    <div class="col-7 sender" style="margin-left: auto;">
+                        <div>${content.data[j].message}</div>
+                    </div>
+                `
+            } else if (content.data[j].sender_id == ClintID){
+                chatDisplay.innerHTML += `
+                    <div class="col-7 sender" style="margin-left: auto;">
+                        <div>${content.data[j].message}</div>
+                    </div>
+                `
+            }
+        }
+    }
+</script>
+
+<script> // send message
+
+    const sendInput = document.getElementById('sendInput')
+    const sendBtn = document.getElementById('sendBtn')
+
+    let currentDate = new Date()
+    let userID = sessionStorage.getItem('id')
+    let username = sessionStorage.getItem('username')
+
+    sendBtn.addEventListener('click', async ()=> {
+
+        // websocket
+        const chatContent = {
+            sender_id: sessionStorage.id,
+            chat: sendInput.value,
+            receiver_id: 1236540987
+        }
+        socket.send(JSON.stringify(chatContent))
+
+        const rawResponse = await fetch('api/send-chat', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: `sender_id=${userID}&message=${sendInput.value}&message_date=${currentDate}&receiver_id=1236540987&username=${username}`
+        })
+        const content = await rawResponse.json();
+
+        if(content.success == true){
+            setTimeout(chatDisplayContents, 100)
+            sendInput.value = ''
+            chatDisplay.scroll
+            chatDisplay.scrollIntoView(false)
+        }
+    })
+</script>
+
+<script> // main
+
+    let ClintID = sessionStorage.getItem('id')
+    let adminId = 1236540987
+    const usernameWelcome = document.getElementById('usernameWelcome').innerHTML = sessionStorage.getItem('username')
+    const chatDisplay = document.getElementById('chatDisplay');
+
+    chatDisplayContents()
+</script>
+
+
+<script> // mouse over and out in person menu
+
+    const aTag = document.getElementsByTagName('a');
+    const menulist = document.getElementsByClassName('menulist');
+
+    const dropbtn = document.getElementById('dropbtn')
+    const dropdownContent = document.getElementById('dropdownContent')
+    const menuCard = document.getElementsByClassName('menuCard')
+    dropbtn.addEventListener('mouseover', ()=> { // toggle click
+        dropdownContent.style.display = 'block'
+    })
+    menuCard[1].addEventListener('mouseout', ()=> {
+        dropdownContent.style.display = 'none'
+    })
+
+
+    for(let i=0; i<menulist.length; i++){
+        menulist[i].addEventListener('mouseover', ()=>{
+            aTag[i].style.color = 'white'
+            menulist[i].style.background = 'gray'
+        })
+        menulist[i].addEventListener('mouseout', ()=>{
+            aTag[i].style.color = 'yellow'
+            menulist[i].style.background = 'none'
+        })
+    }
+</script>
+
+</html>

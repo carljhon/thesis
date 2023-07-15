@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2vw;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.bg {
+    background-image: linear-gradient(to bottom right, yellow, green, rgb(0, 19, 0));
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.404), 0 1rem 2rem 0 rgba(0, 0, 0, 0.267);
+}
+.bg a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.reg {
+    padding-left: 3rem;
+    padding-top: 1rem;
+    font-family: fantasy;
+    background: linear-gradient(to bottom right, yellow, green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.reg a{
+    text-decoration: none;
+    color: white;
+}
+.about {
+    text-align: right;
+    margin-top: 1rem;
+    font-size: 1em;
+    margin-left: 4rem;
+}
+.about a{
+    text-decoration: none;
+    color: black;
+}
+.faq {
+    margin-top: 1rem;
+    font-size: 1em;
+    margin-left: 12%;
+}
+.faq a{
+    text-decoration: none;
+    color: black;
+    margin-left: 25%;
+}
+.log {
+    text-align: center;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    font-size: 1em;
+    background-image: linear-gradient(to bottom right, yellow, green);
+    border-radius: 5px;
+    color: white;
+
+
+}
+.log a{
+    text-decoration: none;
+    color: white;
+}
+
+.con {
+    margin: 2rem;
+}
+
+.logo {
+    text-align: center;
+}
+.logo img {
+    width: 20%;
+    margin-top: 3rem;
+    margin-bottom: 7rem;
+}
+
+.mv{
+    text-align: right;
+    color: white;
+}
+.lr{
+    text-align: center;
+    color: white;
+}
+.pay{
+    text-align: left;
+    color: white;
+}
+.space2 {
+    margin-bottom: 4em;
+}
+

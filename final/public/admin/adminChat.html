@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="adminuseraccount.css"> 
+
+    <style>
+        .divAccount{
+            display: block; 
+            overflow-y: scroll; 
+            height: 75vh;
+        }
+        .b{
+            border: 2px solid red;
+            color: red;
+        }
+        .un_b {
+            border: 2px solid green;
+            color: green;
+        } 
+
+        /* width */
+        .divAccount::-webkit-scrollbar {
+            width: 10px;
+        }
+        /* Track */
+        .divAccount::-webkit-scrollbar-track {
+            background: transparent; 
+        }.divAccount::-webkit-scrollbar-track-piece {
+            background: transparent;
+            margin-top: 10rem;
+            margin-bottom: 10rem; 
+        }
+        /* Handle */
+        .divAccount::-webkit-scrollbar-thumb {
+            background: #888; 
+        }
+        /* Handle on hover */
+        .divAccount::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+
+        .sender{
+            text-align: right;
+        }
+        .sender div{
+            display: inline-block;
+            border: 1px solid black;
+            padding: .5rem;
+            margin: .1rem 0 .1rem;
+            border-radius: 1rem;
+        }
+        .receiver {
+            text-align: left;
+        }
+        .receiver div{
+            display: inline-block;
+            border: 1px solid black;
+            padding: .5rem;
+            margin: .1rem 0 .1rem;
+            border-radius: 1rem;
+        }
+
+        .chatlist{
+            border: 1px solid black; 
+            border-radius: 25px; 
+            padding-top: 1rem; 
+            padding-bottom: 1rem;
+        }
+
+        .chatlist span {
+            color: gray;
+        }
+        .chatBox{
+            margin-right: auto; 
+            border: 1px solid black; 
+            border-radius: 25px; 
+            padding: 0 .5rem .5rem 0;
+        }
+        
+
+        .chatInput {
+            margin-left: auto; 
+            padding: 1% 0 1% 0; 
+            border-radius: 50px;
+        }
+        .chatBtn {
+            border: 2px solid green; 
+            color: green; 
+            border-radius: 50px; 
+            margin-left: 10px;
+        }
+
+        .chatName {
+            cursor: pointer;
+        }
+
+    </style>
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-12 nav1" style="position: sticky; top: 0;">
+            <div class="row">
+                <div class="col-9 navbar1">
+                    <a href="adminChat.html">CHAT</a>
+                    <a href="./adminUserAccount.html">USER ACCOUNTS</a>
+                    <a href="./adminBirth.html">BIRTH CERTIFICATE</a>
+                    <a href="./adminDeath.html">DEATH CERTIFICATE</a>
+                    <a href="./adminMarriage.html">MARRIAGE CERTIFICATE</a>
+                    <a href="./Reports.html">REPORTS</a>
+                    <a href="./adminFAQ.html">FAQ</a>
+                </div>
+                <div class="col-3" style="text-align: center;">
+                    <form id="search">
+                        <input type="text" name="search" id="searchInput" placeholder="search">
+                        <i class="bi bi-binoculars h2" id="searchBtn"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+        <div class="row">
+            
+            <div class="col-3" style="margin-left: auto;"> <!-- chat list-->
+                <div class="row">
+                    <div class="col-11 chatlist" id="chatlist" style=" height: 83vh; overflow-y: scroll;">
+                        <div class="chatName">
+                            <h6 style="margin: 0;">Name: Testing</h6>
+                            <span>Message: My message</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row col-8 chatBox"> <!--Chat Box-->
+                <div class="divAccount">
+                    <div class="row" >
+                        <div class="12" style="text-align: center; margin: 1rem 0 0 0;">
+                            <i class="bi bi-headset" style="font-size: 5rem;"></i>
+                            <h5>Welcome Admin</h5>
+                            <span>do you want to response for client chat? just chat here</span>
+                        </div>
+                        <div class="col-7" style="margin: 0 auto 1rem auto;"><hr></div>
+        
+                        <div class="row" id="chatDisplay" style="padding: 0 0 0 12px;">
+                            <div class="col-7 sender" style="margin-left: auto;">
+                                <div>alsjdlfjasf asdf  asdf asdf asd fasdf nasf as df asdf as dfa sdf a sfd asdf as df as df asdf as df asd  asdf a sdf as df asd fa sdfas</div>
+                            </div>
+                            <div class="col-7 receiver">
+                                <div>alsjdlfjasf asdf  asdf asdf asd fasdf nasf as df asdf as dfa sdf a sfd asdf as df as df asdf as df asd  asdf a sdf as df asd fa sdfas</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <input type="text" id="chatInput" class="col-5 chatInput">
+                <button class="col-1 chatBtn" id="chatBtn">SEND</button>
+                
+            </div>
+        </div>
+        
+    </div>
+
+    
+</body>
+
+<!-- Bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script> // chat list
+
+    function truncate(str, length) { // short message
+        if (str.length > length) {
+            return str.slice(0, length) + '...';
+        } else return str;
+    }
+
+    function chatPrintList(content_data){
+       
+        chatlist.innerHTML = ''
+
+        for(let i in content_data){
+            subContentGlobal.push(content_data[i])
+            let dataContent = content_data[i]
+            let shortMessage = truncate(dataContent.message, 30) // make message short
+    
+            chatlist.innerHTML += `
+                <div class="chatName" id=${dataContent.sender_id} slot="${dataContent.username}">
+                    <h6 style="margin: 0;">Name: ${dataContent.username}</h6>
+                    <span>${shortMessage}</span>
+                    <hr>
+                </div>
+            `
+        }
+    }
+</script>
+
+<script> // chat list click
+    let subID = 0
+    let subUsername = ''
+    let subUserID = 0
+
+    // websocket
+    const socket = new WebSocket(location.href.replace("http", "ws")) 
+    socket.onopen = () => console.log('Socket connected');
+    socket.onerror = err => console.error(err);
+     
+    socket.addEventListener('message', (e)=> {
+        const recievedFromServer = JSON.parse(e.data)
+
+        setTimeout(chatListClick, 100)
+
+        if(recievedFromServer.sender_id == userID && recievedFromServer.receiver_id == subID){
+            chatDisplay.innerHTML += `
+                <div class="col-7 sender" style="margin-left: auto;">
+                    <div>${recievedFromServer.chat}</div>
+                </div>
+            `
+        } else if (recievedFromServer.sender_id == subID && recievedFromServer.receiver_id == userID){
+            chatDisplay.innerHTML += `
+                <div class="col-7 receiver">
+                    <div>${recievedFromServer.chat}</div>
+                </div>
+            `
+        }
+    })
+
+    function chatListClick(){ // click name
+        for(let i = 0; i < chatNames.length; i++){
+            chatNames[i].addEventListener('click', ()=> {
+                subID = chatNames[i].id
+                subUsername = chatNames[i].slot
+                subUserID = userID
+
+                // // chatDisplayContents will show after this function
+                setTimeout(chatDisplayContents, 100)
+            })
+        }
+    } 
+    
+    async function chatDisplayContents (){ // display chat
+        const rawResponse = await fetch('api/receive-chat', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: `sender_id=${subID}&receiver_id=${userID}`
+        })
+        const content = await rawResponse.json();
+
+
+        // remove contents before adding contents
+        chatDisplay.innerHTML = ''
+
+        for(let j in content.data){
+            if(content.data[j].sender_id == subID){
+
+                chatDisplay.innerHTML += `
+                    <div class="col-7 receiver">
+                        <div>${content.data[j].message}</div>
+                    </div>
+                `
+            } else if (content.data[j].receiver_id == subUserID){
+                chatDisplay.innerHTML += `
+                    <div class="col-7 sender" style="margin-left: auto;">
+                        <div>${content.data[j].message}</div>
+                    </div>
+                `
+            } else if (content.data[j].sender_id == subUserID){
+                chatDisplay.innerHTML += `
+                    <div class="col-7 sender" style="margin-left: auto;">
+                        <div>${content.data[j].message}</div>
+                    </div>
+                `
+            }
+        }
+    }
+
+
+</script>
+
+<script> // send message
+
+    const chatInput = document.getElementById('chatInput')
+    const chatBtn = document.getElementById('chatBtn')
+
+    let currentDate = new Date()
+    
+    function sendChat(){
+        chatBtn.addEventListener('click', async ()=> {
+
+            // for web socket
+            const chatContent = {
+                sender_id: userID,
+                chat: chatInput.value,
+                receiver_id: subID
+            }
+            socket.send(JSON.stringify(chatContent))
+
+
+            const rawResponse = await fetch('api/admin-send-chat', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: `sender_id=${userID}&message=${chatInput.value}&message_date=${currentDate}&receiver_id=${subID}`
+            })
+            const content = await rawResponse.json();
+            if(content.success == true){
+                setTimeout(chatDisplayContents, 100)
+                chatInput.value = ''
+                chatDisplay.scroll
+                chatDisplay.scrollIntoView(false)
+            }
+        })
+    }
+</script>
+
+<script> // main
+
+    const chatNames = document.getElementsByClassName('chatName')
+
+    let subContentGlobal = []
+    let userID = sessionStorage.getItem('adminid')
+    const chatDisplay = document.getElementById('chatDisplay')
+    const chatlist = document.getElementById('chatlist');
+
+    (async ()=> {
+        const rawResponse = await fetch('api/admin-chat-list', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: `receiver_id=${userID}`
+        })
+        const content = await rawResponse.json();
+
+        chatPrintList(content.data)
+        chatListClick()
+
+        chatDisplayContents()
+
+        sendChat()
+
+    })()
+</script>
+
+</html>

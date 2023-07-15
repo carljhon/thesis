@@ -1,0 +1,222 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: separate;
+    width: 100%;
+    font-size: 1.15vw;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:hover {
+    background-color: rgb(120, 143, 111);
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+tr:first-child:hover {
+    background-color: white;
+    cursor: auto;
+}
+
+.contents {
+    background-color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 3px 10px gray;
+}
+
+.panel {
+    margin-top: 3rem;
+    background-color: rgba(128, 128, 128, 0.318);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    margin-left: 4.2vw;
+    font-size: 1.15vw;
+}
+.panel .selection:hover{
+    cursor: pointer;
+    color: green
+}
+
+.card1 {
+    margin-top: 0.5rem;
+    border: 1px solid gray;
+    padding: 1rem;
+    margin: 1rem;
+    transition: box-shadow 0.5s;
+    font-size: 1.15vw;
+}
+.card1 h5{
+    font-size: 1.5vw;
+}
+.card1:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 6px gray;
+}
+.card1 .btn1 button {
+    font-size: 80%;
+}
+.btn1 {
+    padding: 0;
+}
+.selected {
+    color: green;
+}
+
+.card2 {
+    height: 70vh;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.card2 h5 {
+    font-size: 1.6vw;
+}
+.card2img{
+    margin: 0.2rem;
+    transition: box-shadow 0.3s;
+}
+.card2 img:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 5px gray;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-track {/* Track */
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {/* Handle */
+    background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {/* Handle on hover */
+    background: #555; 
+}
+
+.nav1{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: .5rem;
+    background: linear-gradient(to bottom right, rgb(0, 166, 0), rgb(0, 0, 0))
+}
+
+.navbar1 {
+    text-align: center; 
+    white-space: nowrap;
+    font-size: 1.06vw;
+}
+.navbar1 a{
+    text-decoration: none;
+    margin-top: .3rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    padding: .5rem;
+    display: inline-block;
+    color: yellow;
+}
+.navbar1 a:hover{
+    text-decoration: underline;
+}
+
+#search input{
+    width: 70%; 
+    border-radius: 2rem; 
+    border: solid 1px white; 
+    padding-top: 3%; 
+    padding-bottom: 3%; 
+    padding-left: 5%;
+    font-size: 1.06vw;
+}
+#search i{
+    color: yellow; 
+    cursor: pointer; 
+    font-size: 2vw;
+}
+
+
+#active {
+    color: white;
+    font-weight: 500;
+}
+
+.blockBtn {
+    color: green;
+    border: solid 2px green;
+}
+
+
+.add {
+    background-color : #31B0D5;
+    color: white;
+    padding: 20px 20px;
+    border-radius: 45%;
+    border-color: #46b8da;
+    box-shadow: 1px 4px 10px 3px #888888;
+}
+.fixBtn {
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+}
+
+.years {
+    border: 1px solid rgb(133, 133, 133); 
+    padding: 5rem 1rem 5rem 1rem;
+    margin: 2% 2vw 2% 2vw;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+.years:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.monthsOfYear {
+    text-align: center;
+    padding: 1% 5% 1% 5%;
+    margin: 0;
+}
+.monthsOfYear:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.divTables{
+    overflow: scroll;
+    height: 70vh;
+}
+.divTables::-webkit-scrollbar {
+    width: 0px;
+    height: 10px;
+}
+.divTables::-webkit-scrollbar-track {/* Track */
+    background: transparent; 
+}
+.divTables::-webkit-scrollbar-track-piece {/* Track */
+    background: transparent; 
+    margin-left: 90px;
+    margin-right: 90px;
+}
+.divTables::-webkit-scrollbar-thumb {/* Handle */
+    background: #888; 
+}
+.divTables::-webkit-scrollbar-thumb:hover {/* Handle on hover */
+    background: #555; 
+}

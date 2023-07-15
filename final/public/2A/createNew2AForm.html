@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="createNew1AForm.css"> 
+
+    <!-- recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <title>2A Form</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2 top1" style="font-size: 1.2vw;">
+            <div class="row subt1">
+                <div class="col-11">
+                    <h5>PANDI CERTIFICATION</h5>
+                </div>
+            </div>
+            <div class="row subt2">
+                <div class="col-12">
+                    <p>Menu</p>
+                </div>
+                <div class="col-12 menulist" id="birth">
+                    <a href="./createNew1AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 1A Birth Certificate
+                    </a>
+                </div>
+                <div class="col-12 active" id="death">
+                    <i class="bi bi-award h4 login-button"></i> 2A Death Certificate
+                </div>
+                <div class="col-12 menulist" id="marriage">
+                    <a href="createNew3AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 3A Marriage Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="Chat" style="margin-top: 3rem;">
+                    <a href="./UserChat.html">
+                        <i class="bi bi-chat-right-dots"></i> Chat
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 top2">
+            <div class="row">
+                <div class="row t1 col-7">
+                    <div class="col-1">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </div>
+                    <div class="col-5">
+                        <h4 style="font-size: 1.6vw;">PANDI ONLINE LCR</h4>
+                    </div>
+                </div>
+                <div class="col-2 dropdown" style="margin-left: auto; margin-right: 5%; text-align: right;">
+                    <h4 class="dropbtn">
+                        <a href="/" class="bi bi-house-fill" style="margin-right: 1rem; color: green; font-size: 1.6vw;"></a> 
+                        <i class="bi bi-person-lines-fill" id="dropbtn" style="cursor: pointer; font-size: 1.6vw;"></i>
+                    </h4>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a class="menuCard" href="./accountUser.html"><i class="bi bi-person"></i> Account</a>
+                        <a class="menuCard" href="./documentUser.html"><i class="bi bi-folder2-open"></i> Documents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row t">
+                <div class="col-10 Form">
+                    <form id="a1" class="row inputCol3">
+
+                        <!--Child-->
+                        <div class="separator">Death Person Information</div>
+
+                        <div class="col-4">
+                            <label for="">First Name</label><br>
+                            <input type="text" name="d_fname" id="d_fname" size="34" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Middle Name</label><br>
+                            <input type="text" name="d_mname" id="d_mname" size="34" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Last Name</label><br>
+                            <input type="text" name="d_lname" id="d_lname" size="34" required>
+                        </div>
+
+                        <div class="col-2">
+                            <label for="">Gender</label><br>
+                            <select name="gender" id="gender">
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Place of Death</label><br>
+                            <input type="text" name="place_of_death" id="place_of_death" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Date of Death</label><br>
+                            <input type="date" name="date_of_death" id="date_of_death" style="width: 100%;" required>
+                        </div>
+
+                        <!--Family-->
+                        <div class="separator">Family Background</div>
+
+                        <!--mother-->
+                        <div class="col-4">
+                            <label for="">Mother's First Name</label><br>
+                            <input type="text" name="m_fname" id="m_fname" required>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Middle Name</label><br>
+                            <input type="text" name="m_mname" id="m_mname" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Last Name</label><br>
+                            <input type="text" name="m_lname" id="m_lname" required>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Nationality</label><br>
+                            <input type="text" name="m_nationality" id="m_nationality" required>
+                        </div>
+
+                        <!--father-->
+                        <div class="col-4">
+                            <label for="">Father's First Name</label><br>
+                            <input type="text" name="f_fname" id="f_fname" required>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Middle Name</label><br>
+                            <input type="text" name="f_mname" id="f_mname" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Last Name</label><br>
+                            <input type="text" name="f_lname" id="f_lname" required>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Nationality</label><br>
+                            <input type="text" name="f_nationality" id="f_nationality" required>
+                        </div>
+
+                        <div style="margin-top: 1rem;" class="g-recaptcha" data-sitekey="6LfS-TYmAAAAAMrEPCWBottdfIPx9ygvXIUbgOH8"></div>
+
+                        <div class="btn">
+                            <button id="submit1">SAVE INFORMATION</button>
+                            <button>CANCEL</button>
+                        </div>
+
+                    </form>
+
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- enryption and decryption -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
+
+<script>
+    const aTag = document.getElementsByTagName('a');
+    const menulist = document.getElementsByClassName('menulist');
+
+    const a1 = document.getElementById('a1');
+    const submitButton = document.getElementById('submit1');
+
+    // data variables
+    const death_fname = document.getElementById('d_fname')
+    const death_mname = document.getElementById('d_mname')
+    const death_lname = document.getElementById('d_lname')
+    const gender = document.getElementById('gender')
+    const place_of_death = document.getElementById('place_of_death')
+    const date_of_death = document.getElementById('date_of_death')
+    const mfname = document.getElementById('m_fname')
+    const mmname = document.getElementById('m_mname')
+    const mlname = document.getElementById('m_lname')
+    const mNationality = document.getElementById('m_nationality')
+    const ffname = document.getElementById('f_fname')
+    const fmname = document.getElementById('f_mname')
+    const flname = document.getElementById('f_lname')
+    const fNationality = document.getElementById('f_nationality')
+    const issuedto = document.getElementById('issuedto')
+
+    // mouse over and out in person menu
+    const dropbtn = document.getElementById('dropbtn')
+    const dropdownContent = document.getElementById('dropdownContent')
+    const menuCard = document.getElementsByClassName('menuCard')
+    dropbtn.addEventListener('mouseover', ()=> { // toggle click
+        dropdownContent.style.display = 'block'
+    })
+    menuCard[1].addEventListener('mouseout', ()=> {
+        dropdownContent.style.display = 'none'
+    })
+
+    var decryptFullname = ''
+    var decryptFormData = ''
+
+    try{
+        // decrypt fullname
+        var decryptFullname = CryptoJS.AES.decrypt(sessionStorage.fullname, "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+        var decryptFormData = CryptoJS.AES.decrypt(localStorage.getItem('formData_Death'), "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+    }catch(err){
+        decryptFullname = sessionStorage.fullname
+        decryptFormData = localStorage.getItem('formData_Death')
+    }
+
+
+    // get save data from local storage
+    const formString = decryptFormData
+    const formData = JSON.parse(formString)
+
+    if(formString != undefined && sessionStorage.id == formData.issuedToId){ // restore data from preview inputs
+        death_fname.value = formData.death_fname
+        death_mname.value = formData.death_mname
+        death_lname.value = formData.death_lname
+        gender.value = formData.gender
+        place_of_death.value = formData.place_of_death
+        date_of_death.value = formData.date_of_death
+        mfname.value = formData.m_fname
+        mmname.value = formData.m_mname
+        mlname.value = formData.m_lname
+        mNationality.value = formData.m_nationality
+        ffname.value = formData.f_fname
+        fmname.value = formData.f_mname
+        flname.value = formData.f_lname
+        fNationality.value = formData.f_nationality
+    }
+
+
+    var captchaIsFilled = false
+
+    function onloadCallback() {
+        /* Place your recaptcha rendering code here */
+        var ll = grecaptcha.getResponse()
+
+        if(ll.length != 0){
+            captchaIsFilled = true
+        }
+    }
+
+    submitButton.addEventListener('click', ()=> { //save form data from local storage
+
+        setTimeout(onloadCallback, 100)
+        a1.addEventListener('submit', (event) => event.preventDefault())
+
+        if(captchaIsFilled == true){
+            const formData2 = new URLSearchParams(new FormData(a1)).toString()
+            
+            window.location.href = './deathPreview.html'
+    
+            const formData1 = new FormData(a1)
+    
+            const sendToLocalStorage = `
+                {
+                    "date_of_death": "${formData1.get('date_of_death')}",
+    
+                    "death_fname": "${formData1.get('d_fname')}",
+                    "death_mname": "${formData1.get('d_mname')}",
+                    "death_lname": "${formData1.get('d_lname')}",
+                    "gender": "${formData1.get('gender')}",
+                    "place_of_death": "${formData1.get('place_of_death')}",
+                    "m_fname": "${formData1.get('m_fname')}",
+                    "m_mname": "${formData1.get('m_mname')}",
+                    "m_lname": "${formData1.get('m_lname')}",
+                    "m_nationality": "${formData1.get('m_nationality')}",
+    
+                    "f_fname": "${formData1.get('f_fname')}",
+                    "f_mname": "${formData1.get('f_mname')}",
+                    "f_lname": "${formData1.get('f_lname')}",
+                    "f_nationality": "${formData1.get('f_nationality')}",
+                    
+                    "issuedTo": "${decryptFullname}",
+                    "issuedToId": "${sessionStorage.id}"
+                }
+            `
+            let formdata1 = formData2+"&issuedto="+decryptFullname+"&issuedToId="+sessionStorage.id
+    
+            // encrypt form data
+            var encryptFormdata_Death = CryptoJS.AES.encrypt(sendToLocalStorage, "Secret Passphrase");
+            var encryptFormdata1 = CryptoJS.AES.encrypt(formdata1, "Secret Passphrase");
+    
+            localStorage.setItem('formData_Death', encryptFormdata_Death)
+            localStorage.setItem('formData1', encryptFormdata1)
+
+        }
+    })
+
+    for(let i=0; i<menulist.length; i++){
+        menulist[i].addEventListener('mouseover', ()=>{
+            aTag[i].style.color = 'white'
+            menulist[i].style.background = 'gray'
+        })
+        menulist[i].addEventListener('mouseout', ()=>{
+            aTag[i].style.color = 'yellow'
+            menulist[i].style.background = 'none'
+        })
+    }
+
+</script>
+
+</html>

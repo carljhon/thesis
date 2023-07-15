@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="adminLogin.css"> 
+
+    <title>Admin Login</title>
+</head>
+<body>
+    <div class="">
+        <div class="row top">
+            <div class="col-4 caption">
+                <img src="logo.png" alt="">
+                <h5>This administration effects the <br> everyday life of the <br> common person</h5>
+                <div class="topA"></div>
+                <div class="bottomA"></div>
+            </div>
+
+            <div class="col-5 loginForm">
+                <form id="login">
+                    <div class="login">
+                        <h1>Admin</h1>
+                        <i class="bi bi-person spaceTxt"></i>
+                        <input type="text" name="username" id="username" placeholder="username" class="username"><br>
+                        <i class="bi bi-lock spaceTxt"></i>
+                        <input type="password" name="pass" id="password" placeholder="password" class="password"><br>
+                        <button id="submit">login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<!-- enryption and decryption -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
+
+<script>
+    const loginForm = document.getElementById('login')
+    const submitButton = document.getElementById('submit')
+
+    const username = document.getElementById('username')
+    const password = document.getElementById('password')
+
+    // Avoid refresh
+    loginForm.addEventListener('submit', (event) => event.preventDefault())
+
+    submitButton.addEventListener('click', () => {
+        (async () => {
+            const formData = new URLSearchParams(new FormData(loginForm)).toString()
+
+            if(username.value != '' && password.value != ''){
+                const rawResponse = await fetch('api/adminlogin', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: formData
+                })
+                const content = await rawResponse.json();
+                if(content.success === true){
+                    alert('Login Account Successfull')
+                    var encryptPass = CryptoJS.AES.encrypt(password.value, "Secret Passphrase"); // encrypt full name
+                    sessionStorage.setItem('adminname', username.value) //saved username and pass into sesion storage
+                    sessionStorage.setItem('adminpassword', encryptPass)
+                    sessionStorage.setItem('adminid', content.data.id)
+                    window.location.href = './adminUserAccount.html'
+                } else {
+                    alert('Invalid Username and Password!!')
+                }
+            } else {
+                alert('Invalid Username and Password!!')
+            }
+        })()
+        return false
+    })
+</script>
+
+</html>

@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2vw;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.bg {
+    background-image: linear-gradient(to bottom right, yellow, green, rgb(0, 19, 0));
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.404), 0 1rem 2rem 0 rgba(0, 0, 0, 0.267);
+}
+
+.top a{
+    text-decoration: none;
+    color: black;
+}
+
+.reg {
+    padding-left: 3rem;
+    padding-top: 1rem;
+    font-family: fantasy;
+    background: linear-gradient(to bottom right, yellow, green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.home {
+    text-align: right;
+    margin-top: 1rem;
+    font-size: 1em;
+    margin-left: 4rem;
+}
+.about {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1em;
+}
+.faq {
+    margin-top: 1rem;
+    font-size: 1em;
+}
+.log {
+    text-align: center;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    font-size: 1em;
+    background-image: linear-gradient(to bottom right, yellow, green);
+    border-radius: 5px;
+    color: white;
+}
+.log a{
+    text-decoration: none;
+    color: white;
+}
+
+.con {
+    margin: 2rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+
+.mission {
+    text-align: right;
+}
+.mission img{
+    width: 50%;
+    margin-top: 2rem;
+}
+.missionContent {
+    text-align: left;
+}
+.missionContent p, h1{
+    padding-left: 6rem;
+
+}
+.missionContent p{
+    padding-top: 1rem;
+    font-size: 130%;
+}
+.missionContent h1{
+    background: linear-gradient(to bottom right, rgb(166, 255, 0), rgb(3, 71, 3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.middle {
+    margin: 2rem;
+}
+
+.vision {
+    text-align: center;
+}
+.vision img{
+    width: 50%;
+}
+.visionContent {
+    text-align: right;
+}
+.visionContent p, h1{
+    padding-right: 2rem;
+}
+.visionContent p{
+    padding-top: 1rem;
+    font-size: 130%;
+}
+.visionContent h1{
+    background: linear-gradient(to bottom right, rgb(106, 255, 0), rgb(2, 70, 2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

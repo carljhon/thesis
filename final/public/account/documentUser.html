@@ -1,0 +1,2229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="documentUser.css"> 
+
+    <title>User's Documents</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2 top1" style="font-size: 1.2vw;">
+            <div class="row subt1" >
+                <div class="col-11">
+                    <h5>PANDI CERTIFICATION</h5>
+                </div>
+            </div>
+            <div class="row subt2">
+                <div class="col-12">
+                    <p>Menu</p>
+                </div>
+                <div class="col-12 menulist" id="birth">
+                    <a href="./createNew1AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 1A Birth Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="merraige">
+                    <a href="./createNew2AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 2A Death Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="death">
+                    <a href="./createNew3AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 3A Marriage Certificate
+                    </a>
+                </div>
+
+                <div class="col-12 menulist" id="Chat" style="margin-top: 3rem;">
+                    <a href="./UserChat.html">
+                        <i class="bi bi-chat-right-dots"></i> Chat Admin
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-10 top2">
+            <div class="row" >
+                <div class="row t1 col-7">
+                    <div class="col-1">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </div>
+                    <div class="col-5">
+                        <h4 style="font-size: 1.6vw;">PANDI ONLINE LCR</h4>
+                    </div>
+                </div>
+                <div class="col-2 dropdown" style="margin-left: auto; margin-right: 5%; text-align: right;">
+                    <h4 class="dropbtn">
+                        <a href="/" class="bi bi-house-fill" style="margin-right: 1rem; color: green; font-size: 1.6vw;"></a> 
+                        <i class="bi bi-person-lines-fill" id="dropbtn" style="cursor: pointer; font-size: 1.6vw;"></i>
+                    </h4>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a class="menuCard" href="./accountUser.html"><i class="bi bi-person"></i> Account</a>
+                        <a class="menuCard" href="./documentUser.html"><i class="bi bi-folder2-open"></i> Documents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row t">
+                    <div class="col-10 ribbonBar">
+                        <div class="row">
+                            <div class="col-4 purchaseActive btnClickProcess"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Kailangan po dito ng supporting documents katulad ng ID, Tin ID, Birth Certificate etc"><span>Application</span></div>
+                            <div class="col-2 purchaseList btnClickProcess" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hintayin lamang po na ma verified ng admin ang iyong dokumento upang makapagpatuloy sa iyong ''Appointment''"><span>Approval</span></div>
+                            <div class="col-2 purchaseList btnClickProcess" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Na approve na po ang iyong request maari lamang po na i screen shot"><span>Appointment</span></div>
+                            <div class="col-2 purchaseList btnClickProcess"><span>Completed</span></div>
+                            <div class="col-2 purchaseList btnClickProcess"><span>Cancelled</span></div>
+                        </div>
+                    </div>
+                    <div class="col-10 ribbonContent">
+                        <div id="nodata" style="text-align: center;">
+                            <img src="./folder.png" alt="" width="20%"><br>
+                            <i style="color: gray;">No data found...</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- The Modal for view more / 1A -->
+    <div class="modal fade" id="viewMore">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+    
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <form id="a1Form" class="row inputCol3">
+
+                    <div class="col-12" style="text-align: left; margin-top: 1rem;">
+                        LCR Form No. 1A <br>
+                        (Birth Available)
+                    </div>
+
+                    <div class="col-12">
+                        <p>
+                            Republic of the Philippines <br>
+                            <span class="h4">OFFICE OF MUNICIPAL CIVIL REGISTRAR</span> <br>
+                            Pandi, Bulacan
+                        </p>
+                        
+                    </div>
+                    
+                    <div class="col-12" style="text-align: right; padding-right: 3rem;">
+                        <p>Date: <span id="Now">m-d-y</span></p>
+                    </div>
+
+                    <div class="col-12" style="text-align: left">
+                        <p>TO WHOM IT MAY CONCERN:</p>
+                    </div>
+
+                    <div class="col-7" style="margin-left: auto; margin-right: auto;">
+                        We certify that, among others, the following facts of appear in our Register of <span style="font-weight: bold;">Birth</span>
+                    </div>
+
+                    <div class="col-6" style="text-align: right; margin-top: 2rem;">
+                        <p>LCR Registry Number: </p>
+                        <p>Date of Registration:</p>
+                        <p>Name of Child:</p>
+                        <p>Sex:</p>
+                        <p>Place of Birth: </p>
+                        <p>Date of Birth: </p>
+                        <p>Name of Mother: </p>
+                        <p>Nationality:</p>
+                        <p>Name of Father:</p>
+                        <p>Nationality: </p>
+                        <p>Date of Marriage:</p>
+                        <p>Place of Marriage:</p>
+                        <p>This Certification is issued to:</p>
+                        <p style="margin-right: 5rem;">Upon his/her request.</p>
+                    </div>
+                    <div class="col-6" style="text-align: left; margin-top: 2rem;">
+                        <p id="lcrRegistryNo"></p>
+                        <p id="registrationDate"></p>
+                        <p id="childName"></p>
+                        <p id="gender"></p>
+                        <p id="birthPlace"></p>
+                        <p id="birthday"></p>
+                        <p id="motherName"></p>
+                        <p id="mNationality"></p>
+                        <p id="fatherName"></p>
+                        <p id="fNationality"></p>
+                        <p id="merriageDate"></p>
+                        <p id="merriagePlace"></p>
+                        <p id="issuedTo"></p>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-12" style="text-align: right; padding-right: 2rem;">
+                <span id="municipalRegistrar">Aaron Sia</span>
+                <p>Municipal Civil Registrar</p>
+            </div>
+    
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for view more / 2A -->
+    <div class="modal fade" id="viewMore_2A">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+    
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <form id="a1Form" class="row inputCol3">
+
+                    <div class="col-12" style="text-align: left; margin-top: 1rem;">
+                        LCR Form No. 2A <br>
+                        (Death Available)
+                    </div>
+
+                    <div class="col-12">
+                        <p>
+                            Republic of the Philippines <br>
+                            <span class="h4">OFFICE OF MUNICIPAL CIVIL REGISTRAR</span> <br>
+                            Pandi, Bulacan
+                        </p>
+                        
+                    </div>
+                    
+                    <div class="col-12" style="text-align: right; padding-right: 3rem;">
+                        <p>Date: <span id="Now">m-d-y</span></p>
+                    </div>
+
+                    <div class="col-12" style="text-align: left">
+                        <p>TO WHOM IT MAY CONCERN:</p>
+                    </div>
+
+                    <div class="col-7" style="margin-left: auto; margin-right: auto;">
+                        We certify that, among others, the following facts of appear in our Register of <span style="font-weight: bold;">Death</span>
+                    </div>
+
+                    <div class="col-6" style="text-align: right; margin-top: 2rem;">
+                        <p>LCR Registry Number: </p>
+                        <p>Date of Death:</p>
+                        <p>Name of Death:</p>
+                        <p>Sex:</p>
+                        <p>Place of Death: </p>
+                        <p>Name of Mother: </p>
+                        <p>Nationality:</p>
+                        <p>Name of Father:</p>
+                        <p>Nationality: </p>
+                        <p>This Certification is issued to:</p>
+                        <p style="margin-right: 5rem;">Upon his/her request.</p>
+                    </div>
+                    <div class="col-6" style="text-align: left; margin-top: 2rem;">
+                        <p id="lcrRegistryNo_2a"></p>
+                        <p id="date_of_death"></p>
+                        <p id="name_of_death"></p>
+                        <p id="gender_2a"></p>
+                        <p id="place_of_death"></p>
+                        <p id="motherName_2a"></p>
+                        <p id="mNationality_2a"></p>
+                        <p id="fatherName_2a"></p>
+                        <p id="fNationality_2a"></p>
+                        <p id="issuedTo_2a"></p>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-12" style="text-align: right; padding-right: 2rem;">
+                <span id="municipalRegistrar">Aaron Sia</span>
+                <p>Municipal Civil Registrar</p>
+            </div>
+    
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for view more / 3A -->
+    <div class="modal fade" id="viewMore_3A">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+    
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <form id="a1Form" class="row inputCol3">
+
+                    <div class="col-12" style="text-align: left; margin-top: 1rem;">
+                        LCR Form No. 3A <br>
+                        (Marriage Available)
+                    </div>
+
+                    <div class="col-12">
+                        <p>
+                            Republic of the Philippines <br>
+                            <span class="h4">OFFICE OF MUNICIPAL CIVIL REGISTRAR</span> <br>
+                            Pandi, Bulacan
+                        </p>
+                        
+                    </div>
+                    
+                    <div class="col-12" style="text-align: right; padding-right: 3rem;">
+                        <p>Date: <span id="Now">m-d-y</span></p>
+                    </div>
+
+                    <div class="col-12" style="text-align: left">
+                        <p>TO WHOM IT MAY CONCERN:</p>
+                    </div>
+
+                    <div class="col-7" style="margin-left: auto; margin-right: auto;">
+                        We certify that, among others, the following facts of appear in our Register of <span style="font-weight: bold;">Marriage</span>
+                    </div>
+
+                    <div class="col-6" style="text-align: right; margin-top: 2rem;">
+                        <p>LCR Registry Number: </p>
+                        <p>Date of Registration:</p>
+                        <p>Name of Husband:</p>
+                        <p>Age:</p>
+                        <p>Civil Status:</p>
+                        <p>Nationality: </p>
+                        <p>Name of Mother: </p>
+                        <p>Name of Father:</p>
+                        <p>Name of Wife:</p>
+                        <p>Age:</p>
+                        <p>Civil Status:</p>
+                        <p>Nationality: </p>
+                        <p>Name of Mother: </p>
+                        <p>Name of Father:</p>
+                        <p>Date of Marriage:</p>
+                        <p>Place of Marriage:</p>
+                        <p>This Certification is issued to: </p>
+                        <p style="margin-right: 5rem;">Upon his/her request.</p>
+                    </div>
+                    <div class="col-6" style="text-align: left; margin-top: 2rem;">
+                        <p id="lcrRegistryNo_3a"></p>
+                        <p id="registrationDate_3a"></p>
+                        <p id="husband_name"></p>
+                        <p id="husband_age"></p>
+                        <p id="husband_civil_status"></p>
+                        <p id="husband_nationality"></p>
+                        <p id="husband_mother"></p>
+                        <p id="husband_father"></p>
+                        <p id="wife_name"></p>
+                        <p id="wife_age"></p>
+                        <p id="wife_civil_status"></p>
+                        <p id="wife_nationality"></p>
+                        <p id="wife_mother"></p>
+                        <p id="wife_father"></p>
+                        <p id="date_of_marriage"></p>
+                        <p id="place_of_marriage"></p>
+                        <p id="issuedTo_3a"></p>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-12" style="text-align: right; padding-right: 2rem;">
+                <span id="municipalRegistrar">Aaron Sia</span>
+                <p>Municipal Civil Registrar</p>
+            </div>
+    
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+
+    <!-- The Modal for add requirements / 1A -->
+    <div class="modal fade" id="addRequirements">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>ADD <span class="h6">A REQUIREMENTS</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <div style="box-shadow: 5px 10px 18px #888888;">
+                    <p style="text-align: left !important; padding: 1rem;">
+                        Ikaw ay nag dadagdag ng mga supporting documents para kay <span id="childNameAddSupportingDox" style="font-weight: bold;">asdfa</span>
+                        at ang kanyang ina ay si <span id="motherNameAddSupportingDox" style="font-weight: bold;">asdfa</span> na asawa ni <span id="fatherNameAddSupportingDox" style="font-weight: bold;">asdfa</span>
+                        <br>
+                        <br>
+
+                        <span style="font-weight: bold;">NOTE: </span>please upload PNG, JPEG type only
+                    </p>
+                </div>
+                <br>
+                <form id="uploadSupportingDox">
+                    <img src="" alt="" id="l_b_cert" width="60%"><br>
+                    <label for="live_birth_cert">Certificate of Live Birth:</label>
+                    <input type="file" id="live_birth_cert" name="live_birth_cert" accept="image/png, image/jpeg"><br>
+
+                    <img src="" alt="" id="v_id_1a" width="60%"><br>
+                    <label for="valid_id_1a">Valid ID FRONT:</label>
+                    <input type="file" id="valid_id_1a" name="valid_id_1a" accept="image/png, image/jpeg"><br>
+
+                    <img src="" alt="" id="v_id_1a_back" width="60%"><br>
+                    <label for="valid_id_1a">Valid ID BACK:</label>
+                    <input type="file" id="valid_id_1a_back" name="valid_id_1a_back" accept="image/png, image/jpeg">
+                </form>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnSave">Save</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for add requirements / 2A -->
+    <div class="modal fade" id="addRequirements_2A">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>ADD <span class="h6">A REQUIREMENTS</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <div style="box-shadow: 5px 10px 18px #888888;">
+                    <p style="text-align: left !important; padding: 1rem;">
+                        Ikaw ay nag dadagdag ng mga supporting documents kay <span id="deathNameAddSupportingDox" style="font-weight: bold;">asdf</span>
+                        na namayapa ng awar na ito <span id="deathDateAddSupportingDox" style="font-weight: bold;">asdfa</span>
+                        <br>
+                        <br>
+
+                        <span style="font-weight: bold;">NOTE: </span>please upload PNG, JPEG type only
+                    </p>
+                </div>
+                <br>
+                
+                <form id="uploadSupportingDox">
+
+                    <img src="" id="h_cert" width="60%"><br>
+
+                    <label for="hospital_certificate">Hospital Certificate</label>
+                    <input type="file" name="hospital_certificate" id="hospital_certificate" accept="image/png, image/jpeg"><br>
+
+                    <img src="" alt="" id="b_cert" width="60%"><br>
+
+                    <label for="barangay_certificate">Barangay Certificate</label>
+                    <input type="file" name="barangay_certificate" id="barangay_certificate" accept="image/png, image/jpeg"><br>
+
+                    <img src="" alt="" id="p_clear" width="60%"> <br>
+
+                    <label for="police_clearance">Police Clearance</label>
+                    <input type="file" name="police_clearance" id="police_clearance" accept="image/png, image/jpeg"><br>
+
+                    <img src="" alt="" id="v_id" width="60%"> <br>
+
+                    <label for="valid_id">Valid ID FRONT</label>
+                    <input type="file" name="valid_id" id="valid_id" accept="image/png, image/jpeg"><br>
+
+                    <img src="" alt="" id="v_id_back" width="60%"> <br>
+
+                    <label for="valid_id">Valid ID BACK</label>
+                    <input type="file" name="valid_id_back" id="valid_id_back" accept="image/png, image/jpeg"><br>
+
+                    
+                </form>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnSave_2A">Save</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for add requirements / 3A -->
+    <div class="modal fade" id="addRequirements_3A">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>ADD <span class="h6">A REQUIREMENTS</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <div style="box-shadow: 5px 10px 18px #888888;">
+                    <p style="text-align: left !important; padding: 1rem;">
+                        Ikaw ay nag dadagdag ng mga supporting documents kanila <span id="husbandNameAddSupportingDox" style="font-weight: bold;">asdfa</span>
+                        at <span id="wifeNameAddSupportingDox" style="font-weight: bold;">asdfa</span> na ikinasal sa araw na ito <span id="marriageDateAddSupportingDox" style="font-weight: bold;">asdfa</span>
+
+                        <br>
+                        <br>
+
+                        <span style="font-weight: bold;">NOTE: </span>please upload PNG, JPEG type only
+                    </p>
+                </div>
+                <br>
+                <div >
+                    <form id="uploadSupportingDox1">
+                        <h4>Husband</h4>
+                        <img src="" alt="" id="h_birth_cert_3a" width="60%"><br>
+                        <label for="h_birth_certificate_3a">Birth Certificate</label>
+                        <input type="file" name="h_birth_certificate_3a" id="h_birth_certificate_3a" accept="image/png, image/jpeg"><br>
+    
+                        <img src="" alt="" id="h_ceno" width="60%"><br>
+                        <label for="h_cenomar">CENOMAR:</label>
+                        <input type="file" id="h_cenomar" name="h_cenomar" accept="image/png, image/jpeg"><br>
+    
+                        <img src="" alt="" id="h_cedu" width="60%"><br>
+                        <label for="h_cedula">Cedula:</label>
+                        <input type="file" id="h_cedula" name="h_cedula" accept="image/png, image/jpeg"><br>
+    
+                        <img src="" alt="" id="h_b_cert_3a" width="60%"><br>
+                        <label for="h_barangay_certificate_3a">Barangay Certificate</label>
+                        <input type="file" name="h_barangay_certificate_3a" id="h_barangay_certificate_3a" accept="image/png, image/jpeg"><br>
+    
+                        <img src="" alt="" id="h_v_id_3a" width="60%"><br>
+                        <label for="h_valid_id_3a">Valid ID FRONT</label>
+                        <input type="file" name="h_valid_id_3a" id="h_valid_id_3a" accept="image/png, image/jpeg"><br>
+
+                        <img src="" alt="" id="h_v_id_3a_back" width="60%"><br>
+                        <label for="h_valid_id_3a_back">Valid ID BACK</label>
+                        <input type="file" name="h_valid_id_3a_back" id="h_valid_id_3a_back" accept="image/png, image/jpeg"><br>
+                    </form>
+
+                    <br>
+                    <br>
+                    <hr>
+                    <br><br>
+
+                    <form id="uploadSupportingDox" >
+                        <h4>Wife</h4>
+                        <img src="" alt="" id="w_birth_cert_3a" width="60%"><br>
+                        <label for="w_birth_certificate_3a">Birth Certificate</label>
+                        <input type="file" name="w_birth_certificate_3a" id="w_birth_certificate_3a" accept="image/png, image/jpeg"><br>
+    
+                        <img src="" alt="" id="w_ceno" width="60%"><br>
+                        <label for="w_cenomar">CENOMAR:</label>
+                        <input type="file" id="w_cenomar" name="w_cenomar" accept="image/png, image/jpeg"><br>
+    
+                        <img src="" alt="" id="w_cedu" width="60%"><br>
+                        <label for="w_cedula">Cedula:</label>
+                        <input type="file" id="w_cedula" name="w_cedula" accept="image/png, image/jpeg"><br>
+    
+                        <img src="" alt="" id="w_b_cert_3a" width="60%"><br>
+                        <label for="w_barangay_certificate_3a">Barangay Certificate</label>
+                        <input type="file" name="w_barangay_certificate_3a" id="w_barangay_certificate_3a" accept="image/png, image/jpeg"><br>
+    
+                        <img src="" alt="" id="w_v_id_3a" width="60%"><br>
+                        <label for="w_valid_id_3a">Valid ID FONT</label>
+                        <input type="file" name="w_valid_id_3a" id="w_valid_id_3a" accept="image/png, image/jpeg"><br>
+
+                        <img src="" alt="" id="w_v_id_3a_back" width="60%"><br>
+                        <label for="w_valid_id_3a_back">Valid ID BACK</label>
+                        <input type="file" name="w_valid_id_3a_back" id="w_valid_id_3a_back" accept="image/png, image/jpeg"><br>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnSave_3A">Save</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+
+    <!-- The Modal for cancel -->
+    <div class="modal fade" id="cancel">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>CANCEL <span class="h6">now</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p>
+                    Ikaw ba ay nakakasiguradong nais mong ikansela ang iyong request ? click <span style="font-weight: bold;">Yes</span> kung ikaw ay sigurado na at <span style="font-weight: bold;">Close</span> kung hindi
+                </p>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="cancelYes">Yes</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+    <!-- The Modal for cancel  / 2A-->
+    <div class="modal fade" id="cancel_2A">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>CANCEL <span class="h6">now</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p>
+                    Ikaw ba ay nakakasiguradong nais mong ikansela ang iyong request ? click <span style="font-weight: bold;">Yes</span> kung ikaw ay sigurado na at <span style="font-weight: bold;">Close</span> kung hindi
+                </p>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="cancelYes_2a">Yes</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+    <!-- The Modal for cancel  / 2A-->
+    <div class="modal fade" id="cancel_3A">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>CANCEL <span class="h6">now</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p>
+                    Ikaw ba ay nakakasiguradong nais mong ikansela ang iyong request ? click <span style="font-weight: bold;">Yes</span> kung ikaw ay sigurado na at <span style="font-weight: bold;">Close</span> kung hindi
+                </p>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="cancelYes_3a">Yes</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+
+    <!-- The Modal for proced -->
+    <div class="modal fade" id="procedBtn">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>PROCEED <span class="h6">now</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p>
+                    Ikaw ba ay nakakasiguradong tama ang mga inilagay mong supporting documents click <span style="font-weight: bold;">Yes</span> kung ikaw ang sigurado na at <span style="font-weight: bold;">Close</span> kung hindi
+                </p>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnYes">Yes</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for proced / 2A -->
+    <div class="modal fade" id="procedBtn_2A">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>PROCEED <span class="h6">now</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p>
+                    Ikaw ba ay nakakasiguradong tama ang mga inilagay mong supporting documents click <span style="font-weight: bold;">Yes</span> kung ikaw ang sigurado na at <span style="font-weight: bold;">Close</span> kung hindi
+                </p>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnYes_2a">Yes</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for proced / 3A -->
+    <div class="modal fade" id="procedBtn_3A">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>PROCEED <span class="h6">now</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p>
+                    Ikaw ba ay nakakasiguradong tama ang mga inilagay mong supporting documents click <span style="font-weight: bold;">Yes</span> kung ikaw ang sigurado na at <span style="font-weight: bold;">Close</span> kung hindi
+                </p>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnYes_3a">Yes</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+
+</body>
+
+
+<!-- ajax query -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- Bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Initialize tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+
+<script> // when cancel
+    const cancel = document.getElementsByClassName('cancel')
+    const cancelYes = document.getElementById('cancelYes')
+    let cancel_id = 0
+
+    function btnClickCancel(){
+        for(let i = 0; i < cancel.length; i++){
+            cancel[i].addEventListener('click', ()=> {
+                cancel_id = cancel[i].id
+            })
+        }
+    } function btnClickCancelYes(){
+        cancelYes.addEventListener('click', ()=> {
+            (async ()=> {
+                const rawResponse = await fetch('api/send-proced', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: `proced=Cancel&id=${cancel_id}`
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    location.href = './documentUserCancel.html'
+                }
+
+            })()
+        })
+    }
+</script>
+
+<script> // when cancel / 2A
+    const cancel_2a = document.getElementsByClassName('cancel_2a')
+    const cancelYes_2a = document.getElementById('cancelYes_2a')
+    let cancel_id_2a = 0
+
+    function btnClickCancel_2A(){
+        for(let i = 0; i < cancel_2a.length; i++){
+            cancel_2a[i].addEventListener('click', ()=> {
+                cancel_id_2a = cancel_2a[i].id
+            })
+        }
+    } function btnClickCancelYes_2A(){
+        cancelYes_2a.addEventListener('click', ()=> {
+            (async ()=> {
+                const rawResponse = await fetch('api/send-proced-2a', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: `proced=Cancel&id=${cancel_id_2a}`
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    location.href = './documentUserCancel.html'
+                }
+
+            })()
+        })
+    }
+</script>
+
+<script> // when cancel / 3A
+    const cancel_3a = document.getElementsByClassName('cancel_3a')
+    const cancelYes_3a = document.getElementById('cancelYes_3a')
+    let cancel_id_3a = 0
+
+    function btnClickCancel_3A(){
+        for(let i = 0; i < cancel_3a.length; i++){
+            cancel_3a[i].addEventListener('click', ()=> {
+                cancel_id_3a = cancel_3a[i].id
+            })
+        }
+    } function btnClickCancelYes_3A(){
+        cancelYes_3a.addEventListener('click', ()=> {
+            (async ()=> {
+                const rawResponse = await fetch('api/send-proced-3a', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: `proced=Cancel&id=${cancel_id_3a}`
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    location.href = './documentUserCancel.html'
+                }
+
+            })()
+        })
+    }
+</script>
+
+
+
+<script> // when button proced click
+    const proced = document.getElementsByClassName('proced')
+    const btnYes = document.getElementById('btnYes')
+
+    var subIDforProced = ''
+    function btnClickProced () {
+        for(let i = 0; i < proced.length; i++){
+            proced[i].addEventListener('click', ()=> {
+                subIDforProced = proced[i].id
+            })
+        }
+    } function btnClickProcedYes (){
+        btnYes.addEventListener('click', ()=> {
+
+            (async ()=> {
+                const rawResponse = await fetch('api/send-proced', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: `proced=True&id=${subIDforProced}`
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    location.href = './documentUser2.html'
+                }
+
+            })()
+        })
+    }
+</script>
+
+<script> // when button proced click / 2A
+    const proced_2a = document.getElementsByClassName('proced_2a')
+    const btnYes_2a = document.getElementById('btnYes_2a')
+
+    var subIDforProced = ''
+    function btnClickProced_2A () {
+        for(let i = 0; i < proced_2a.length; i++){
+            proced_2a[i].addEventListener('click', ()=> {
+                subIDforProced = proced_2a[i].id
+            })
+        }
+    } function btnClickProcedYes_2A (){
+        btnYes_2a.addEventListener('click', ()=> {
+
+            (async ()=> {
+                const rawResponse = await fetch('api/send-proced-2a', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: `proced=True&id=${subIDforProced}`
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    location.href = './documentUser2.html'
+                }
+
+            })()
+        })
+    }
+</script>
+
+<script> // when button proced click / 3A
+    const proced_3a = document.getElementsByClassName('proced_3a')
+    const btnYes_3a = document.getElementById('btnYes_3a')
+
+    var subIDforProced = ''
+    function btnClickProced_3A () {
+        for(let i = 0; i < proced_3a.length; i++){
+            proced_3a[i].addEventListener('click', ()=> {
+                subIDforProced = proced_3a[i].id
+            })
+        }
+    } function btnClickProcedYes_3A (){
+        btnYes_3a.addEventListener('click', ()=> {
+
+            (async ()=> {
+                const rawResponse = await fetch('api/send-proced-3a', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: `proced=True&id=${subIDforProced}`
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    location.href = './documentUser2.html'
+                }
+
+            })()
+        })
+    }
+</script>
+
+
+
+
+<script> // when view more clicked
+
+    // view more
+    const viewMore = document.getElementsByClassName('viewMore')
+    const lcrRegistryNo = document.getElementById('lcrRegistryNo')
+    const registrationDate = document.getElementById('registrationDate')
+    const childName = document.getElementById('childName')
+    const gender = document.getElementById('gender')
+    const birthPlace = document.getElementById('birthPlace')
+    const birthday = document.getElementById('birthday')
+    const motherName = document.getElementById('motherName')
+    const mNationality = document.getElementById('mNationality')
+    const fatherName = document.getElementById('fatherName')
+    const fNationality = document.getElementById('fNationality')
+    const merriageDate = document.getElementById('merriageDate')
+    const merriagePlace = document.getElementById('merriagePlace')
+    const issuedTo = document.getElementById('issuedTo');
+
+    function viewMoreClick (){
+        for(let j = 0; j < viewMore.length; j++){
+            viewMore[j].addEventListener('click', ()=> {
+
+                const childFullname = `${subContentGlobal[j].child_fname} ${subContentGlobal[j].child_mname} ${subContentGlobal[j].child_lname}`
+                const motherFullname = `${subContentGlobal[j].m_fname} ${subContentGlobal[j].m_mname} ${subContentGlobal[j].m_lname}`
+                const fatherFullname = `${subContentGlobal[j].f_fname} ${subContentGlobal[j].f_mname} ${subContentGlobal[j].f_lname}`
+
+                lcrRegistryNo.innerHTML = subContentGlobal[j].id
+                registrationDate.innerHTML = subContentGlobal[j].date_of_registration
+                childName.innerHTML = childFullname
+                gender.innerHTML = subContentGlobal[j].gender
+                birthPlace.innerHTML = subContentGlobal[j].place_of_birth
+                birthday.innerHTML = subContentGlobal[j].birthday
+                motherName.innerHTML = motherFullname
+                mNationality.innerHTML = subContentGlobal[j].m_nationality
+                fatherName.innerHTML = fatherFullname
+                fNationality.innerHTML = subContentGlobal[j].f_nationality
+                merriageDate.innerHTML = subContentGlobal[j].date_of_merriage
+                merriagePlace.innerHTML = subContentGlobal[j].place_of_merriage
+                issuedTo.innerHTML = subContentGlobal[j].issuedto
+
+            })
+        }
+    }
+</script>
+
+<script> // when view more clicked / 2A
+
+    // view more
+    const viewMore_2a = document.getElementsByClassName('viewMore_2a')
+
+    const lcrRegistryNo_2a = document.getElementById('lcrRegistryNo_2a')
+    const date_of_death = document.getElementById('date_of_death')
+    const name_of_death = document.getElementById('name_of_death')
+    const gender_2a = document.getElementById('gender_2a')
+    const place_of_death = document.getElementById('place_of_death')
+    const motherName_2a = document.getElementById('motherName_2a')
+    const mNationality_2a = document.getElementById('mNationality_2a')
+    const fatherName_2a = document.getElementById('fatherName_2a')
+    const fNationality_2a = document.getElementById('fNationality_2a')
+    const issuedTo_2a = document.getElementById('issuedTo_2a');
+
+    function viewMoreClick_2A (){
+        for(let j = 0; j < viewMore_2a.length; j++){
+            viewMore_2a[j].addEventListener('click', ()=> {
+
+                lcrRegistryNo_2a.innerHTML = subContentGlobal_2A[j].id
+                date_of_death.innerHTML = subContentGlobal_2A[j].date_of_death
+                name_of_death.innerHTML = `${subContentGlobal_2A[j].d_fname} ${subContentGlobal_2A[j].d_mname} ${subContentGlobal_2A[j].d_lname}`
+                gender_2a.innerHTML = subContentGlobal_2A[j].gender
+                place_of_death.innerHTML = subContentGlobal_2A[j].place_of_death
+                motherName_2a.innerHTML = `${subContentGlobal_2A[j].m_fname} ${subContentGlobal_2A[j].m_mname} ${subContentGlobal_2A[j].m_lname}`
+                mNationality_2a.innerHTML = subContentGlobal_2A[j].m_nationality
+                fatherName_2a.innerHTML = `${subContentGlobal_2A[j].f_fname} ${subContentGlobal_2A[j].f_mname} ${subContentGlobal_2A[j].f_lname}`
+                fNationality_2a.innerHTML = subContentGlobal_2A[j].f_nationality
+                issuedTo_2a.innerHTML = subContentGlobal_2A[j].issuedto
+
+            })
+        }
+    }
+</script>
+
+<script> // when view more clicked / 3A
+
+
+    const viewMore_3a = document.getElementsByClassName('viewMore_3a')
+
+    // husband info
+    const lcrRegistryNo_3a = document.getElementById('lcrRegistryNo_3a')
+    const registrationDate_3a = document.getElementById('registrationDate_3a')
+    const husband_name = document.getElementById('husband_name')
+    const husband_age = document.getElementById('husband_age')
+    const husband_civil_status = document.getElementById('husband_civil_status')
+    const husband_nationality = document.getElementById('husband_nationality')
+    const husband_mother = document.getElementById('husband_mother')
+    const husband_father = document.getElementById('husband_father')
+    // wife info
+    const wife_name = document.getElementById('wife_name')
+    const wife_age = document.getElementById('wife_age')
+    const wife_civil_status = document.getElementById('wife_civil_status')
+    const wife_nationality = document.getElementById('wife_nationality')
+    const wife_mother = document.getElementById('wife_mother')
+    const wife_father = document.getElementById('wife_father')
+    // other info
+    const date_of_marriage = document.getElementById('date_of_marriage')
+    const place_of_marriage = document.getElementById('place_of_marriage')
+    
+    const issuedTo_3a = document.getElementById('issuedTo_3a')
+
+    function viewMoreClick_3A (){
+        for(let j = 0; j < viewMore_3a.length; j++){
+            viewMore_3a[j].addEventListener('click', ()=> {
+
+
+                lcrRegistryNo_3a.innerHTML = subContentGlobal_3A[j].id
+                registrationDate_3a.innerHTML = subContentGlobal_3A[j].date_of_registration
+                // husband
+                husband_name.innerHTML = `${subContentGlobal_3A[j].h_fname} ${subContentGlobal_3A[j].h_mname} ${subContentGlobal_3A[j].h_lname}`
+                husband_age.innerHTML = subContentGlobal_3A[j].h_age
+                husband_civil_status.innerHTML = subContentGlobal_3A[j].h_civil_status
+                husband_nationality.innerHTML = subContentGlobal_3A[j].h_nationality
+                husband_mother.innerHTML = `${subContentGlobal_3A[j].h_m_fname} ${subContentGlobal_3A[j].h_m_mname} ${subContentGlobal_3A[j].h_m_lname}`
+                husband_father.innerHTML = `${subContentGlobal_3A[j].h_f_fname} ${subContentGlobal_3A[j].h_f_mname} ${subContentGlobal_3A[j].h_f_lname}`
+                // wife
+                wife_name.innerHTML = `${subContentGlobal_3A[j].w_fname} ${subContentGlobal_3A[j].w_mname} ${subContentGlobal_3A[j].w_lname}`
+                wife_age.innerHTML = subContentGlobal_3A[j].w_age
+                wife_civil_status.innerHTML = subContentGlobal_3A[j].w_civil_status
+                wife_nationality.innerHTML = subContentGlobal_3A[j].w_nationality
+                wife_mother.innerHTML = `${subContentGlobal_3A[j].w_m_fname} ${subContentGlobal_3A[j].w_m_mname} ${subContentGlobal_3A[j].w_m_lname}`
+                wife_father.innerHTML = `${subContentGlobal_3A[j].w_f_fname} ${subContentGlobal_3A[j].w_f_mname} ${subContentGlobal_3A[j].w_f_lname}`
+                // other
+                date_of_marriage.innerHTML = subContentGlobal_3A[j].date_of_marriage
+                place_of_marriage.innerHTML = subContentGlobal_3A[j].place_of_marriage
+
+                issuedTo_3a.innerHTML = subContentGlobal_3A[j].issued_to
+
+            })
+        }
+    }
+</script>
+
+
+
+<script> // add requirements when click
+
+    // Add Supporting Documents
+    const addRequirements = document.getElementsByClassName('addRequirements')
+    const childNameAddSupportingDox = document.getElementById('childNameAddSupportingDox')
+    const motherNameAddSupportingDox = document.getElementById('motherNameAddSupportingDox')
+    const fatherNameAddSupportingDox = document.getElementById('fatherNameAddSupportingDox')
+
+    const live_birth_cert = document.getElementById('live_birth_cert')
+    const valid_id_1a = document.getElementById('valid_id_1a')
+    const valid_id_1a_back = document.getElementById('valid_id_1a_back')
+
+    const l_b_cert = document.getElementById('l_b_cert')
+    const v_id_1a = document.getElementById('v_id_1a')
+    const v_id_1a_back = document.getElementById('v_id_1a_back')
+
+
+    var qp = 0
+    var results1 = ''
+    var results2 = ''
+
+    function addRequirementsClick (){
+        for(let x = 0; x < addRequirements.length; x++){
+            addRequirements[x].addEventListener('click', ()=> {
+
+                qp = addRequirements[x].id;
+
+                childNameAddSupportingDox.innerHTML = `${subContentGlobal[x].child_fname} ${subContentGlobal[x].child_mname} ${subContentGlobal[x].child_lname}`
+                motherNameAddSupportingDox.innerHTML = `${subContentGlobal[x].m_fname} ${subContentGlobal[x].m_mname} ${subContentGlobal[x].m_lname}`
+                fatherNameAddSupportingDox.innerHTML = `${subContentGlobal[x].f_fname} ${subContentGlobal[x].f_mname} ${subContentGlobal[x].f_lname}`
+
+                l_b_cert.src = `private${subContentGlobal[x].live_birth_certificate}`
+                v_id_1a.src = `private${subContentGlobal[x].valid_id}`
+                v_id_1a_back.src = `private${subContentGlobal[x].valid_id_back}`
+            })
+        }
+    } function saveBtnClick (){ // when save button click
+        btnSave.addEventListener('click', ()=> {
+
+            var form1 = new FormData()
+            form1.append("image", live_birth_cert.files[0]);
+
+            var form2 = new FormData()
+            form2.append("image", valid_id_1a.files[0]);
+
+            var form3 = new FormData()
+            form3.append("image", valid_id_1a_back.files[0]);
+
+            (async()=> {
+                const rawResponse = await fetch('api/add-image1', {
+                    method: 'POST',
+                    body: form1
+                })
+
+                const content = await rawResponse.json()
+                if(content.success === true){
+                    const rawResponse1 = await fetch('api/add-image2', {
+                        method: 'POST',
+                        body: form2
+                    })
+
+                    const content1 = await rawResponse1.json()
+                    if(content1.success === true){
+                        const rawResponse2 = await fetch('api/add-image3', {
+                            method: 'POST',
+                            body: form3
+                        })
+
+                        const content2 = await rawResponse2.json()
+                        if(content2.success === true){
+                            const rawResponse3 = await fetch('api/add-supporting-dox', {
+                                method: 'POST',
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Content-Type': "application/json"
+                                },
+                                body: `live_birth_certificate=${content.image}&valid_id=${content1.image}&valid_id_back=${content2.image}&id=${qp}`
+                            })
+
+                            const content3 = rawResponse3.json()
+                            if(content.success === true){
+                                alert('Successfully uploaded!!')
+                                location.reload()
+                            }
+                        }
+                    }
+                }
+            })()
+        })
+    }
+</script>
+
+<script> // add requirements when click / 2A
+
+    // Add Supporting Documents
+    const addRequirements_2a = document.getElementsByClassName('addRequirements_2a')
+    const deathNameAddSupportingDox = document.getElementById('deathNameAddSupportingDox')
+    const deathDateAddSupportingDox = document.getElementById('deathDateAddSupportingDox')
+    const h_cert = document.getElementById('h_cert')
+    const b_cert = document.getElementById('b_cert')
+    const p_clear = document.getElementById('p_clear')
+    const v_id = document.getElementById('v_id')
+    const v_id_back = document.getElementById('v_id_back')
+
+
+    const birthCertificate = document.getElementById('birthCertificate')
+    const hospital_certificate = document.getElementById('hospital_certificate')
+    const barangay_certificate = document.getElementById('barangay_certificate')
+    const police_clearance = document.getElementById('police_clearance')
+    const valid_id = document.getElementById('valid_id')
+    const valid_id_back = document.getElementById('valid_id_back')
+
+    const issued_to_id = sessionStorage.getItem('id')
+
+    const btnSave_2A = document.getElementById('btnSave_2A')
+
+
+    var qp = 0
+    var results1 = ''
+    var results2 = ''
+    var results3 = ''
+    var results4 = ''
+
+    function addRequirementsClick_2A (){
+        for(let x = 0; x < addRequirements_2a.length; x++){
+            addRequirements_2a[x].addEventListener('click', ()=> {
+
+                qp = addRequirements_2a[x].id;
+
+                deathNameAddSupportingDox.innerHTML = `${subContentGlobal_2A[x].d_fname} ${subContentGlobal_2A[x].d_mname} ${subContentGlobal_2A[x].d_lname}`
+                deathDateAddSupportingDox.innerHTML = subContentGlobal_2A[x].date_of_death
+
+                h_cert.src = `private/${subContentGlobal_2A[x].hospital_certificate}`
+                b_cert.src = `private/${subContentGlobal_2A[x].barangay_certificate}`
+                p_clear.src = `private/${subContentGlobal_2A[x].police_clearance}`
+                v_id.src = `private/${subContentGlobal_2A[x].valid_id}`
+                v_id_back.src = `private/${subContentGlobal_2A[x].valid_id_back}`
+            })
+        }
+    } function saveBtnClick_2A (){ // when save button click
+        btnSave_2A.addEventListener('click', ()=> {
+
+            
+            let form1 = new FormData()
+            form1.append('image', hospital_certificate.files[0]);
+
+            let form2 = new FormData()
+            form2.append('image', barangay_certificate.files[0]);
+
+            let form3 = new FormData()
+            form3.append('image', police_clearance.files[0]);
+
+            let form4 = new FormData()
+            form4.append('image', valid_id.files[0]);
+
+            let form5 = new FormData()
+            form5.append('image', valid_id_back.files[0]);
+
+            (async()=> {
+                const rawResponse = await fetch('api/add-image1', {
+                    method: 'POST',
+                    body: form1
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    const rawResponse1 = await fetch('api/add-image2', {
+                        method: 'POST',
+                        body: form2
+                    })
+                    const content1 = await rawResponse1.json();
+
+                    if(content1.success === true){
+                        const rawResponse2 = await fetch('api/add-image3', {
+                            method: 'POST',
+                            body: form3
+                        })
+                        const content2 = await rawResponse2.json();
+
+                        if(content2.success === true){
+                            const rawResponse3 = await fetch('api/add-image4', {
+                                method: 'POST',
+                                body: form4
+                            })
+                            const content3 = await rawResponse3.json();
+
+                            if(content3.success === true){
+                                const rawResponse4 = await fetch('api/add-image5', {
+                                    method: 'POST',
+                                    body: form5
+                                })
+                                const content4 = await rawResponse4.json();
+
+                                if(content4.success === true){
+                                    const rawResponse5 = await fetch('api/add-supporting-dox-2a', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Accept': 'application/json',
+                                            'Content-Type': "application/json"
+                                        },
+                                        body: `hospital_certificate=${content.image}&barangay_certificate=${content1.image}&police_clearance=${content2.image}&valid_id=${content3.image}&valid_id_back=${content4.image}&id=${qp}&issued_to_id=${issued_to_id}`
+                                    })
+                                    const content5 = await rawResponse5.json();
+
+                                    if(content5.success === true){
+                                        alert('Successfully uploaded!!')
+                                        location.reload()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            })()
+        })
+    }
+</script>
+
+<script> // add requirements when click / 3A
+
+    // Add Supporting Documents
+    const addRequirements_3a = document.getElementsByClassName('addRequirements_3a')
+    const husbandNameAddSupportingDox = document.getElementById('husbandNameAddSupportingDox')
+    const wifeNameAddSupportingDox = document.getElementById('wifeNameAddSupportingDox')
+    const marriageDateAddSupportingDox = document.getElementById('marriageDateAddSupportingDox')
+
+    // husband images
+    const h_birth_cert_3a = document.getElementById('h_birth_cert_3a')
+    const h_ceno = document.getElementById('h_ceno')
+    const h_cedu = document.getElementById('h_cedu')
+    const h_b_cert_3a = document.getElementById('h_b_cert_3a')
+    const h_v_id_3a = document.getElementById('h_v_id_3a')
+    const h_v_id_3a_back = document.getElementById('h_v_id_3a_back')
+    // husband form
+    const h_birth_certificate_3a = document.getElementById('h_birth_certificate_3a')
+    const h_cenomar = document.getElementById('h_cenomar')
+    const h_cedula = document.getElementById('h_cedula')
+    const h_barangay_certificate_3a = document.getElementById('h_barangay_certificate_3a')
+    const h_valid_id_3a = document.getElementById('h_valid_id_3a')
+    const h_valid_id_3a_back = document.getElementById('h_valid_id_3a_back')
+
+    // wife images
+    const w_birth_cert_3a = document.getElementById('w_birth_cert_3a')
+    const w_ceno = document.getElementById('w_ceno')
+    const w_cedu = document.getElementById('w_cedu')
+    const w_b_cert_3a = document.getElementById('w_b_cert_3a')
+    const w_v_id_3a = document.getElementById('w_v_id_3a')
+    const w_v_id_3a_back = document.getElementById('w_v_id_3a_back')
+    // wife form
+    const w_birth_certificate_3a = document.getElementById('w_birth_certificate_3a')
+    const w_cenomar = document.getElementById('w_cenomar')
+    const w_cedula = document.getElementById('w_cedula')
+    const w_barangay_certificate_3a = document.getElementById('w_barangay_certificate_3a')
+    const w_valid_id_3a = document.getElementById('w_valid_id_3a')
+    const w_valid_id_3a_back = document.getElementById('w_valid_id_3a_back')
+
+
+    const btnSave_3A = document.getElementById('btnSave_3A')
+
+
+    var qp = 0
+
+    var result = ''
+    var result1 = ''
+    var result2 = ''
+    var result3 = ''
+    var result4 = ''
+    var result4_back = ''
+    var result5 = ''
+    var result6 = ''
+    var result7 = ''
+    var result8 = ''
+    var result9 = ''
+    var result9_back = ''
+
+
+    function addRequirementsClick_3A (){
+        for(let x = 0; x < addRequirements_3a.length; x++){
+            addRequirements_3a[x].addEventListener('click', ()=> {
+
+                qp = addRequirements_3a[x].id;
+
+                husbandNameAddSupportingDox.innerHTML = `${subContentGlobal_3A[x].h_fname} ${subContentGlobal_3A[x].h_mname} ${subContentGlobal_3A[x].h_lname}`
+                wifeNameAddSupportingDox.innerHTML = `${subContentGlobal_3A[x].w_fname} ${subContentGlobal_3A[x].w_mname} ${subContentGlobal_3A[x].w_lname}`
+                marriageDateAddSupportingDox.innerHTML = subContentGlobal_3A[x].date_of_marriage
+
+                h_birth_cert_3a.src = `private/${subContentGlobal_3A[x].h_birth_certificate}`
+                h_ceno.src = `private/${subContentGlobal_3A[x].h_cenomar}`
+                h_cedu.src = `private/${subContentGlobal_3A[x].h_cedula}`
+                h_b_cert_3a.src = `private/${subContentGlobal_3A[x].h_barangay_certificate}`
+                h_v_id_3a.src = `private/${subContentGlobal_3A[x].h_valid_id}`
+                h_v_id_3a_back.src = `private/${subContentGlobal_3A[x].h_valid_id_back}`
+
+                w_birth_cert_3a.src = `private/${subContentGlobal_3A[x].w_birth_certificate}`
+                w_ceno.src = `private/${subContentGlobal_3A[x].w_cenomar}`
+                w_cedu.src = `private/${subContentGlobal_3A[x].w_cedula}`
+                w_b_cert_3a.src = `private/${subContentGlobal_3A[x].w_barangay_certificate}`
+                w_v_id_3a.src = `private/${subContentGlobal_3A[x].w_valid_id}`
+                w_v_id_3a_back.src = `private/${subContentGlobal_3A[x].w_valid_id_back}`
+
+            })
+        }
+    } function saveBtnClick_3A (){ // when save button click
+        btnSave_3A.addEventListener('click', ()=> {
+
+            var form1 = new FormData();
+            form1.append("image", h_birth_certificate_3a.files[0]);
+
+            var form2 = new FormData();
+            form2.append("image", h_cenomar.files[0]);
+
+            var form3 = new FormData();
+            form3.append("image", h_cedula.files[0]);
+
+            var form4 = new FormData();
+            form4.append("image", h_barangay_certificate_3a.files[0]);
+
+            var form5 = new FormData();
+            form5.append("image", h_valid_id_3a.files[0]);
+
+            var form6 = new FormData();
+            form6.append("image", h_valid_id_3a_back.files[0]);
+
+            var form7 = new FormData();
+            form7.append("image", w_birth_certificate_3a.files[0]);
+
+            var form8 = new FormData();
+            form8.append("image", w_cenomar.files[0]);
+
+            var form9 = new FormData();
+            form9.append("image", w_cedula.files[0]);
+
+            var form10 = new FormData();
+            form10.append("image", w_barangay_certificate_3a.files[0]);
+
+            var form11 = new FormData();
+            form11.append("image", w_valid_id_3a.files[0]);
+
+            var form12 = new FormData();
+            form12.append("image", w_valid_id_3a_back.files[0]);
+
+
+            (async()=> {
+                const rawResponse1 = await fetch('api/add-image1', {
+                    method: 'POST',
+                    body: form1
+                })
+                const content1 = await rawResponse1.json();
+
+                if(content1.success === true){
+                    const rawResponse2 = await fetch('api/add-image2', {
+                        method: 'POST',
+                        body: form2
+                    })
+                    const content2 = await rawResponse2.json();
+
+                    if(content2.success === true){
+                        const rawResponse3 = await fetch('api/add-image3', {
+                            method: 'POST',
+                            body: form3
+                        })
+                        const content3 = await rawResponse3.json();
+
+                        if(content3.success === true){
+                            const rawResponse4 = await fetch('api/add-image4', {
+                                method: 'POST',
+                                body: form4
+                            })
+                            const content4 = await rawResponse4.json();
+
+                            if(content4.success === true){
+                                const rawResponse5 = await fetch('api/add-image5', {
+                                    method: 'POST',
+                                    body: form5
+                                })
+                                const content5 = await rawResponse5.json();
+
+                                if(content5.success === true){
+                                    const rawResponse6 = await fetch('api/add-image6', {
+                                        method: 'POST',
+                                        body: form6
+                                    })
+                                    const content6 = await rawResponse6.json();
+
+                                    if(content6.success === true){
+                                        const rawResponse7 = await fetch('api/add-image7', {
+                                            method: 'POST',
+                                            body: form7
+                                        })
+                                        const content7 = await rawResponse7.json();
+
+                                        if(content7.success === true){
+                                            const rawResponse8 = await fetch('api/add-image8', {
+                                                method: 'POST',
+                                                body: form8
+                                            })
+                                            const content8 = await rawResponse8.json();
+
+                                            if(content8.success === true){
+                                                const rawResponse9 = await fetch('api/add-image9', {
+                                                    method: 'POST',
+                                                    body: form9
+                                                })
+                                                const content9 = await rawResponse9.json();
+
+                                                if(content9.success === true){
+                                                    const rawResponse10 = await fetch('api/add-image10', {
+                                                        method: 'POST',
+                                                        body: form10
+                                                    })
+                                                    const content10 = await rawResponse10.json();
+
+                                                    if(content10.success === true){
+                                                        const rawResponse11 = await fetch('api/add-image11', {
+                                                            method: 'POST',
+                                                            body: form11
+                                                        })
+                                                        const content11 = await rawResponse11.json();
+
+                                                        if(content11.success === true){
+                                                            const rawResponse12 = await fetch('api/add-image12', {
+                                                                method: 'POST',
+                                                                body: form12
+                                                            })
+                                                            const content12 = await rawResponse12.json();
+
+                                                            if(content12.success === true){
+                                                                const rawResponse = await fetch('api/add-supporting-dox-3a', {
+                                                                    method: 'POST',
+                                                                    headers: {
+                                                                        'Accept': 'application/json',
+                                                                        'Content-Type': "application/json"
+                                                                    },
+                                                                    body: `h_birth_certificate=${content1.image}&h_cenomar=${content2.image}&h_cedula=${content3.image}&h_barangay_certificate=${content4.image}&h_valid_id=${content5.image}&h_valid_id_back=${content6.image}&w_birth_certificate=${content7.image}&w_cenomar=${content8.image}&w_cedula=${content9.image}&w_barangay_certificate=${content10.image}&w_valid_id=${content11.image}&w_valid_id_back=${content12.image}&id=${qp}`
+                                                                })
+                                                                const content = await rawResponse.json();
+                                                                if(content.success === true){
+                                                                    alert('Successfully uploaded!!')
+                                                                    location.reload()
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            })()
+
+
+
+            
+
+            // for husband
+            // var form = new FormData();
+            // form.append("image", h_birth_certificate_3a.files[0])
+            // var settings = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form
+            // }
+            // var form1 = new FormData();
+            // form1.append("image", h_cenomar.files[0])
+            // var settings1 = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form1
+            // }
+            // var form2 = new FormData();
+            // form2.append("image", h_cedula.files[0])
+            // var settings2 = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form2
+            // }
+            // var form3 = new FormData();
+            // form3.append("image", h_barangay_certificate_3a.files[0])
+            // var settings3 = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form3
+            // }
+            // var form4 = new FormData();
+            // form4.append("image", h_valid_id_3a.files[0])
+            // var settings4 = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form4
+            // }
+            // var form4_back = new FormData();
+            // form4_back.append("image", h_valid_id_3a_back.files[0])
+            // var settings4_back = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form4_back
+            // }
+            // // for wife
+            // var form5 = new FormData();
+            // form5.append("image", w_birth_certificate_3a.files[0])
+            // var settings5 = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form5
+            // }
+            // var form6 = new FormData();
+            // form6.append("image", w_cenomar.files[0])
+            // var settings6 = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form6
+            // }
+            // var form7 = new FormData();
+            // form7.append("image", w_cedula.files[0])
+            // var settings7 = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form7
+            // }
+            // var form8 = new FormData();
+            // form8.append("image", w_barangay_certificate_3a.files[0])
+            // var settings8 = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form8
+            // }
+            // var form9 = new FormData();
+            // form9.append("image", w_valid_id_3a.files[0])
+            // var settings9 = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form9
+            // }
+            // var form9_back = new FormData();
+            // form9_back.append("image", w_valid_id_3a_back.files[0])
+            // var settings9_back = {
+            //     "url": "https://api.imgbb.com/1/upload?key=09bac7cd5564eb1e71ab55a000d66c85",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "processData": false,
+            //     "mimeType": "multipart/form-data",
+            //     "contentType": false,
+            //     "data": form9_back
+            // }
+
+            // $.ajax(settings).done((e)=> {let i = JSON.parse(e); result = i.data.url})
+            // $.ajax(settings1).done((e)=> {let i = JSON.parse(e); result1 = i.data.url})
+            // $.ajax(settings2).done((e)=> {let i = JSON.parse(e); result2 = i.data.url})
+            // $.ajax(settings3).done((e)=> {let i = JSON.parse(e); result3 = i.data.url})
+            // $.ajax(settings4).done((e)=> {let i = JSON.parse(e); result4 = i.data.url})
+            // $.ajax(settings4_back).done((e)=> {let i = JSON.parse(e); result4_back = i.data.url})
+            // $.ajax(settings5).done((e)=> {let i = JSON.parse(e); result5 = i.data.url})
+            // $.ajax(settings6).done((e)=> {let i = JSON.parse(e); result6 = i.data.url})
+            // $.ajax(settings7).done((e)=> {let i = JSON.parse(e); result7 = i.data.url})
+            // $.ajax(settings8).done((e)=> {let i = JSON.parse(e); result8 = i.data.url})
+            // $.ajax(settings9).done((e)=> {let i = JSON.parse(e); result9 = i.data.url})
+
+
+            
+
+            // $.ajax(settings9_back).done((e)=> {
+
+            //     let i = JSON.parse(e); 
+            //     result9_back = i.data.url
+
+            //     // if(result != '' && result1 != '' && result2 != '' && result3 != '' && result4 != '' && result4_back != '' && result5 != '' && result6 != '' && result7 != '' && result8 != ''&& result9 != ''){
+    
+            //     //     const rawResponse = await fetch('api/add-supporting-dox-3a', {
+            //     //         method: 'POST',
+            //     //         headers: {
+            //     //             'Accept': 'application/json',
+            //     //             'Content-Type': "application/json"
+            //     //         },
+            //     //         body: `h_birth_certificate=${result}&h_cenomar=${result1}&h_cedula=${result2}&h_barangay_certificate=${result3}&h_valid_id=${result4}&h_valid_id_back=${result4_back}&w_birth_certificate=${result5}&w_cenomar=${result6}&w_cedula=${result7}&w_barangay_certificate=${result8}&w_valid_id=${result9}&w_valid_id_back=${result9_back}&id=${qp}`
+            //     //     })
+            //     //     const content = await rawResponse.json();
+            //     //     if(content.success === true){
+            //     //         alert('Successfully uploaded!!')
+            //     //         location.reload()
+            //     //     }
+            //     // }
+            
+            //     console.log(result)
+            //     console.log(result1)
+            //     console.log(result2)
+            //     console.log(result3)
+            //     console.log(result4)
+            //     console.log(result4_back)
+            //     console.log(result5)
+            //     console.log(result6)
+            //     console.log(result7)
+            //     console.log(result8)
+            //     console.log(result9)
+            //     console.log(result9_back)
+            // })
+
+        })
+    }
+</script>
+
+
+
+<script> // printing contents for birth certificate
+    function printing(content) {
+
+        if(content.success === true){
+
+            nodata.style.display = 'none'
+            for(let i in content.data){
+
+                if(content.data[i].proced != 'True' && content.data[i].proced != 'Cancel' && content.data[i].proced != 'Expired'){
+
+                    contentValuesCount = 1
+
+                    const nameOfChild = `${content.data[i].child_fname} ${content.data[i].child_mname} ${content.data[i].child_lname}`
+                    const nameOfMother = `${content.data[i].m_fname} ${content.data[i].m_mname} ${content.data[i].m_lname}`
+                    const nameOfFather = `${content.data[i].f_fname} ${content.data[i].f_mname} ${content.data[i].f_lname}`
+                    const birthDate = `${content.data[i].date_of_registration}`
+                    const gender = `${content.data[i].gender}`
+
+                    let columnDiv = document.createElement('DIV')
+                    columnDiv.className = 'cards'
+                    parent.appendChild(columnDiv)
+
+                    subContentGlobal.push(content.data[i]) // storing to global var
+
+                    
+                    let disableBtn = `<button data-bs-toggle="modal" data-bs-target="#procedBtn" class="proced" id="${content.data[i].id}">PROCEED</button>`
+                    if(content.data[i].live_birth_certificate == '' && content.data[i].valid_id == ''){
+                        disableBtn = `
+                        <div class="tooltip1">
+                            <button disabled style="border: solid gray 2px;color: gray;">PROCEED</button>
+                            <span class="tooltiptext1">Pakiusap kumplituhin muna ang mga supporting documents</span>
+                        </div>
+                        `
+                    }
+
+                    let hasAWrongDox = ''
+                    if(content.data[i].proced == 'WrongDox'){ // has a wrong dox
+                        hasAWrongDox  = `
+                        <div class="tooltip3">
+                            <h6 style='color: orange; margin-left: 30vw; font-size:90%;'>Has a wrong documents</h6>
+                            <span class="tooltiptext3">Ang iyong request ay ibinalik dahil may maling dokumentong ipinasa, siguraduhin po munang tama ang iyong ibinibigay</span>
+                        </div>
+                        `
+                    }
+
+
+                    let defaultBtn = `
+                        <div style="text-align: right;">
+                            ${disableBtn}
+                            <button data-bs-toggle="modal" data-bs-target="#cancel" class="cancel" id="${content.data[i].id}">CANCEL</button>
+                            <button data-bs-toggle="modal" data-bs-target="#viewMore" id="${content.data[i].id}" class="viewMore">PREVIEW REQUEST</button>
+                            <div class="tooltip2">
+                                <button class="addRequirements" id="${content.data[i].id}" data-bs-toggle="modal" data-bs-target="#addRequirements" class="addRequirments">ADD SUPPORTING DOCUMENTS</button>
+                                <span class="tooltiptext2">
+                                    Add Requirements
+                                </span>
+                            </div>
+                        </div>
+                    `
+
+                    let hasRejected = ''
+                    if(content.data[i].proced == 'Reject'){ // has rejected
+                        hasRejected  = `
+                        <div class="tooltip3">
+                            <h6 style='color: red; margin-left: 30vw; font-size:90%;'>Has Rejected</h6>
+                            <span class="tooltiptext3">Ang iyong request ay REJECTED. kung ikaw ay may katanungan kontakin lamang po ang admin</span>
+                        </div>
+                        `
+
+                        defaultBtn = `
+                        <div style="text-align: right;">
+                            <button>CONTACT ADMIN</button>
+                            <button data-bs-toggle="modal" data-bs-target="#viewMore" id="${content.data[i].id}" class="viewMore">Preview Request</button>
+                            <div class="tooltip2">
+                                <button class="addRequirements" id="${content.data[i].id}" data-bs-toggle="modal" data-bs-target="#addRequirements" class="addRequirments">ADD SUPPORTING DOCUMENTS</button>
+                                <span class="tooltiptext2">
+                                    Add Requirements
+                                </span>
+                            </div>
+                        </div>
+                        `
+                    }
+
+                    // displaying content
+                    columnDiv.innerHTML = `
+                        <div class="row";>
+                            <div class="col-3" style="text-align: center;">
+                                <span class="h6">1A</span>
+                                <hr>
+                                <img src="./baby1.png" alt="" width="50%">
+                            </div>
+                            <div class="col-9">
+                                ${hasAWrongDox}
+                                ${hasRejected}
+                                <h4 style="margin-bottom: 1rem;">Birth Certification</h4>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span><b> NAME OF CHILD: </b> ${nameOfChild}</span><br>
+                                        <span><b> NAME OF MOTHER: </b> ${nameOfMother}</span>
+                                        <p><b> NAME OF FATHER: </b> ${nameOfFather}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <span><b> DATE OF BIRTH: </b> ${birthDate}</span><br>
+                                        <span><b> GENDER: </b> ${gender}</span>
+                                    </div>
+                                </div>
+                                ${defaultBtn}
+                            </div>
+                        </div>
+                    `
+                }
+            }
+        } 
+        
+
+    }
+
+</script>
+
+<script> // printing contents for death certificate
+
+    function printing_2A(content) {
+
+        if(content.success === true){
+            nodata.style.display = 'none'
+            for(let i in content.data){
+                if(content.data[i].proced != 'True' && content.data[i].proced != 'Cancel' && content.data[i].proced != 'Expired'){
+
+                    contentValuesCount = 1
+                    
+                    const name = `${content.data[i].d_fname} ${content.data[i].d_mname} ${content.data[i].d_lname}`
+                    const nameOfMother = `${content.data[i].m_fname} ${content.data[i].m_mname} ${content.data[i].m_lname}`
+                    const nameOfFather = `${content.data[i].f_fname} ${content.data[i].f_mname} ${content.data[i].f_lname}`
+                    const deathDate = `${content.data[i].date_of_death}`
+                    const gender = `${content.data[i].gender}`
+
+                    
+                    let columnDiv = document.createElement('DIV')
+                    columnDiv.className = 'cards'
+                    parent.appendChild(columnDiv)
+
+                    subContentGlobal_2A.push(content.data[i]) // storing to global var
+
+                    const cdata = content.data[i]
+
+                    let disableBtn = `<button data-bs-toggle="modal" data-bs-target="#procedBtn_2A" class="proced_2a" id="${content.data[i].id}">PROCEED</button>`
+                    if(cdata.hospital_certificate == '' && cdata.barangay_certificate == '' && cdata.police_clearance == '' && cdata.valid_id == ''){
+                        disableBtn = `
+                        <div class="tooltip1">
+                            <button disabled style="border: solid gray 2px;color: gray;">PROCEED</button>
+                            <span class="tooltiptext1">Pakiusap kumplituhin muna ang mga supporting documents</span>
+                        </div>
+                        `
+                    }
+
+                    let hasAWrongDox = ''
+                    if(content.data[i].proced == 'WrongDox'){ // has a wrong dox
+                        hasAWrongDox  = `
+                        <div class="tooltip3">
+                            <h6 style='color: orange; margin-left: 30vw; font-size:90%;'>Has a wrong documents</h6>
+                            <span class="tooltiptext3">Ang iyong request ay ibinalik dahil may maling dokumentong ipinasa, siguraduhin po munang tama ang iyong ibinibigay</span>
+                        </div>
+                        `
+                    }
+
+                    let defaultBtn = `
+                    <div style="text-align: right;">
+                        ${disableBtn}
+                        
+                        <button data-bs-toggle="modal" data-bs-target="#cancel_2A" class="cancel_2a" id="${content.data[i].id}">CANCEL</button>
+                        <button data-bs-toggle="modal" data-bs-target="#viewMore_2A" id="${content.data[i].id}" class="viewMore_2a">Preview Request</button>
+                        <div class="tooltip2">
+                            <button class="addRequirements_2a" id="${content.data[i].id}" data-bs-toggle="modal" data-bs-target="#addRequirements_2A">ADD SUPPORTING DOCUMENTS</button>
+                            <span class="tooltiptext2">
+                                Add Requirements
+                            </span>
+                        </div>
+                    </div>`
+
+                    let hasRejected = ''
+                    if(content.data[i].proced == 'Reject'){ // has rejected
+                        hasRejected  = `
+                        <div class="tooltip3">
+                            <h6 style='color: red; margin-left: 30vw; font-size:90%;'>Has Rejected</h6>
+                            <span class="tooltiptext3">Ang iyong request ay REJECTED. kung ikaw ay may katanungan kontakin lamang po ang admin</span>
+                        </div>
+                        `
+
+                        defaultBtn =
+                        ` <div style="text-align: right;">
+                            
+                            <button>CONTACT ADMIN</button>
+                            <button data-bs-toggle="modal" data-bs-target="#viewMore_2A" id="${content.data[i].id}" class="viewMore_2a">Preview Request</button>
+                            <div class="tooltip2">
+                                <button class="addRequirements_2a" id="${content.data[i].id}" data-bs-toggle="modal" data-bs-target="#addRequirements_2A">ADD SUPPORTING DOCUMENTS</button>
+                                <span class="tooltiptext2">
+                                    Add Requirements
+                                </span>
+                            </div>
+                        </div>`
+                    }
+
+
+                    columnDiv.innerHTML = `
+                        <div class="row">
+                            <div class="col-3" style="text-align: center;">
+                                <span class="h6">2A</span>
+                                <hr>
+                                <img src="./death.png" alt="" width="50%">
+                            </div>
+                            <div class="col-9">
+                                ${hasAWrongDox}
+                                ${hasRejected}
+                                <h4 style="margin-bottom: 1rem;">Death Certification</h4>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span><b> NAME OF DEATH: </b> ${name}</span><br>
+                                        <span><b> NAME OF MOTHER: </b> ${nameOfMother}</span>
+                                        <p><b> NAME OF FATHER: </b> ${nameOfFather}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <span><b> DATE OF DEATH: </b> ${deathDate}</span><br>
+                                        <span><b> GENDER: </b> ${gender}</span>
+                                    </div>
+                                </div>
+                                ${defaultBtn}
+                            </div>
+                        </div>
+                    `
+                }
+            }
+        }
+
+    }
+
+</script>
+
+<script> // printing contents for marriage certificate
+
+    function printing_3A(content) {
+
+        if(content.success === true){
+            nodata.style.display = 'none'
+            for(let i in content.data){
+                if(content.data[i].proced != 'True' && content.data[i].proced != 'Cancel'){
+
+                    contentValuesCount = 1
+                    
+                    const nameOfHusband = `${content.data[i].h_fname} ${content.data[i].h_mname} ${content.data[i].h_lname}`
+                    const nameOfWife = `${content.data[i].w_fname} ${content.data[i].w_mname} ${content.data[i].w_lname}`
+                    const placeOfMarriage = `${content.data[i].place_of_marriage}`
+                    const marriageDate = `${content.data[i].date_of_marriage}`
+                    const registrationDate = `${content.data[i].date_of_registration}`
+
+                    
+                    let columnDiv = document.createElement('DIV')
+                    columnDiv.className = 'cards'
+                    parent.appendChild(columnDiv)
+
+                    subContentGlobal_3A.push(content.data[i]) // storing to global var
+
+                    let disableBtn = `<button data-bs-toggle="modal" data-bs-target="#procedBtn_3A" class="proced_3a" id="${content.data[i].id}">PROCEED</button>`
+                    if(content.data[i].h_birth_certificate == '' && content.data[i].h_cenomar == '' && content.data[i].h_cedula == '' && content.data[i].h_barangay_certificate == '' && content.data[i].h_valid_id == '' && content.data[i].w_birth_certificate == '' && content.data[i].w_cenomar == '' && content.data[i].w_cedula == '' && content.data[i].w_barangay_certificate == '' && content.data[i].w_valid_id == '' ){
+                        disableBtn = `
+                        <div class="tooltip1">
+                            <button disabled style="border: solid gray 2px;color: gray;">PROCEED</button>
+                            <span class="tooltiptext1">Pakiusap kumplituhin muna ang mga supporting documents</span>
+                        </div>
+                        `
+                    }
+
+                    let hasAWrongDox = ''
+                    if(content.data[i].proced == 'WrongDox'){ // has a wrong dox
+                        hasAWrongDox  = `
+                        <div class="tooltip3">
+                            <h6 style='color: orange; margin-left: 30vw; font-size:90%;'>Has a wrong documents</h6>
+                            <span class="tooltiptext3">Ang iyong request ay ibinalik dahil may maling dokumentong ipinasa, siguraduhin po munang tama ang iyong ibinibigay</span>
+                        </div>
+                        `
+                    }
+
+                    let defaultBtn = `
+                    <div style="text-align: right;">
+                        ${disableBtn}
+                        
+                        <button data-bs-toggle="modal" data-bs-target="#cancel_3A" class="cancel_3a" id="${content.data[i].id}">CANCEL</button>
+                        <button data-bs-toggle="modal" data-bs-target="#viewMore_3A" id="${content.data[i].id}" class="viewMore_3a">PREVIEW REQUEST</button>
+                        <div class="tooltip2">
+                            <button class="addRequirements_3a" id="${content.data[i].id}" data-bs-toggle="modal" data-bs-target="#addRequirements_3A">ADD SUPPORTING DOCUMENTS</button>
+                            <span class="tooltiptext2">
+                                Add Requirements
+                            </span>
+                        </div>
+                    </div>
+                    `
+
+
+                    let hasRejected = ''
+                    if(content.data[i].proced == 'Reject'){ // has rejected
+                        hasRejected  = `
+                        <div class="tooltip3">
+                            <h6 style='color: red; margin-left: 30vw; font-size:90%;'>Has Rejected</h6>
+                            <span class="tooltiptext3">Ang iyong request ay REJECTED. kung ikaw ay may katanungan kontakin lamang po ang admin</span>
+                        </div>
+                        `
+
+                        defaultBtn = `
+                        <div style="text-align: right;">
+                            <button>CONTACT ADMIN</button>
+                            <button data-bs-toggle="modal" data-bs-target="#viewMore_3A" id="${content.data[i].id}" class="viewMore_3a">PREVIEW REQUEST</button>
+                            <div class="tooltip2">
+                                <button class="addRequirements_3a" id="${content.data[i].id}" data-bs-toggle="modal" data-bs-target="#addRequirements_3A">ADD SUPPORTING DOCUMENTS</button>
+                                <span class="tooltiptext2">
+                                    Add Requirements
+                                </span>
+                            </div>
+                        </div>`
+                    }
+
+
+                    columnDiv.innerHTML = `
+                        <div class="row">
+                            <div class="col-3" style="text-align: center;">
+                                <span class="h6">3A</span>
+                                <hr>
+                                <img src="./marriage.png" alt="" width="50%">
+                            </div>
+                            <div class="col-9">
+                                ${hasAWrongDox}
+                                ${hasRejected}
+                                <h4 style="margin-bottom: 1rem;">Marriage Certification</h4>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span><b> NAME OF HUSBAND: </b> ${nameOfHusband}</span><br>
+                                        <span><b> NAME OF WIFE: </b> ${nameOfWife}</span>
+                                        <p><b> PLACE OF MARRIAGE: </b> ${placeOfMarriage}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <span><b> DATE OF MARRIAGE: </b> ${marriageDate}</span><br>
+                                        <span><b> DATE OF REGISTRATION: </b> ${registrationDate}</span>
+                                    </div>
+                                </div>
+                                ${defaultBtn}
+                            </div>
+                        </div>
+                    `
+                }
+            }
+        }
+
+    }
+
+</script>
+
+
+        <!-- normal js -->
+<script>
+    const aTag = document.getElementsByTagName('a');
+    const menulist = document.getElementsByClassName('menulist');
+
+    const parent = document.getElementsByClassName('ribbonContent')[0];
+
+    const nodata = document.getElementById('nodata');
+
+    // upload supporting dox
+    const uploadSupportingDox = document.getElementById('uploadSupportingDox') // form id
+    const btnSave = document.getElementById('btnSave')
+
+    let contentValuesCount = 0
+
+
+    var subContentGlobal = [];
+    var subContentGlobal_2A = [];
+    var subContentGlobal_3A = [];
+
+    (async () => {
+        const rawResponse = await fetch('api/getDocuments', { // fetch all 1A documents for client
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: `issuedToId=${sessionStorage.id}`
+        })
+        const content = await rawResponse.json();
+        printing(content) // printing content for 1A
+
+
+        const rawResponse_2A = await fetch('api/getDocuments_2a', { // fetch all 2A documents for client
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: `issuedToId=${sessionStorage.id}`
+        })
+        const content_2A = await rawResponse_2A.json();
+        printing_2A(content_2A) // printing content for 2A
+
+
+
+        const rawResponse_3A = await fetch('api/getDocuments_3a', { // fetch all 3A documents for client
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: `issuedToId=${sessionStorage.id}`
+        })
+        const content_3A = await rawResponse_3A.json();
+        printing_3A(content_3A) // printing content for 3A
+
+        if(contentValuesCount == 0){ // displaying not data found if true
+            nodata.style.display = 'block'
+        }
+
+        // functions for 1A
+        viewMoreClick()
+        addRequirementsClick()
+        saveBtnClick()
+        btnClickProced()
+        btnClickProcedYes()
+        btnClickCancel()
+        btnClickCancelYes()
+
+        // functions for 2A
+        viewMoreClick_2A()
+        addRequirementsClick_2A()
+        saveBtnClick_2A()
+        btnClickProced_2A()
+        btnClickProcedYes_2A()
+        btnClickCancel_2A()
+        btnClickCancelYes_2A()
+
+        // functions for 3A
+        viewMoreClick_3A()
+        addRequirementsClick_3A() 
+        saveBtnClick_3A()
+        btnClickProced_3A()
+        btnClickProcedYes_3A()
+        btnClickCancel_3A()
+        btnClickCancelYes_3A()
+    })()
+
+</script>
+
+<script> // when click the process
+    const btnClickProcess = document.getElementsByClassName('btnClickProcess')
+
+    for(let i = 0; i < btnClickProcess.length; i++){
+        btnClickProcess[i].addEventListener('click', ()=> {
+            if(i == 1){
+                location.href = "./documentUser2.html"
+            }
+            if(i == 0){
+                location.href = './documentUser.html'
+            }
+            if(i == 2){
+                location.href = './documentUser3.html'
+            }
+            if(i == 3){
+                location.href = './documentUserComplete.html'
+            }
+            if(i == 4){
+                location.href = './documentUserCancel.html'
+            }
+        })
+    }
+</script>
+
+<script> // mouse over and out in person menu
+    const dropbtn = document.getElementById('dropbtn')
+    const dropdownContent = document.getElementById('dropdownContent')
+    const menuCard = document.getElementsByClassName('menuCard')
+    dropbtn.addEventListener('mouseover', ()=> { // toggle click
+        dropdownContent.style.display = 'block'
+    })
+    menuCard[1].addEventListener('mouseout', ()=> {
+        dropdownContent.style.display = 'none'
+    })
+
+
+    for(let i=0; i<menulist.length; i++){
+        menulist[i].addEventListener('mouseover', ()=>{
+            aTag[i].style.color = 'white'
+            menulist[i].style.background = 'gray'
+        })
+        menulist[i].addEventListener('mouseout', ()=>{
+            aTag[i].style.color = 'yellow'
+            menulist[i].style.background = 'none'
+        })
+    }
+</script>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="signup.css"> 
+
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="">
+        <div class="row top">
+            <div class="col-4 caption">
+                <img src="logo.png" alt="">
+                <h5>Save time <br> and enjoy e-government <br> service in just a few clicks</h5>
+                <div class="topA"></div>
+                <a href="./login.html"><b>Login</b></a>
+                <div class="bottomA"></div>
+            </div>
+
+            <div class="col-5 signupForm">
+                <form id="signup">
+                    <div class="signup">
+                        <h1>Sign Up</h1>
+                        <i class="bi bi-person"></i> <input type="text" name="lname" id="lname" placeholder="Lastname" required><br>
+                        <i class="bi bi-person"></i> <input type="text" name="fname" id="fname" placeholder="Firstname" required><br>
+                        <i class="bi bi-person"></i> <input type="text" name="mname" id="mname" placeholder="Middle Name" required><br>
+                        <i class="bi bi-calendar2"></i> <input type="date" name="bday" id="bday" required><br>
+                        
+                        <i class="bi bi-gender-ambiguous"></i> 
+                        <select name="gender" id="gender">
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                        </select> <br>
+                        
+                        
+                        <i class="bi bi-geo-alt"></i> <input type="text" name="add" id="add" placeholder="Address" required><br>
+                        <i class="bi bi-envelope"></i> <input type="email" name="email" id="email" placeholder="Email" required><br>
+                        <i class="bi bi-person"></i> <input type="text" name="username" id="username" placeholder="Username" required><br>
+                        <i class="bi bi-key"></i> <input type="password" name="pass" id="pass" placeholder="Password"  required><br>
+                        <i class="bi bi-telephone"></i> <input type="text" name="phone" id="phone" placeholder="Contact"  required><br>
+                        <button class="roundButton loginButton login-button" id="submit"><b>Proceed</b></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+
+<!-- enryption and decryption -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
+<script>
+    let i = ''
+
+    const signupForm = document.getElementById('signup')
+    const submitButton = document.getElementById('submit')
+
+    const lname = document.getElementById('lname')
+    const fname = document.getElementById('fname')
+    const mname = document.getElementById('mname')
+    const bday = document.getElementById('bday')
+    const add = document.getElementById('add')
+    const email = document.getElementById('email')
+    const username = document.getElementById('username')
+    const password = document.getElementById('pass')
+    const phone = document.getElementById('phone')
+
+    // Avoid refresh
+    signupForm.addEventListener('submit', (event) => event.preventDefault())
+
+    submitButton.addEventListener('click', () => {
+        (async () => {
+            const formData = new URLSearchParams(new FormData(signupForm));
+    
+            var encrypted = CryptoJS.AES.encrypt(password.value, "Secret Passphrase");
+            var decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
+            // encrypted.toString() = U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
+            // decrypted.toString() = 4d65737361676
+            // decrypted.toString(CryptoJS.enc.Utf8) = actual message
+
+            if(lname.value != '' && fname.value != '' && bday.value != '' && add.value != '' && email.value != '' && username.value != '' && password.value != '' && phone.value != ''){
+                const rawResponse = await fetch('api/signup', {
+                    method: 'POST',
+                    headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                    },
+                    body: formData
+                })
+                const content = await rawResponse.json();
+
+                if(content.success === true){
+                    const fullname = fname.value+" "+mname.value+" "+lname.value
+                    alert('Account created Successful ')
+                    var encryptFullname = CryptoJS.AES.encrypt(fullname, "Secret Passphrase"); // encrypt full name
+                    sessionStorage.setItem('username', username.value) //saved username and pass into sesion storage
+                    sessionStorage.setItem('password', encrypted)
+                    sessionStorage.setItem('id', content.data.id)
+                    sessionStorage.setItem('fullname', encryptFullname)
+                    window.location.href = './createNew1AForm.html'
+                } else {
+                    alert('Username is already used!')
+                }
+            } else {
+                alert('Please Complete the Form!!')
+            }
+        })()
+        return false
+    })
+</script>
+
+</html>

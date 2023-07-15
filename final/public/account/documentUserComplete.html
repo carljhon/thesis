@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="documentUser.css"> 
+
+    <title>User's Documents</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2 top1" style="font-size: 1.2vw;">
+            <div class="row subt1" >
+                <div class="col-11">
+                    <h5>PANDI CERTIFICATION</h5>
+                </div>
+            </div>
+            <div class="row subt2">
+                <div class="col-12">
+                    <p>Menu</p>
+                </div>
+                <div class="col-12 menulist" id="birth">
+                    <a href="./createNew1AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 1A Birth Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="merraige">
+                    <a href="./createNew2AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 2A Death Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="death">
+                    <a href="./createNew3AForm.html">
+                        <i class="bi bi-award h4 login-button"></i> 3A Marriage Certificate
+                    </a>
+                </div>
+                <div class="col-12 menulist" id="Chat" style="margin-top: 3rem;">
+                    <a href="./UserChat.html">
+                        <i class="bi bi-chat-right-dots"></i> Chat Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 top2">
+            <div class="row" >
+                <div class="row t1 col-7">
+                    <div class="col-1">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </div>
+                    <div class="col-5">
+                        <h4 style="font-size: 1.6vw;">PANDI ONLINE LCR</h4>
+                    </div>
+                </div>
+                <div class="col-2 dropdown" style="margin-left: auto; margin-right: 5%; text-align: right;">
+                    <h4 class="dropbtn">
+                        <a href="/" class="bi bi-house-fill" style="margin-right: 1rem; color: green; font-size: 1.6vw;"></a> 
+                        <i class="bi bi-person-lines-fill" id="dropbtn" style="cursor: pointer; font-size: 1.6vw;"></i>
+                    </h4>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a class="menuCard" href="./accountUser.html"><i class="bi bi-person"></i> Account</a>
+                        <a class="menuCard" href="./documentUser.html"><i class="bi bi-folder2-open"></i> Documents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row t">
+                    <div class="col-10 ribbonBar">
+                        <div class="row">
+                            <div class="col-2 purchaseList proces"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Kailangan po dito ng supporting documents katulad ng ID, Tin ID, Birth Certificate etc"><span>Application</span></div>
+                            <div class="col-2 purchaseList proces" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hintayin lamang po na ma verified ng admin ang iyong dokumento upang makapagpatuloy sa iyong ''Appointment''"><span>Approval</span></div>
+                            <div class="col-2 purchaseList proces" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Na approve na po ang iyong request maari lamang po na i screen shot"><span>Appointment</span></div>
+                            <div class="col-4 purchaseActive proces"><span>Completed</span></div>
+                            <div class="col-2 purchaseList proces"><span>Cancelled</span></div>
+                        </div>
+                    </div>
+                    <div class="col-10 ribbonContent">
+                        <div id="nodata" style="text-align: center;">
+                            <img src="./folder.png" alt="" width="20%"><br>
+                            <i style="color: gray;">Waiting for admin response.. .</i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal for view more -->
+    <div class="modal fade" id="viewMore">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+    
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <form id="a1Form" class="row inputCol3" style="font-size: 1.2vw;">
+
+                    <div class="col-12" style="text-align: left; margin-top: 1rem;">
+                        LCR Form No. 1A <br>
+                        (Birth Available)
+                    </div>
+
+                    <div class="col-12">
+                        <p>
+                            Republic of the Philippines <br>
+                            <span class="h4">OFFICE OF MUNICIPAL CIVIL REGISTRAR</span> <br>
+                            Pandi, Bulacan
+                        </p>
+                        
+                    </div>
+                    
+                    <div class="col-12" style="text-align: right; padding-right: 3rem;">
+                        <p>Date: <span id="Now">m-d-y</span></p>
+                    </div>
+
+                    <div class="col-12" style="text-align: left">
+                        <p>TO WHOM IT MAY CONCERN:</p>
+                    </div>
+
+                    <div class="col-7" style="margin-left: auto; margin-right: auto;">
+                        We certify that, among others, the following facts of appear in our Register of <span style="font-weight: bold;">Birth</span>
+                    </div>
+
+                    <div class="col-6" style="text-align: right; margin-top: 2rem;">
+                        <p>LCR Registry Number: </p>
+                        <p>Date of Registration:</p>
+                        <p>Name of Child:</p>
+                        <p>Sex:</p>
+                        <p>Place of Birth: </p>
+                        <p>Date of Birth: </p>
+                        <p>Name of Mother: </p>
+                        <p>Nationality:</p>
+                        <p>Name of Father:</p>
+                        <p>Nationality: </p>
+                        <p>Date of Marriage:</p>
+                        <p>Place of Marriage:</p>
+                        <p>This Certification is issued to:</p>
+                        <p style="margin-right: 5rem;">Upon his/her request.</p>
+                    </div>
+                    <div class="col-6" style="text-align: left; margin-top: 2rem;">
+                        <p id="lcrRegistryNo">asdf</p>
+                        <p id="registrationDate">asdfasd</p>
+                        <p id="childName"></p>
+                        <p id="gender"></p>
+                        <p id="birthPlace"></p>
+                        <p id="birthday"></p>
+                        <p id="motherName"></p>
+                        <p id="mNationality"></p>
+                        <p id="fatherName"></p>
+                        <p id="fNationality"></p>
+                        <p id="merriageDate"></p>
+                        <p id="merriagePlace"></p>
+                        <p id="issuedTo"></p>
+                    </div>
+
+
+                    <div class="col-12" style="text-align: right; padding-right: 2rem;">
+                        <span id="municipalRegistrar">Aaron Sia</span>
+                        <p>Municipal Civil Registrar</p>
+                    </div>
+                    <div class="col-12" style="text-align: left;">
+                        <p>VERIFIED BY: <span id="verifiedBy"></span></p>
+                    </div>
+                    
+                    <div class="col-12" style="text-align: left;">
+                        <p>Note: This Certification is not valid if it has mark of erasure or alteration of any entry</p>
+                    </div>
+
+                </form>
+            </div>
+    
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for view more / 2A -->
+    <div class="modal fade" id="viewMore_2A">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+    
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <form id="a1Form" class="row inputCol3">
+
+                    <div class="col-12" style="text-align: left; margin-top: 1rem;">
+                        LCR Form No. 2A <br>
+                        (Death Available)
+                    </div>
+
+                    <div class="col-12">
+                        <p>
+                            Republic of the Philippines <br>
+                            <span class="h4">OFFICE OF MUNICIPAL CIVIL REGISTRAR</span> <br>
+                            Pandi, Bulacan
+                        </p>
+                        
+                    </div>
+                    
+                    <div class="col-12" style="text-align: right; padding-right: 3rem;">
+                        <p>Date: <span id="Now">m-d-y</span></p>
+                    </div>
+
+                    <div class="col-12" style="text-align: left">
+                        <p>TO WHOM IT MAY CONCERN:</p>
+                    </div>
+
+                    <div class="col-7" style="margin-left: auto; margin-right: auto;">
+                        We certify that, among others, the following facts of appear in our Register of <span style="font-weight: bold;">Death</span>
+                    </div>
+
+                    <div class="col-6" style="text-align: right; margin-top: 2rem;">
+                        <p>LCR Registry Number: </p>
+                        <p>Date of Death:</p>
+                        <p>Name of Death:</p>
+                        <p>Sex:</p>
+                        <p>Place of Death: </p>
+                        <p>Name of Mother: </p>
+                        <p>Nationality:</p>
+                        <p>Name of Father:</p>
+                        <p>Nationality: </p>
+                        <p>This Certification is issued to:</p>
+                        <p style="margin-right: 5rem;">Upon his/her request.</p>
+                    </div>
+                    <div class="col-6" style="text-align: left; margin-top: 2rem;">
+                        <p id="lcrRegistryNo_2a">asdf</p>
+                        <p id="date_of_death">asdfasd</p>
+                        <p id="name_of_death"></p>
+                        <p id="gender_2a"></p>
+                        <p id="place_of_death"></p>
+                        <p id="motherName_2a"></p>
+                        <p id="mNationality_2a"></p>
+                        <p id="fatherName_2a"></p>
+                        <p id="fNationality_2a"></p>
+                        <p id="issuedTo_2a"></p>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-12" style="text-align: right; padding-right: 2rem;">
+                <span id="municipalRegistrar">Aaron Sia</span>
+                <p>Municipal Civil Registrar</p>
+            </div>
+    
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for view more / 3A -->
+    <div class="modal fade" id="viewMore_3A">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+    
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <form id="a1Form" class="row inputCol3">
+
+                    <div class="col-12" style="text-align: left; margin-top: 1rem;">
+                        LCR Form No. 3A <br>
+                        (Marriage Available)
+                    </div>
+
+                    <div class="col-12">
+                        <p>
+                            Republic of the Philippines <br>
+                            <span class="h4">OFFICE OF MUNICIPAL CIVIL REGISTRAR</span> <br>
+                            Pandi, Bulacan
+                        </p>
+                        
+                    </div>
+                    
+                    <div class="col-12" style="text-align: right; padding-right: 3rem;">
+                        <p>Date: <span id="Now">m-d-y</span></p>
+                    </div>
+
+                    <div class="col-12" style="text-align: left">
+                        <p>TO WHOM IT MAY CONCERN:</p>
+                    </div>
+
+                    <div class="col-7" style="margin-left: auto; margin-right: auto;">
+                        We certify that, among others, the following facts of appear in our Register of <span style="font-weight: bold;">Marriage</span>
+                    </div>
+
+                    <div class="col-6" style="text-align: right; margin-top: 2rem;">
+                        <p>LCR Registry Number: </p>
+                        <p>Date of Registration:</p>
+                        <p>Name of Husband:</p>
+                        <p>Age:</p>
+                        <p>Civil Status:</p>
+                        <p>Nationality: </p>
+                        <p>Name of Mother: </p>
+                        <p>Name of Father:</p>
+                        <p>Name of Wife:</p>
+                        <p>Age:</p>
+                        <p>Civil Status:</p>
+                        <p>Nationality: </p>
+                        <p>Name of Mother: </p>
+                        <p>Name of Father:</p>
+                        <p>Date of Marriage:</p>
+                        <p>Place of Marriage:</p>
+                        <p>This Certification is issued to: </p>
+                        <p style="margin-right: 5rem;">Upon his/her request.</p>
+                    </div>
+                    <div class="col-6" style="text-align: left; margin-top: 2rem;">
+                        <p id="lcrRegistryNo_3a"></p>
+                        <p id="registrationDate_3a"></p>
+                        <p id="husband_name"></p>
+                        <p id="husband_age"></p>
+                        <p id="husband_civil_status"></p>
+                        <p id="husband_nationality"></p>
+                        <p id="husband_mother"> </p>
+                        <p id="husband_father"></p>
+                        <p id="wife_name"></p>
+                        <p id="wife_age"></p>
+                        <p id="wife_civil_status"></p>
+                        <p id="wife_nationality"></p>
+                        <p id="wife_mother"></p>
+                        <p id="wife_father"> </p>
+                        <p id="date_of_marriage"></p>
+                        <p id="place_of_marriage"></p>
+                        <p id="issuedTo_3a"></p>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-12" style="text-align: right; padding-right: 2rem;">
+                <span id="municipalRegistrar">Aaron Sia</span>
+                <p>Municipal Civil Registrar</p>
+            </div>
+    
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+
+
+    <!-- The Modal for see requirements -->
+    <div class="modal fade" id="addRequirements">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>SEE <span class="h6">YOUR DOCUMENTS</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <div style="box-shadow: 5px 10px 18px #888888;">
+                    <p style="text-align: left !important; padding: 1rem;">
+                        Ito ang mga dokumentong idinagdag mo kay <span id="childNameAddSupportingDox" style="font-weight: bold;">asdf</span>
+                        at ang kanyang ina ay si <span id="motherNameAddSupportingDox" style="font-weight: bold;">dasas</span> na asawa ni <span id="fatherNameAddSupportingDox" style="font-weight: bold;">asdfa</span>
+                    </p>
+                </div>
+                <br>
+                <form id="uploadSupportingDox">
+                    <div class="row"> 
+                        <div class="col-12">
+                            Certificate of Live Birth <br>
+                            <img src="man.png" alt="" width="60%" id="l_b_cert"><br>
+                            <hr>
+
+                            Valid ID <br>
+                            <img src="man.png" alt="" width="60%" id="valid_id"><br>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for see requirements / 2A -->
+    <div class="modal fade" id="addRequirements_2A">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>SEE <span class="h6">YOUR DOCUMENTS</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <div style="box-shadow: 5px 10px 18px #888888;">
+                    <p style="text-align: left !important; padding: 1rem;">
+                        Ito ang mga dokumentong idinagdag mo kay <span id="deathNameAddSupportingDox" style="font-weight: bold;">asdfa</span>
+                        na namayapa ng awar na ito <span id="deathDateAddSupportingDox" style="font-weight: bold;">fafasd</span>
+                    </p>
+                </div>
+                <br>
+                <form id="uploadSupportingDox" >
+                    <div class="row"> 
+                        <div class="col-12">
+                            Hospital Certificate <br>
+                            <img src="man.png" alt="" width="60%" id="h_cert"><br>
+                            <hr>
+                            Barangay Certificate <br>
+                            <img src="man.png" alt="" width="60%" id="b_cert"><br>
+                            <hr>
+                            Police Clearance <br>
+                            <img src="man.png" alt="" width="60%" id="p_clear"><br>
+                            <hr>
+                            Valid ID <br>
+                            <img src="man.png" alt="" width="60%" id="v_id"><br>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- The Modal for see requirements / 3A -->
+    <div class="modal fade" id="addRequirements_3A">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3>SEE <span class="h6">YOUR DOCUMETNS</span></h3>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <div style="box-shadow: 5px 10px 18px #888888;">
+                    <p style="text-align: left !important; padding: 1rem;">
+                        Ito ang mga dokumentong idinagdag mo kanila <span id="husbandNameAddSupportingDox" style="font-weight: bold;">asdfa</span>
+                        at <span id="wifeNameAddSupportingDox" style="font-weight: bold;">asdfa</span> na ikinasal sa araw na ito <span id="marriageDateAddSupportingDox" style="font-weight: bold;">asdfa</span>
+                    </p>
+                </div>
+                <br>
+                <div >
+                    <form id="uploadSupportingDox1">
+
+                        <p>Husband Birth Certificate</p>
+                        <img src="" alt="" id="h_birth_cert_3a" width="60%"><br><hr>
+                        <p>Husband Cenomar</p>
+                        <img src="" alt="" id="h_ceno" width="60%"><br><hr>
+                        <p>Husband Cedula</p>
+                        <img src="" alt="" id="h_cedu" width="60%"><br><hr>
+                        <p>Husband Barangay Certificate</p>
+                        <img src="" alt="" id="h_b_cert_3a" width="60%"><br><hr>
+                        <p>Husband Valid ID</p>
+                        <img src="" alt="" id="h_v_id_3a" width="60%"><br><hr>
+                    </form>
+
+                    <form id="uploadSupportingDox" >
+
+                        <p>Wife Birth Certificate</p>
+                        <img src="" alt="" id="w_birth_cert_3a" width="60%"><br><hr>
+                        <p>Wife Cenomar</p>
+                        <img src="" alt="" id="w_ceno" width="60%"><br><hr>
+                        <p>Wife Cedula</p>
+                        <img src="" alt="" id="w_cedu" width="60%"><br><hr>
+                        <p>Wife Barangay Certificate</p>
+                        <img src="" alt="" id="w_b_cert_3a" width="60%"><br><hr>
+                        <p>Wife Valid ID</p>
+                        <img src="" alt="" id="w_v_id_3a" width="60%"><br>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+</body>
+
+<!-- Bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Initialize tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+<script>// when view more clicked
+
+    const viewMore = document.getElementsByClassName('viewMore')
+    const lcrRegistryNo = document.getElementById('lcrRegistryNo')
+    const registrationDate = document.getElementById('registrationDate')
+    const childName = document.getElementById('childName')
+    const gender = document.getElementById('gender')
+    const birthPlace = document.getElementById('birthPlace')
+    const birthday = document.getElementById('birthday')
+    const motherName = document.getElementById('motherName')
+    const mNationality = document.getElementById('mNationality')
+    const fatherName = document.getElementById('fatherName')
+    const fNationality = document.getElementById('fNationality')
+    const merriageDate = document.getElementById('merriageDate')
+    const merriagePlace = document.getElementById('merriagePlace')
+    const issuedTo = document.getElementById('issuedTo');
+
+    function viewMoreClick (){
+
+        for(let j = 0; j < viewMore.length; j++){
+            viewMore[j].addEventListener('click', ()=> {
+
+                const childFullname = `${subContentGlobal[j].child_fname} ${subContentGlobal[j].child_mname} ${subContentGlobal[j].child_lname}`
+                const motherFullname = `${subContentGlobal[j].m_fname} ${subContentGlobal[j].m_mname} ${subContentGlobal[j].m_lname}`
+                const fatherFullname = `${subContentGlobal[j].f_fname} ${subContentGlobal[j].f_mname} ${subContentGlobal[j].f_lname}`
+
+                lcrRegistryNo.innerHTML = subContentGlobal[j].id
+                registrationDate.innerHTML = subContentGlobal[j].date_of_registration
+                childName.innerHTML = childFullname
+                gender.innerHTML = subContentGlobal[j].gender
+                birthPlace.innerHTML = subContentGlobal[j].place_of_birth
+                birthday.innerHTML = subContentGlobal[j].birthday
+                motherName.innerHTML = motherFullname
+                mNationality.innerHTML = subContentGlobal[j].m_nationality
+                fatherName.innerHTML = fatherFullname
+                fNationality.innerHTML = subContentGlobal[j].f_nationality
+                merriageDate.innerHTML = subContentGlobal[j].date_of_merriage
+                merriagePlace.innerHTML = subContentGlobal[j].place_of_merriage
+                issuedTo.innerHTML = subContentGlobal[j].issuedto
+            })
+        }
+    }
+</script>
+
+<script> // when view more clicked / 2A
+
+    // view more
+    const viewMore_2a = document.getElementsByClassName('viewMore_2a')
+
+    const lcrRegistryNo_2a = document.getElementById('lcrRegistryNo_2a')
+    const date_of_death = document.getElementById('date_of_death')
+    const name_of_death = document.getElementById('name_of_death')
+    const gender_2a = document.getElementById('gender_2a')
+    const place_of_death = document.getElementById('place_of_death')
+    const motherName_2a = document.getElementById('motherName_2a')
+    const mNationality_2a = document.getElementById('mNationality_2a')
+    const fatherName_2a = document.getElementById('fatherName_2a')
+    const fNationality_2a = document.getElementById('fNationality_2a')
+    const issuedTo_2a = document.getElementById('issuedTo_2a');
+
+    function viewMoreClick_2A (){
+        for(let j = 0; j < viewMore_2a.length; j++){
+            viewMore_2a[j].addEventListener('click', ()=> {
+
+                lcrRegistryNo_2a.innerHTML = subContentGlobal_2A[j].id
+                date_of_death.innerHTML = subContentGlobal_2A[j].date_of_death
+                name_of_death.innerHTML = `${subContentGlobal_2A[j].d_fname} ${subContentGlobal_2A[j].d_mname} ${subContentGlobal_2A[j].d_lname}`
+                gender_2a.innerHTML = subContentGlobal_2A[j].gender
+                place_of_death.innerHTML = subContentGlobal_2A[j].place_of_death
+                motherName_2a.innerHTML = `${subContentGlobal_2A[j].m_fname} ${subContentGlobal_2A[j].m_mname} ${subContentGlobal_2A[j].m_lname}`
+                mNationality_2a.innerHTML = subContentGlobal_2A[j].m_nationality
+                fatherName_2a.innerHTML = `${subContentGlobal_2A[j].f_fname} ${subContentGlobal_2A[j].f_mname} ${subContentGlobal_2A[j].f_lname}`
+                fNationality_2a.innerHTML = subContentGlobal_2A[j].f_nationality
+                issuedTo_2a.innerHTML = subContentGlobal_2A[j].issuedto
+
+            })
+        }
+    }
+</script>
+
+<script> // when view more clicked / 3A
+
+
+    const viewMore_3a = document.getElementsByClassName('viewMore_3a')
+
+    // husband info
+    const lcrRegistryNo_3a = document.getElementById('lcrRegistryNo_3a')
+    const registrationDate_3a = document.getElementById('registrationDate_3a')
+    const husband_name = document.getElementById('husband_name')
+    const husband_age = document.getElementById('husband_age')
+    const husband_civil_status = document.getElementById('husband_civil_status')
+    const husband_nationality = document.getElementById('husband_nationality')
+    const husband_mother = document.getElementById('husband_mother')
+    const husband_father = document.getElementById('husband_father')
+    // wife info
+    const wife_name = document.getElementById('wife_name')
+    const wife_age = document.getElementById('wife_age')
+    const wife_civil_status = document.getElementById('wife_civil_status')
+    const wife_nationality = document.getElementById('wife_nationality')
+    const wife_mother = document.getElementById('wife_mother')
+    const wife_father = document.getElementById('wife_father')
+    // other info
+    const date_of_marriage = document.getElementById('date_of_marriage')
+    const place_of_marriage = document.getElementById('place_of_marriage')
+    
+    const issuedTo_3a = document.getElementById('issuedTo_3a')
+
+    function viewMoreClick_3A (){
+        for(let j = 0; j < viewMore_3a.length; j++){
+            viewMore_3a[j].addEventListener('click', ()=> {
+
+
+                lcrRegistryNo_3a.innerHTML = subContentGlobal_3A[j].id
+                registrationDate_3a.innerHTML = subContentGlobal_3A[j].date_of_registration
+                // husband
+                husband_name.innerHTML = `${subContentGlobal_3A[j].h_fname} ${subContentGlobal_3A[j].h_mname} ${subContentGlobal_3A[j].h_lname}`
+                husband_age.innerHTML = subContentGlobal_3A[j].h_age
+                husband_civil_status.innerHTML = subContentGlobal_3A[j].h_civil_status
+                husband_nationality.innerHTML = subContentGlobal_3A[j].h_nationality
+                husband_mother.innerHTML = `${subContentGlobal_3A[j].h_m_fname} ${subContentGlobal_3A[j].h_m_mname} ${subContentGlobal_3A[j].h_m_lname}`
+                husband_father.innerHTML = `${subContentGlobal_3A[j].h_f_fname} ${subContentGlobal_3A[j].h_f_mname} ${subContentGlobal_3A[j].h_f_lname}`
+                // wife
+                wife_name.innerHTML = `${subContentGlobal_3A[j].w_fname} ${subContentGlobal_3A[j].w_mname} ${subContentGlobal_3A[j].w_lname}`
+                wife_age.innerHTML = subContentGlobal_3A[j].w_age
+                wife_civil_status.innerHTML = subContentGlobal_3A[j].w_civil_status
+                wife_nationality.innerHTML = subContentGlobal_3A[j].w_nationality
+                wife_mother.innerHTML = `${subContentGlobal_3A[j].w_m_fname} ${subContentGlobal_3A[j].w_m_mname} ${subContentGlobal_3A[j].w_m_lname}`
+                wife_father.innerHTML = `${subContentGlobal_3A[j].w_f_fname} ${subContentGlobal_3A[j].w_f_mname} ${subContentGlobal_3A[j].w_f_lname}`
+                // other
+                date_of_marriage.innerHTML = subContentGlobal_3A[j].date_of_marriage
+                place_of_marriage.innerHTML = subContentGlobal_3A[j].place_of_marriage
+
+                issuedTo_3a.innerHTML = subContentGlobal_3A[j].issued_to
+
+            })
+        }
+    }
+</script>
+
+
+
+<script>// read supporting docs when click
+
+    // Add Supporting Documents
+    const addRequirements = document.getElementsByClassName('addRequirements')
+    const childNameAddSupportingDox = document.getElementById('childNameAddSupportingDox')
+    const motherNameAddSupportingDox = document.getElementById('motherNameAddSupportingDox')
+    const fatherNameAddSupportingDox = document.getElementById('fatherNameAddSupportingDox')
+
+    const l_b_cert = document.getElementById('l_b_cert')
+    const valid_id = document.getElementById('valid_id')
+
+    var qp = 0
+    function addRequirementsClick (){
+        for(let x = 0; x < addRequirements.length; x++){
+            addRequirements[x].addEventListener('click', ()=> {
+
+                qp = addRequirements[x].id;
+
+                childNameAddSupportingDox.innerHTML = `${subContentGlobal[x].child_fname} ${subContentGlobal[x].child_mname} ${subContentGlobal[x].child_lname}`
+                motherNameAddSupportingDox.innerHTML = `${subContentGlobal[x].m_fname} ${subContentGlobal[x].m_mname} ${subContentGlobal[x].m_lname}`
+                fatherNameAddSupportingDox.innerHTML = `${subContentGlobal[x].f_fname} ${subContentGlobal[x].f_mname} ${subContentGlobal[x].f_lname}`
+
+                l_b_cert.src = `private/${subContentGlobal[x].live_birth_certificate}`
+                valid_id.src = `private/${subContentGlobal[x].valid_id}`
+
+            })
+        }
+    }
+</script>
+
+<script> // read supporting docs when click / 2A
+
+    // Add Supporting Documents
+    const addRequirements_2a = document.getElementsByClassName('addRequirements_2a')
+    const deathNameAddSupportingDox = document.getElementById('deathNameAddSupportingDox')
+    const deathDateAddSupportingDox = document.getElementById('deathDateAddSupportingDox')
+
+    const h_cert = document.getElementById('h_cert')
+    const b_cert = document.getElementById('b_cert')
+    const p_clear = document.getElementById('p_clear')
+    const v_id = document.getElementById('v_id')
+
+    var qp = 0
+
+    function addRequirementsClick_2A (){
+        for(let x = 0; x < addRequirements_2a.length; x++){
+            addRequirements_2a[x].addEventListener('click', ()=> {
+
+                qp = addRequirements_2a[x].id;
+
+                deathNameAddSupportingDox.innerHTML = `${subContentGlobal_2A[x].d_fname} ${subContentGlobal_2A[x].d_mname} ${subContentGlobal_2A[x].d_lname}`
+                deathDateAddSupportingDox.innerHTML = subContentGlobal_2A[x].date_of_death
+
+                h_cert.src = `private${subContentGlobal_2A[x].hospital_certificate}`
+                b_cert.src = `private${subContentGlobal_2A[x].barangay_certificate}`
+                p_clear.src = `private${subContentGlobal_2A[x].police_clearance}`
+                v_id.src = `private${subContentGlobal_2A[x].valid_id}`
+            })
+        }
+    }
+</script>
+
+<script> // read requirements when click / 3A
+
+    // Add Supporting Documents
+    const addRequirements_3a = document.getElementsByClassName('addRequirements_3a')
+    const husbandNameAddSupportingDox = document.getElementById('husbandNameAddSupportingDox')
+    const wifeNameAddSupportingDox = document.getElementById('wifeNameAddSupportingDox')
+    const marriageDateAddSupportingDox = document.getElementById('marriageDateAddSupportingDox')
+
+    // husband images
+    const h_birth_cert_3a = document.getElementById('h_birth_cert_3a')
+    const h_ceno = document.getElementById('h_ceno')
+    const h_cedu = document.getElementById('h_cedu')
+    const h_b_cert_3a = document.getElementById('h_b_cert_3a')
+    const h_v_id_3a = document.getElementById('h_v_id_3a')
+    // husband form
+    const h_birth_certificate_3a = document.getElementById('h_birth_certificate_3a')
+    const h_cenomar = document.getElementById('h_cenomar')
+    const h_cedula = document.getElementById('h_cedula')
+    const h_barangay_certificate_3a = document.getElementById('h_barangay_certificate_3a')
+    const h_valid_id_3a = document.getElementById('h_valid_id_3a')
+
+    // wife images
+    const w_birth_cert_3a = document.getElementById('w_birth_cert_3a')
+    const w_ceno = document.getElementById('w_ceno')
+    const w_cedu = document.getElementById('w_cedu')
+    const w_b_cert_3a = document.getElementById('w_b_cert_3a')
+    const w_v_id_3a = document.getElementById('w_v_id_3a')
+    // wife form
+    const w_birth_certificate_3a = document.getElementById('w_birth_certificate_3a')
+    const w_cenomar = document.getElementById('w_cenomar')
+    const w_cedula = document.getElementById('w_cedula')
+    const w_barangay_certificate_3a = document.getElementById('w_barangay_certificate_3a')
+    const w_valid_id_3a = document.getElementById('w_valid_id_3a')
+
+
+    const btnSave_3A = document.getElementById('btnSave_3A')
+
+    function addRequirementsClick_3A (){
+        for(let x = 0; x < addRequirements_3a.length; x++){
+            addRequirements_3a[x].addEventListener('click', ()=> {
+
+                husbandNameAddSupportingDox.innerHTML = `${subContentGlobal_3A[x].h_fname} ${subContentGlobal_3A[x].h_mname} ${subContentGlobal_3A[x].h_lname}`
+                wifeNameAddSupportingDox.innerHTML = `${subContentGlobal_3A[x].w_fname} ${subContentGlobal_3A[x].w_mname} ${subContentGlobal_3A[x].w_lname}`
+                marriageDateAddSupportingDox.innerHTML = subContentGlobal_3A[x].date_of_marriage
+
+                h_birth_cert_3a.src = `private/${subContentGlobal_3A[x].h_birth_certificate}`
+                h_ceno.src = `private/${subContentGlobal_3A[x].h_cenomar}`
+                h_cedu.src = `private/${subContentGlobal_3A[x].h_cedula}`
+                h_b_cert_3a.src = `private/${subContentGlobal_3A[x].h_barangay_certificate}`
+                h_v_id_3a.src = `private/${subContentGlobal_3A[x].h_valid_id}`
+
+                w_birth_cert_3a.src = `private/${subContentGlobal_3A[x].w_birth_certificate}`
+                w_ceno.src = `private/${subContentGlobal_3A[x].w_cenomar}`
+                w_cedu.src =`private/${subContentGlobal_3A[x].w_cedula}`
+                w_b_cert_3a.src = `private/${subContentGlobal_3A[x].w_barangay_certificate}`
+                w_v_id_3a.src = `private/${subContentGlobal_3A[x].w_valid_id}`
+
+            })
+        }
+    }
+</script>
+
+
+
+<script> // printing contents 1A
+
+    function printing(content){
+        if(content.success === true){
+            nodata.style.display = 'none'
+
+            for(let i in content.data){
+
+                if(content.data[i].done == 'True'){
+
+                    contentValuesCount = 1
+
+                    subContentGlobal.push(content.data[i]) // storing data to sub content globally
+
+                    const nameOfChild = `${content.data[i].child_fname} ${content.data[i].child_mname} ${content.data[i].child_lname}`
+                    const nameOfMother = `${content.data[i].m_fname} ${content.data[i].m_mname} ${content.data[i].m_lname}`
+                    const nameOfFather = `${content.data[i].f_fname} ${content.data[i].f_mname} ${content.data[i].f_lname}`
+                    const birthDate = `${content.data[i].date_of_registration}`
+                    const gender = `${content.data[i].gender}`
+
+                    let columnDiv = document.createElement('DIV')
+                    columnDiv.className = 'cards'
+                    parent.appendChild(columnDiv)
+
+                    columnDiv.innerHTML = `
+                        <div class="row">
+                            <div class="col-3" style="text-align: center;">
+                                <span class="h6">1A</span>
+                                <hr>
+                                <img src="./baby1.png" alt="" width="50%">
+                            </div>
+                            <div class="col-9">
+                                <h4 style="margin-bottom: 1rem;">Birth Certification</h4>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span><b> NAME OF CHILD: </b> ${nameOfChild}</span><br>
+                                        <span><b> NAME OF MOTHER: </b> ${nameOfMother}</span>
+                                        <p><b> NAME OF FATHER: </b> ${nameOfFather}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <span><b> DATE OF BIRTH: </b> ${birthDate}</span><br>
+                                        <span><b> GENDER: </b> ${gender}</span>
+                                    </div>
+                                </div>
+                                <div style="text-align: right;">
+                                    
+                                    <button data-bs-toggle="modal" data-bs-target="#viewMore" id="${content.data[i].id}" class="viewMore">CERTIFICATE</button>
+                                    <div class="tooltip2">
+                                        <button class="addRequirements" id="${content.data[i].id}" data-bs-toggle="modal" data-bs-target="#addRequirements" class="addRequirments">PREVIEW SUPPORTING DOCUMENTS</button>
+                                        <span class="tooltiptext2">
+                                            List of Supporting Documents
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                }
+            }
+        }
+    }
+
+</script>
+
+<script> // printing contents 2A
+    function printing_2A(content) {
+        if(content.success === true){
+            nodata.style.display = 'none'
+
+            for(let i in content.data){
+
+                if(content.data[i].done == 'True'){
+
+                    contentValuesCount = 1
+
+                    subContentGlobal_2A.push(content.data[i]) // storing to global var
+
+                    const name = `${content.data[i].d_fname} ${content.data[i].d_mname} ${content.data[i].d_lname}`
+                    const nameOfMother = `${content.data[i].m_fname} ${content.data[i].m_mname} ${content.data[i].m_lname}`
+                    const nameOfFather = `${content.data[i].f_fname} ${content.data[i].f_mname} ${content.data[i].f_lname}`
+                    const deathDate = `${content.data[i].date_of_death}`
+                    const gender = `${content.data[i].gender}`
+
+                    
+                    let columnDiv = document.createElement('DIV')
+                    columnDiv.className = 'cards'
+                    parent.appendChild(columnDiv)
+
+                    columnDiv.innerHTML = `
+                        <div class="row">
+                            <div class="col-3" style="text-align: center;">
+                                <span class="h6">2A</span>
+                                <hr>
+                                <img src="./death.png" alt="" width="50%">
+                            </div>
+                            <div class="col-9">
+                                <h4 style="margin-bottom: 1rem;">Death Certification</h4>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span><b> NAME OF DEATH: </b> ${name}</span><br>
+                                        <span><b> NAME OF MOTHER: </b> ${nameOfMother}</span>
+                                        <p><b> NAME OF FATHER: </b> ${nameOfFather}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <span><b> DATE OF DEATH: </b> ${deathDate}</span><br>
+                                        <span><b> GENDER: </b> ${gender}</span>
+                                    </div>
+                                </div>
+                                <div style="text-align: right;">
+                                    
+                                    <button data-bs-toggle="modal" data-bs-target="#viewMore_2A" id="${content.data[i].id}" class="viewMore_2a">CERTIFICATE</button>
+                                    <div class="tooltip2">
+                                        <button class="addRequirements_2a" id="${content.data[i].id}" data-bs-toggle="modal" data-bs-target="#addRequirements" class="addRequirments_2a">PREVIEW SUPPORTING DOCUMENTS</button>
+                                        <span class="tooltiptext2">
+                                             List of Supporting Documents
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                }
+            }
+        }
+    }
+
+</script>
+
+<script> // printing contents 3A
+    function printing_3A(content) {
+        if(content.success === true){
+            nodata.style.display = 'none'
+
+            for(let i in content.data){
+
+                if(content.data[i].done == 'True'){
+
+                    contentValuesCount = 1
+
+                    subContentGlobal_3A.push(content.data[i]) // storing to global var
+
+                    const nameOfHusband = `${content.data[i].h_fname} ${content.data[i].h_mname} ${content.data[i].h_lname}`
+                    const nameOfWife = `${content.data[i].w_fname} ${content.data[i].w_mname} ${content.data[i].w_lname}`
+                    const placeOfMarriage = `${content.data[i].place_of_marriage}`
+                    const marriageDate = `${content.data[i].date_of_marriage}`
+                    const registrationDate = `${content.data[i].date_of_registration}`
+
+                    
+                    let columnDiv = document.createElement('DIV')
+                    columnDiv.className = 'cards'
+                    parent.appendChild(columnDiv)
+
+                    columnDiv.innerHTML = `
+                        <div class="row">
+                            <div class="col-3" style="text-align: center;">
+                                <span class="h6">3A</span>
+                                <hr>
+                                <img src="./marriage.png" alt="" width="50%">
+                            </div>
+                            <div class="col-9">
+                                <h4 style="margin-bottom: 1rem;">Marriage Certification</h4>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span><b> NAME OF HUSBAND: </b> ${nameOfHusband}</span><br>
+                                        <span><b> NAME OF WIFE: </b> ${nameOfWife}</span>
+                                        <p><b> PLACE OF MARRIAGE: </b> ${placeOfMarriage}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <span><b> DATE OF MARRIAGE: </b> ${marriageDate}</span><br>
+                                        <span><b> DATE OF REGISTRATION: </b> ${registrationDate}</span>
+                                    </div>
+                                </div>
+                                <div style="text-align: right;">
+                                    
+                                    <button data-bs-toggle="modal" data-bs-target="#viewMore_3A" id="${content.data[i].id}" class="viewMore_3a">CERTIFICATE</button>
+                                    <div class="tooltip2">
+                                        <button class="addRequirements_3a" id="${content.data[i].id}" data-bs-toggle="modal" data-bs-target="#addRequirements" class="addRequirments_3a">PREVIEW SUPPORTING DOCUMENTS</button>
+                                        <span class="tooltiptext2">
+                                            List of Supporting Documents
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                }
+            }
+        }
+    }
+
+</script>
+
+
+
+<script> // parsing time (am - pm)
+    function formatAMPM(date) { // get time
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
+        return strTime;
+    }
+</script>
+
+
+
+<script> // main
+    const parent = document.getElementsByClassName('ribbonContent')[0];
+    const nodata = document.getElementById('nodata');
+
+    let contentValuesCount = 0
+
+    var subContentGlobal = []; // global var
+    var subContentGlobal_2A = [];
+    var subContentGlobal_3A = [];
+
+    (async ()=> {
+
+        const rawResponse = await fetch('api/getDocuments', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: `issuedToId=${sessionStorage.id}`
+        })
+        const content = await rawResponse.json();
+        printing(content) // printing contents 1A
+
+        const rawResponse_2A = await fetch('api/getDocuments_2a', { // fetch all 2A documents for client
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: `issuedToId=${sessionStorage.id}`
+        })
+        const content_2A = await rawResponse_2A.json();
+        printing_2A(content_2A) // printing content for 2A
+
+        const rawResponse_3A = await fetch('api/getDocuments_3a', { // fetch all 3A documents for client
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: `issuedToId=${sessionStorage.id}`
+        })
+        const content_3A = await rawResponse_3A.json();
+        printing_3A(content_3A) // printing content for 3A
+
+        if(contentValuesCount == 0){ // displaying not data found if true
+            nodata.style.display = 'block'
+        }
+        
+
+        viewMoreClick()
+        viewMoreClick_2A()
+        viewMoreClick_3A()
+
+        addRequirementsClick()
+        addRequirementsClick_2A()
+        addRequirementsClick_3A()
+
+    })()
+</script>
+
+<script> // mouse over and out in person menu   AND certificate menu
+    const dropbtn = document.getElementById('dropbtn')
+    const dropdownContent = document.getElementById('dropdownContent')
+    const menuCard = document.getElementsByClassName('menuCard')
+    dropbtn.addEventListener('mouseover', ()=> { // toggle click
+        dropdownContent.style.display = 'block'
+    })
+    menuCard[1].addEventListener('mouseout', ()=> {
+        dropdownContent.style.display = 'none'
+    })
+
+
+    // menu
+    const aTag = document.getElementsByTagName('a')
+    const menulist = document.getElementsByClassName('menulist')
+    for(let i=0; i<menulist.length; i++){
+        menulist[i].addEventListener('mouseover', ()=>{
+            aTag[i].style.color = 'white'
+            menulist[i].style.background = 'gray'
+        })
+        menulist[i].addEventListener('mouseout', ()=>{
+            aTag[i].style.color = 'yellow'
+            menulist[i].style.background = 'none'
+        })
+    }
+</script>
+
+<script> // when  click btn process
+    const proces = document.getElementsByClassName('proces')
+    for(let i = 0; i < proces.length; i++){
+        proces[i].addEventListener('click', ()=> {
+            if(i == 0){
+                location.href = './documentUser.html'
+            }
+            if(i == 1){
+                location.href = "./documentUser2.html"
+            }
+            if(i == 2){
+                location.href = './documentUser3.html'
+            }
+            if(i == 3){
+                location.href = './documentUserComplete.html'
+            }
+            if(i == 4){
+                location.href = './documentUserCancel.html'
+            }
+        })
+    }
+</script>
+
+</html>

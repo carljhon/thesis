@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="reports.css"> 
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-12 nav1" style="position: sticky; top:0">
+            <div class="row">
+                <div class="col-9 navbar1">
+                    <a href="./adminChat.html">CHAT</a>
+                    <a href="./adminUserAccount.html">USER ACCOUNTS</a>
+                    <a href="./adminBirth.html">BIRTH CERTIFICATE</a>
+                    <a href="./adminDeath.html">DEATH CERTIFICATE</a>
+                    <a href="./adminMarriage.html">MARRIAGE CERTIFICATE</a>
+                    <a href="" id="active">REPORTS</a>
+                    <a href="./adminFAQ.html">FAQ</a>
+                </div>
+                <div class="col-3" style="text-align: center;">
+                    <form id="search">
+                        <input type="text" name="search" style="padding-top: .5rem; padding-bottom: .5rem; padding-left: 1.5rem; padding-right: 1.5rem; border-radius: 2rem; border: solid 1px white;" placeholder="search">
+                        <i class="bi bi-binoculars h2" style="color: yellow; cursor: pointer;"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    
+        <div class="col-7" id="divYears" style="display: block; margin-left: auto; margin-right: auto;">
+            <div class="row" id="parent">
+            </div>
+        </div>
+
+        <div class="row" id="divYearsContent" style="display: none;">
+            <h3 style="margin-left: 2rem;" id="selectedYear"></h3>
+            <div class="col-3 panel">
+                <div class="row" style="font-size: 80%; margin-bottom: 0.5rem;">
+                    <div class="col-4 selection selected" id="birth">
+                        Birth
+                    </div>
+                    <div class="col-4 selection" id="death">
+                        Death
+                    </div>
+                    <div class="col-4 selection" id="marriage">
+                        Marriage
+                    </div>
+                </div>
+            </div>
+    
+            <!-- reports -->
+            <div class="col-11 divYearsContent">
+                <div class="row" id="parent1">
+                    <div class="col-1" style="padding: 12px 0 12px 0;">
+                        <p class="monthsOfYear" id="0">JAN</p><br>
+                        <p class="monthsOfYear" id="1">FEB</p><br>
+                        <p class="monthsOfYear" id="2">MAR</p><br>
+                        <p class="monthsOfYear" id="3">APR</p><br>
+                        <p class="monthsOfYear" id="4">MAY</p><br>
+                        <p class="monthsOfYear" id="5">JUN</p><br>
+                        <p class="monthsOfYear" id="6">JUL</p><br>
+                        <p class="monthsOfYear" id="7">AUG</p><br>
+                        <p class="monthsOfYear" id="8">SEP</p><br>
+                        <p class="monthsOfYear" id="9">OCT</p><br>
+                        <p class="monthsOfYear" id="10">NOV</p><br>
+                        <p class="monthsOfYear" id="11">DEC</p>
+                    </div>
+                    <div class="col-11 divTables" id="divYearsContent_1a" style="display: block;"> <!-- 1A -->
+                        <table id="table_1a">
+                            <tr>
+                                <th>ID</th>
+                                <th>Child Name</th>
+                                <th>Gender</th>
+                                <th>Birth Place</th>
+                                <th>Registration Date</th>
+                                <th>Mother's Name</th>
+                                <th>Mother's Nationality</th>
+                                <th>Father's Name</th>
+                                <th>Father's Nationality</th>
+                                <th>Marriage Date</th>
+                                <th>Marriage Place</th>
+                                <th>Issued To</th>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="col-11 divTables"  id="divYearsContent_2a" style="display: none;"> <!-- 2A -->
+                        <table id="table_2a" style="width: 150%;">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name of Death</th>
+                                <th>Gender</th>
+                                <th>Death Place</th>
+                                <th>Date of Death</th>
+                                <th>Mother's Name</th>
+                                <th>Mother's Nationality</th>
+                                <th>Father's Name</th>
+                                <th>Father's Nationality</th>
+                                <th>Issued To</th>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="col-11 divTables" id="divYearsContent_3a" style="display: none;"> <!-- 3A -->
+                        <table id="table_3a" style="width: 300%;">
+                            <tr>
+                                <th>ID</th>
+                                <th>Husband Name</th>
+                                <th>Husband Age</th>
+                                <th>Husband Nationality</th>
+                                <th>Husband Civil Status</th>
+                                <th>Husband Mother's Name</th>
+                                <th>Husband Father's Name</th>
+
+                                <th>Wife Name</th>
+                                <th>Wife Age</th>
+                                <th>Wife Nationality</th>
+                                <th>Wife Civil Status</th>
+                                <th>Wife Mother's Name</th>
+                                <th>Wife Father's Name</th>
+
+                                <th>Registration Date</th>
+                                <th>Marriage Date</th>
+                                <th>Marriage Place</th>
+                                <th>Issued To</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 7rem;">
+                <div class="col-8" style="margin-left: auto;">
+                    <canvas id="myChart" style="width:100%;"></canvas>
+                </div>
+    
+                <div class="col-8" style="margin-left: 10vw;">
+                    <canvas id="myChart2" style="width:100%;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<!-- Bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> <!--for chart -->
+
+
+
+<script> // div display
+    const divYearsContent_1a = document.getElementById('divYearsContent_1a')
+    const divYearsContent_2a = document.getElementById('divYearsContent_2a')
+    const divYearsContent_3a = document.getElementById('divYearsContent_3a')
+
+    const birth = document.getElementById('birth')
+    const death = document.getElementById('death')
+    const marriage = document.getElementById('marriage')
+
+    function divDisplay(){
+
+        birth.addEventListener('click', ()=> {
+            divYearsContent_1a.style.display = 'block'
+            death.classList.remove('selected')
+            birth.classList.add('selected')
+            marriage.classList.remove('selected')
+            divYearsContent_2a.style.display = 'none'
+            divYearsContent_3a.style.display = 'none'
+        })
+
+        death.addEventListener('click', ()=> {
+            divYearsContent_2a.style.display = 'block'
+            death.classList.add('selected')
+            birth.classList.remove('selected')
+            marriage.classList.remove('selected')
+            divYearsContent_1a.style.display = 'none'
+            divYearsContent_3a.style.display = 'none'
+        })
+
+        marriage.addEventListener('click', ()=> {
+            divYearsContent_3a.style.display = 'block'
+            death.classList.remove('selected')
+            birth.classList.remove('selected')
+            marriage.classList.add('selected')
+            divYearsContent_2a.style.display = 'none'
+            divYearsContent_1a.style.display = 'none'
+        })
+    }
+</script>
+
+<script> // selected print 1A
+
+    function selectedPrint_1a(clickedYear, monthsOfYear_id){
+
+        subContentsForChart.month = monthsOfYear_id
+
+        if(printed_1a == true){ // remove old rows
+            while(table_1a.rows.length > 1){
+                table_1a.deleteRow(1)
+            }
+
+            if(divYearsContent_1a.style.display == 'block'){ // for chart info
+                s = 0; c = 0; r = 0; a = 0; w = 0; p = 0
+                jan = 0; feb = 0; mar = 0; apr = 0; may = 0; jun = 0; jul = 0; aug = 0; sep = 0; oct = 0; nov = 0; dec = 0;
+            }
+        }
+
+        
+        for(let j in subContentGlobal){ // printing contents
+
+            let myYear_1a = new Date(`${subContentGlobal[j].date_of_registration}`).getFullYear()
+            let myMoth_1a = new Date(`${subContentGlobal[j].date_of_registration}`).getMonth()
+
+            // if(selected year, selectect month, selected request)
+            if(clickedYear == myYear_1a && monthsOfYear_id == myMoth_1a && divYearsContent_1a.style.display == 'block'){
+                printed_1a = true
+
+                subContentsForChart.table = '1A'
+
+                var row = table_1a.insertRow(1) // printing new rows
+                row.innerHTML += `
+                    <tr>
+                        <td>${subContentGlobal[j].id}</td>
+                        <td>${subContentGlobal[j].child_fname} ${subContentGlobal[j].child_mname} ${subContentGlobal[j].child_lname}</td>
+                        <td>${subContentGlobal[j].gender}</td>
+                        <td>${subContentGlobal[j].place_of_birth}</td>
+                        <td>${subContentGlobal[j].date_of_registration}</td>
+                        <td>${subContentGlobal[j].m_fname} ${subContentGlobal[j].m_mname} ${subContentGlobal[j].m_lname}</td>
+                        <td>${subContentGlobal[j].m_nationality}</td>
+                        <td>${subContentGlobal[j].f_fname} ${subContentGlobal[j].f_mname} ${subContentGlobal[j].f_lname}</td>
+                        <td>${subContentGlobal[j].f_nationality}</td>
+                        <td>${subContentGlobal[j].date_of_merriage}</td>
+                        <td>${subContentGlobal[j].place_of_merriage}</td>
+                        <td>${subContentGlobal[j].issuedto}</td>
+                    </tr>
+                `
+
+                
+                if(subContentGlobal[j].done == 'True' && subContentGlobal[j].proced == 'True'){ // for doughnut chart info
+                    s += 1
+                } else if(subContentGlobal[j].proced == 'Reject') {
+                    r += 1
+                } else if(subContentGlobal[j].proced == 'WrongDox'){
+                    w += 1
+                } else if(subContentGlobal[j].proced == 'Cancel'){
+                    c += 1
+                } else if(subContentGlobal[j].schedule != ''){
+                    a += 1
+                } else if(subContentGlobal[j].proced == 'True') {
+                    p += 1
+                }
+
+            }
+
+            if(clickedYear == myYear_1a){ // for bar chart
+                var monthsChart = new Date(`${subContentGlobal[j].date_of_registration}`).getMonth()
+
+                if(monthsChart == 0){
+                    jan += 1
+                } else if (monthsChart == 1){
+                    feb += 1
+                } else if (monthsChart == 2){
+                    mar += 1
+                } else if (monthsChart == 3){
+                    apr += 1
+                } else if (monthsChart == 4){
+                    may += 1
+                } else if (monthsChart == 5){
+                    jun += 1
+                } else if (monthsChart == 6){
+                    jul += 1
+                } else if (monthsChart == 7){
+                    aug += 1
+                } else if (monthsChart == 8){
+                    sep += 1
+                } else if (monthsChart == 9){
+                    oct += 1
+                } else if (monthsChart == 10){
+                    nov += 1
+                } else if (monthsChart == 11){
+                    dec += 1
+                }
+            }
+
+        }
+
+        // doughnut bar will show after this function
+        setTimeout(doughnutChart, 100)
+
+        // same with doughnut
+        setTimeout(barChart, 100)
+    }
+</script>
+
+<script> // selected print 2A
+
+    function selectedPrint_2a(clickedYear, monthsOfYear_id){
+
+        subContentsForChart.month = monthsOfYear_id
+
+        if(printed_2a == true){ // remove old rows
+            while(table_2a.rows.length > 1){
+                table_2a.deleteRow(1)
+            }
+            if(divYearsContent_2a.style.display == 'block'){
+                s = 0; c = 0; r = 0; a = 0; w = 0; p = 0
+                jan = 0; feb = 0; mar = 0; apr = 0; may = 0; jun = 0; jul = 0; aug = 0; sep = 0; oct = 0; nov = 0; dec = 0;
+            }
+        } 
+
+        
+        for(let i in subContentGlobal_2a){
+            let myYear_2a = new Date(`${subContentGlobal_2a[i].date_of_death}`).getFullYear()
+            let myMoth_2a = new Date(`${subContentGlobal_2a[i].date_of_death}`).getMonth()
+
+            if(clickedYear == myYear_2a && monthsOfYear_id == myMoth_2a && divYearsContent_2a.style.display == 'block'){
+                printed_2a = true
+
+                subContentsForChart.table = '2A'
+
+                var row2a = table_2a.insertRow(1) // printing new rows
+                row2a.innerHTML += `
+                    <tr>
+                        <td>${subContentGlobal_2a[i].id}</td>
+                        <td>${subContentGlobal_2a[i].d_fname} ${subContentGlobal_2a[i].d_mname} ${subContentGlobal_2a[i].d_lname}</td>
+                        <td>${subContentGlobal_2a[i].gender}</td>
+                        <td>${subContentGlobal_2a[i].place_of_death}</td>
+                        <td>${subContentGlobal_2a[i].date_of_death}</td>
+                        <td>${subContentGlobal_2a[i].m_fname} ${subContentGlobal_2a[i].m_mname} ${subContentGlobal_2a[i].m_lname}</td>
+                        <td>${subContentGlobal_2a[i].m_nationality}</td>
+                        <td>${subContentGlobal_2a[i].f_fname} ${subContentGlobal_2a[i].f_mname} ${subContentGlobal_2a[i].f_lname}</td>
+                        <td>${subContentGlobal_2a[i].f_nationality}</td>
+                        <td>${subContentGlobal_2a[i].issuedto}</td>
+                    </tr>
+                `
+
+                if(subContentGlobal_2a[i].done == 'True' && subContentGlobal_2a[i].proced == 'True'){ // for doughnut chart info
+                    s += 1
+                } else if(subContentGlobal_2a[i].proced == 'Reject') {
+                    r += 1
+                } else if(subContentGlobal_2a[i].proced == 'WrongDox'){
+                    w += 1
+                } else if(subContentGlobal_2a[i].proced == 'Cancel'){
+                    c += 1
+                } else if(subContentGlobal_2a[i].schedule != ''){
+                    a += 1
+                } else if(subContentGlobal_2a[i].proced == 'True') {
+                    p += 1
+                }
+            }
+
+            if(clickedYear == myYear_2a){ // for bar chart
+                var monthsChart = new Date(`${subContentGlobal_2a[i].date_of_death}`).getMonth()
+                if(monthsChart == 0){
+                    jan += 1
+                } else if (monthsChart == 1){
+                    feb += 1
+                } else if (monthsChart == 2){
+                    mar += 1
+                } else if (monthsChart == 3){
+                    apr += 1
+                } else if (monthsChart == 4){
+                    may += 1
+                } else if (monthsChart == 5){
+                    jun += 1
+                } else if (monthsChart == 6){
+                    jul += 1
+                } else if (monthsChart == 7){
+                    aug += 1
+                } else if (monthsChart == 8){
+                    sep += 1
+                } else if (monthsChart == 9){
+                    oct += 1
+                } else if (monthsChart == 10){
+                    nov += 1
+                } else if (monthsChart == 11){
+                    dec += 1
+                }
+            }
+        }
+        // doughnut bar will show after this function
+        setTimeout(doughnutChart, 100)
+        // same with doughnut
+        setTimeout(barChart, 100)
+    }
+</script>
+
+<script> // selected print 3A
+
+    function selectedPrint_3a(clickedYear, monthsOfYear_id){
+
+        subContentsForChart.month = monthsOfYear_id
+
+        if(printed_3a == true){ // removing all old rows in table
+            while(table_3a.rows.length > 1){
+                table_3a.deleteRow(1)
+            }
+            if(divYearsContent_3a.style.display == 'block'){
+                s = 0; c = 0; r = 0; a = 0; w = 0; p = 0
+                jan = 0; feb = 0; mar = 0; apr = 0; may = 0; jun = 0; jul = 0; aug = 0; sep = 0; oct = 0; nov = 0; dec = 0;
+            }
+        } 
+        
+        for(let y in subContentGlobal_3a){
+            let myYear_3a = new Date(`${subContentGlobal_3a[y].date_of_registration}`).getFullYear()
+            let myMoth_3a = new Date(`${subContentGlobal_3a[y].date_of_registration}`).getMonth()
+
+            if(clickedYear == myYear_3a && monthsOfYear_id == myMoth_3a && divYearsContent_3a.style.display == 'block'){
+
+                printed_3a = true
+
+                subContentsForChart.table = '3A'
+
+                var row3a = table_3a.insertRow(1) // printing new rows
+                row3a.innerHTML += `
+                    <tr>
+                        <td>${subContentGlobal_3a[y].id}</td>
+                        <td>${subContentGlobal_3a[y].h_fname} ${subContentGlobal_3a[y].h_mname} ${subContentGlobal_3a[y].h_lname}</td>
+                        <td>${subContentGlobal_3a[y].h_age}</td>
+                        <td>${subContentGlobal_3a[y].h_nationality}</td>
+                        <td>${subContentGlobal_3a[y].h_civil_status}</td>
+                        <td>${subContentGlobal_3a[y].h_m_fname} ${subContentGlobal_3a[y].h_m_mname} ${subContentGlobal_3a[y].h_m_lname}</td>
+                        <td>${subContentGlobal_3a[y].h_f_fname} ${subContentGlobal_3a[y].h_f_mname} ${subContentGlobal_3a[y].h_f_lname}</td>
+                        
+                        <td>${subContentGlobal_3a[y].w_fname} ${subContentGlobal_3a[y].w_mname} ${subContentGlobal_3a[y].w_lname}</td>
+                        <td>${subContentGlobal_3a[y].w_age}</td>
+                        <td>${subContentGlobal_3a[y].w_nationality}</td>
+                        <td>${subContentGlobal_3a[y].w_civil_status}</td>
+                        <td>${subContentGlobal_3a[y].w_m_fname} ${subContentGlobal_3a[y].w_m_mname} ${subContentGlobal_3a[y].w_m_lname}</td>
+                        <td>${subContentGlobal_3a[y].w_f_fname} ${subContentGlobal_3a[y].w_f_mname} ${subContentGlobal_3a[y].w_f_lname}</td>
+
+
+                        <td>${subContentGlobal_3a[y].date_of_registration}</td>
+                        <td>${subContentGlobal_3a[y].date_of_marriage}</td>
+                        <td>${subContentGlobal_3a[y].place_of_marriage}</td>
+
+                        <td>${subContentGlobal_3a[y].issued_to}</td>
+                    </tr>
+                `
+
+                if(subContentGlobal_3a[y].done == 'True' && subContentGlobal_3a[y].proced == 'True'){ // for doughnut chart info
+                    s += 1
+                } else if(subContentGlobal_3a[y].proced == 'Reject') {
+                    r += 1
+                } else if(subContentGlobal_3a[y].proced == 'WrongDox'){
+                    w += 1
+                } else if(subContentGlobal_3a[y].proced == 'Cancel'){
+                    c += 1
+                } else if(subContentGlobal_3a[y].schedule != ''){
+                    a += 1
+                } else if(subContentGlobal_3a[y].proced == 'True') {
+                    p += 1
+                }
+            }
+
+            if(clickedYear == myYear_3a){ // for bar chart
+                var monthsChart = new Date(`${subContentGlobal_3a[y].date_of_death}`).getMonth()
+                if(monthsChart == 0){
+                    jan += 1
+                } else if (monthsChart == 1){
+                    feb += 1
+                } else if (monthsChart == 2){
+                    mar += 1
+                } else if (monthsChart == 3){
+                    apr += 1
+                } else if (monthsChart == 4){
+                    may += 1
+                } else if (monthsChart == 5){
+                    jun += 1
+                } else if (monthsChart == 6){
+                    jul += 1
+                } else if (monthsChart == 7){
+                    aug += 1
+                } else if (monthsChart == 8){
+                    sep += 1
+                } else if (monthsChart == 9){
+                    oct += 1
+                } else if (monthsChart == 10){
+                    nov += 1
+                } else if (monthsChart == 11){
+                    dec += 1
+                }
+            }
+        }
+
+        // doughnut bar will show after this function
+        setTimeout(doughnutChart, 100)
+        // same with doughnut
+        setTimeout(barChart, 100)
+    }
+</script>
+
+<script> // printing selected Year, Month, Request
+    const table_1a = document.getElementById('table_1a')
+    const table_2a = document.getElementById('table_2a')
+    const table_3a = document.getElementById('table_3a')
+
+    function selectedPrint(clickedYear, monthsOfYear_id){
+
+        selectedPrint_1a(clickedYear, monthsOfYear_id)
+        selectedPrint_2a(clickedYear, monthsOfYear_id)
+        selectedPrint_3a(clickedYear, monthsOfYear_id)
+    }
+</script>
+
+<script> // years click
+    const years = document.getElementsByClassName('years')
+    const monthsOfYear = document.getElementsByClassName('monthsOfYear')
+    const selectedYear = document.getElementById('selectedYear')
+
+
+    let clickedYear = ''
+    let preventDoubleClick = ''
+
+    setInterval(yearClick, 1000)
+
+    function yearClick(){
+        for(let i = 0; i < years.length; i++){
+            years[i].addEventListener('click', ()=> { // selected year
+
+                divYears.style.display = 'none'
+                divYearsContent.style.display = 'block'
+
+                clickedYear = years[i].id
+
+                subContentsForChart.year = clickedYear
+
+                selectedYear.innerHTML = clickedYear
+
+                setTimeout(barChart, 100)
+            })
+        }
+
+        for(let y = 0; y < monthsOfYear.length; y++){
+            monthsOfYear[y].addEventListener('click', ()=> { // selected month
+
+                for(let j = 0; j < monthsOfYear.length; j++){ // remove high lights
+                    monthsOfYear[j].classList.remove('selected')
+                }
+
+                monthsOfYear[y].classList.add('selected') // add hight light
+
+                if(preventDoubleClick != monthsOfYear[y].id){ // prevent double click
+                    selectedPrint(clickedYear, monthsOfYear[y].id)
+                    preventDoubleClick = monthsOfYear[y].id
+                }
+            })
+        }
+    }
+</script>
+
+<script> // printing year
+    function printYear(){
+        for(let i in yearOf){
+            parentCards.innerHTML += `
+                <div class="col-3 years" id="${yearOf[i]}">
+                    <h1>${yearOf[i]}</h1>
+                </div>
+            `
+        }
+    }
+</script>
+
+<script> // get 1A
+    function printing(content){
+
+        for(let i in content){
+
+            content[i].table = '1A' // add table 1A
+
+            subContentGlobal.push(content[i])
+
+            let myYear = new Date(`${content[i].date_of_registration}`).getFullYear()
+
+            if(!yearOf.includes(myYear)){ // add and ! duplicate
+                yearOf.push(myYear)
+            }
+        }
+    }
+</script>
+
+<script> // get 2A
+    function printing_2a(content){
+        for(let i in content){
+            content[i].table = '2A' // add table 2A
+
+            subContentGlobal_2a.push(content[i])
+
+            let myYear = new Date(`${content[i].date_of_death}`).getFullYear() // get year
+
+            if(!yearOf.includes(myYear)){ // add and ! duplicate
+                yearOf.push(myYear)
+            }
+        }
+    }
+</script>
+
+<script> // get 3A
+    function printing_3a(content){
+        for(let i in content){
+            content[i].table = '3A' // add table 3A
+
+            subContentGlobal_3a.push(content[i])
+
+            let myYear = new Date(`${content[i].date_of_registration}`).getFullYear() // get year
+
+            if(!yearOf.includes(myYear)){ // add and ! duplicate
+                yearOf.push(myYear)
+            }
+        }
+    }
+</script>
+
+<script> // main
+
+    const divYears = document.getElementById('divYears')
+    const divYearsContent = document.getElementById('divYearsContent')
+
+    const parentCards = document.getElementById('parent');
+    let subContentsForChart = []
+    let getStatus = []
+
+    // for doughnut chart
+    let r = 0 // reject
+    let w = 0 // wrong dox
+    let c = 0 // cancel
+    let a = 0 // approve
+    let s = 0 // success
+    let p = 0 // pending
+    // months for bar chart
+    var jan = 0
+    var feb = 0
+    var mar = 0
+    var apr = 0
+    var may = 0
+    var jun = 0
+    var jul = 0
+    var aug = 0
+    var sep = 0
+    var oct = 0
+    var nov = 0
+    var dec = 0
+
+    let printed_1a = false
+    let printed_2a = false
+    let printed_3a = false
+
+    let yearOf = [];
+    let subContentGlobal = [];
+    let subContentGlobal_2a = [];
+    let subContentGlobal_3a = [];
+
+    (async ()=> {
+        const rawResponse = await fetch('api/get-all-documents', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        const content = await rawResponse.json();
+        printing(content.data)
+
+        const rawResponse_2a = await fetch('api/get-all-documents-2a', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        const content_2a = await rawResponse_2a.json();
+        printing_2a(content_2a.data)
+
+        const rawResponse_3a = await fetch('api/get-all-documents-3a', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        const content_3a = await rawResponse_3a.json();
+        printing_3a(content_3a.data)
+
+
+        printYear()
+        yearClick()
+
+        divDisplay()
+
+    })()
+</script>
+
+<script> // doughnut chart 
+    var xValues_d = ["Reject", "Wrong Documents", "Cancel", "Pending", "Approve", "Success"];
+    var barColors_d = ["#b91d47","#e8c3b9","#2b5797","purple","#00aba9","#1e7145"];
+
+
+    var monthsList = ['January', 'Febrary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    var statsuRequestList = ["Reject", "WrongDox", "Cancel", "True", "Success"]
+
+    
+
+    function doughnutChart (){
+
+        for(let i in monthsList){ // printing selected months in doughnut chart
+            if(subContentsForChart.month == i){
+                subContentsForChart.month = monthsList[i]
+            }
+        }
+
+        var yValues_d = [r, w, c, p, a, s];
+
+        new Chart("myChart", {
+            type: "doughnut",
+            data: {
+                labels: xValues_d,
+                datasets: [{backgroundColor: barColors_d, data: yValues_d}]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: `Reports for ${subContentsForChart.year} month's of ${subContentsForChart.month} in request ${subContentsForChart.table}`
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        });
+    }
+
+</script>
+
+<script> // bar chart 2
+    var xValues = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var barColors = ["#ea5545", "#f46a9b", "#ef9b20", "#edbf33", "#ede15b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6", "#ef9b20", "#ede15b", "#ea5545",];
+
+
+    function barChart(){
+
+        var yValues = [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec];
+
+        new Chart("myChart2", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{backgroundColor: barColors, data: yValues}]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: `Whole Year ${clickedYear} Requests Reports`
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        });
+    }
+
+    
+</script>
+
+</html>
