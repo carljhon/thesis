@@ -24,10 +24,10 @@ const ApiAccount = (mysql, req, res, option) => {
         const username = clientPayload.get('username')
 
         var con = mysql.createConnection({
-            host: "localhost",
-            user: "root",
-            password: "",
-            database: "thesis"
+            host: "db4free.net",
+            user: "carljhonamasan",
+            password: "carljhonamasan",
+            database: "thesis0101"
         })
 
         if(option == 'adminChatList'){ // receive chat

@@ -37,10 +37,10 @@ const ApiAccount = (mysql, req, res, option) => {
         const hashPassword = await bcrypt.hash(password, 10)
 
         var con = mysql.createConnection({
-            host: "localhost",
-            user: "root",
-            password: "",
-            database: "thesis"
+            host: "db4free.net",
+            user: "carljhonamasan",
+            password: "carljhonamasan",
+            database: "thesis0101"
         })
 
         if(option == 'get'){ // get account

@@ -56,10 +56,10 @@ const Api2A = (mysql, req, res, option) => {
         const issuedToId = clientPayload.get('issuedToId')
 
         var con = mysql.createConnection({
-            host: "localhost",
-            user: "root",
-            password: "",
-            database: "thesis"
+            host: "db4free.net",
+            user: "carljhonamasan",
+            password: "carljhonamasan",
+            database: "thesis0101"
         });
 
         if (option === 'add') {

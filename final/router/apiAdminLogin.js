@@ -21,10 +21,10 @@ const ApiLogin = (mysql, req, res) => {
         const password = clientPayload.get('pass')
 
         var con = mysql.createConnection({
-            host: "localhost",
-            user: "root",
-            password: "",
-            database: "thesis"
+            host: "db4free.net",
+            user: "carljhonamasan",
+            password: "carljhonamasan",
+            database: "thesis0101"
         })
 
         con.connect(function(err) {

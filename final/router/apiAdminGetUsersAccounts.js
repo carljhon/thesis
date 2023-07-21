@@ -20,10 +20,10 @@ const ApiAccounts = (mysql, req, res, option) => {
         const id = clientPayload.get('id')
 
         var con = mysql.createConnection({
-            host: "localhost",
-            user: "root",
-            password: "",
-            database: "thesis"
+            host: "db4free.net",
+            user: "carljhonamasan",
+            password: "carljhonamasan",
+            database: "thesis0101"
         })
 
         if(option == 'get'){ // get all account
