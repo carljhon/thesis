@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 1.2vw;
 }
 
 body {
@@ -49,13 +48,11 @@ body {
     border-radius: 5px;
     color: white;
 }
-.log a{
-    text-decoration: none;
-    color: white;
+#log button {
+    padding: 15%;
 }
 
 .t1 {
-    margin-right: auto;
     background-image: linear-gradient(to bottom right, #6cf2f7, #fccd90, #fff0a5, #8adc62, #26dc66, rgb(76, 188, 175));
     box-shadow: 1em 1rem 2rem 0 rgba(0, 0, 0, 0.404), 0 1rem 1rem 0 rgba(0, 0, 0, 0.267);
 }
@@ -89,7 +86,6 @@ body {
 
 
 .t2 {
-    margin-left: auto;
     text-align: left;
     height: 40vmax;
     overflow-y: scroll;
@@ -112,4 +108,32 @@ table {
 td {
     text-align: left;
     padding: 8px;
+}
+
+/* lg */
+@media screen and (max-width: 992px) { 
+    .reg {
+        padding-left: 5%;
+        padding-top: 1rem;
+    }
+}
+
+/* sm */
+@media screen and (max-width: 576px) { 
+    #log button {
+        padding: 30%;
+    }
+    .vision img{
+        width: 80%;
+    }
+    .mission img{
+        width: 80%;
+    }
+
+    .visionContent p, h1{
+        padding-right: 1rem;
+    }
+    .missionContent p, h1{
+        padding-left: 3rem;
+    }
 }

@@ -14,7 +14,6 @@ body {
 .signupForm {
     text-align: center;
     margin-right: auto;
-    font-size: 1.1vw;
 }
 .signupForm h1{
     text-align: left;
@@ -47,7 +46,6 @@ body {
     margin-left: auto;
     color: white;
     box-shadow: 1em 1rem 1rem 0 rgba(0, 0, 0, 0.404), 0 1rem 1rem 0 rgba(0, 0, 0, 0.267);
-    font-size: 1.2vw;
 }
 .caption img{
     margin-top: 3rem;
@@ -75,4 +73,36 @@ body {
 .caption a:hover{
     color: black;
     background-color: rgba(197, 197, 197, 0.523);
+}
+
+/* sm */
+@media screen and (max-width: 576px) { 
+    .top{
+        margin-top: 0px;
+    }
+    .caption img{
+        margin-top: 1rem;
+    }
+    .caption h5{
+        margin-top: 1rem;
+        font-size: medium;
+    }
+    .caption .topA{
+        margin-top: 1.5rem;
+    }
+    .caption .bottomA{
+        margin-bottom: 2rem;
+    }
+
+    .signupForm button{
+        padding: 1em;
+        padding-left: 27vw;
+        padding-right: 27vw;
+        margin-bottom: 10%;
+    }
+    .caption a{
+        padding: 1em;
+        padding-left: 26vw;
+        padding-right: 26vw;
+    }
 }

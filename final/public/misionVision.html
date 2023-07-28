@@ -14,21 +14,22 @@
     <title>Mission & Vision</title>
 </head>
 <body>
-    <div class="row top">
-        <div class="col-7 reg">
+    <div class="row top g-0">
+        <div class="col-5 col-sm-6 col-lg-7 reg">
             <h3>Pandi Local Civil Registry</h3>
         </div>
+
         <div class="col-1 home">
-            <a href="./index.html"><b>Home</b></a>
+            <a href="./index.html" id="home"><b>Home</b></a>
         </div>
         <div class="col-1 about">
-            <a href="./aboutUs.html"><b>About Us</b></a>
+            <a href="./aboutUs.html" id="about"><b>About Us</b></a>
         </div>
         <div class="col-1 faq">
-            <a href="./faq.html"><b>FAQ</b></a>
+            <a href="./faq.html" id="faq"><b>FAQ</b></a>
         </div>
-        <div class="col-1 log" id="log">
-            <a id="login" href="./login.html"><b>Login</b></a>
+        <div class="col-1" id="log">
+            <button id="login" class="log"><b>Login</b></button>
         </div>
 
         <div class="col-12 space"></div>
@@ -37,7 +38,7 @@
 
     <hr>
 
-    <div class="con">
+    <div class="con g-0">
         <div class="row bg1">
             <div class="col-4 mission">
                 <img src="vision.png" alt="">
@@ -70,13 +71,31 @@
         login.href = './documentUser.html'
     }
 
-    log.addEventListener('mouseover', ()=> {
-        log.style.backgroundImage = 'linear-gradient(to bottom right, green, black)';
+    log.addEventListener('click', ()=> {
+        window.location.href = './login.html';
     })
-    log.addEventListener('mouseout', ()=> {
-        log.style.backgroundImage = 'linear-gradient(to bottom right, yellow, green)';
-    })
+</script>
 
+<script> // change to icon
+    const home = document.getElementById('home');
+    const about = document.getElementById('about');
+    const faq = document.getElementById('faq');
+
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            home.innerHTML = '<i class="bi bi-house-fill"></i>';
+            about.innerHTML = '<i class="bi bi-info-lg"></i>';
+            faq.innerHTML = '<i class="bi bi-question-lg"></i>';
+        } else {
+            home.innerHTML = '<b>Home</b>';
+            about.innerHTML = '<b>About Us</b>';
+            faq.innerHTML = '<b>FAQ</b>';
+        }
+    }
+
+    var x = window.matchMedia("(max-width: 768px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
 </script>
 
 </html>

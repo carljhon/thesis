@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 1.2vw;
 }
 
 body {
@@ -50,6 +49,9 @@ body {
     color: black;
     margin-left: 25%;
 }
+.faq_sub {
+    display: none;
+}
 .log {
     text-align: center;
     margin-top: 0.5em;
@@ -58,9 +60,8 @@ body {
     background-image: linear-gradient(to bottom right, yellow, green);
     border-radius: 5px;
     color: white;
-
-
 }
+
 .log a{
     text-decoration: none;
     color: white;
@@ -72,6 +73,9 @@ body {
 
 .logo {
     text-align: center;
+}
+.log_sub {
+    display: none;
 }
 .logo img {
     width: 20%;
@@ -95,3 +99,38 @@ body {
     margin-bottom: 4em;
 }
 
+/* sm */
+@media screen and (max-width: 576px) { 
+    .reg {
+        padding-left: 1rem;
+        padding-top: 0.5rem;
+    }
+    .logo img {
+        width: 80%;
+        margin-top: 3rem;
+        margin-bottom: 7rem;
+    }
+    .con {
+        margin: 1px;
+    }
+    hr {
+        margin-bottom: 0;
+    }
+
+    .faq, .log, .lr{
+        display: none;
+    }
+
+    .mv, .pay, .faq_sub, .log_sub{
+        text-align: center;
+        color: white;
+        border: 1px solid white;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .faq_sub, .log_sub {
+        display: block;
+    }
+
+}

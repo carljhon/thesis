@@ -8,6 +8,7 @@ body {
     background-image: linear-gradient(to bottom right, green, black);
     color: white;
     height: 105vh;
+    font-size: 1.2vw;
 }
 .subt1 {
     padding-top: .6rem;
@@ -17,14 +18,20 @@ body {
 .subt1 h5 {
     font-size: 1.5vw;
 }
+.subt1 i{
+    cursor: pointer;
+}
 .subt2 p{
     margin-top: 2rem;
     text-align: left;
     margin-left: 1rem;
     font-size: 80%;
 }
+.subt1 i {
+    display: none;
+    margin-left: 1rem;
+}
 .menulist {
-    text-align: left;
     padding: .3rem;
     text-align: center;
 }
@@ -33,7 +40,6 @@ body {
     color: yellow;
 }
 .active {
-    text-align: left;
     padding: .3rem;
     text-align: center;
     background-color: yellow;
@@ -51,6 +57,13 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.reg {
+    font-size: 1.6vw;
+}
+#menu {
+    margin-left: 1rem; 
+    display: none;
+}
 
 .dropbtn {
     color: green;
@@ -59,6 +72,9 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
+    margin-left: auto; 
+    margin-right: 5%;
+    text-align: right;
 }
 .dropdown-content {
     display: none;
@@ -76,14 +92,21 @@ body {
     display: block;
 }
 .dropdown-content a:hover {background-color: #ddd;}
+.dropbtn a{
+    margin-right: 1rem; 
+    color: green; 
+    font-size: 1.6vw;
+}
+.dropbtn i{
+    cursor: pointer; 
+    font-size: 1.6vw;
+}
 
 .t {
     height: 91vh;
     overflow: auto;
 }
 .Form {
-    margin-left: auto;
-    margin-right: auto;
     overflow: visible;
     background-color: white;
     margin-top: 1rem;
@@ -137,4 +160,50 @@ body {
     border: solid rgb(0, 90, 0) 2px;
     color: rgb(0, 58, 0);
     font-size: 1.2vw;
+}
+
+/* sm */
+@media screen and (max-width: 575px) { 
+    .top1 {
+        display: none;
+    }
+    .reg {
+        margin-left: 0.5rem;
+    }
+    #menu {
+        display: inline-block;
+    }
+    .subt1 i {
+        display: inline-block;
+    }
+    .menulist, .active{
+        text-align: left;
+        padding-left: 3rem;
+        font-size: medium;
+    }
+}
+
+/* md */
+@media screen and (max-width: 767px) { 
+    .subt1 h5, .reg {
+        font-size: medium;
+    }
+    .subt2 p{
+        margin-top: 2rem;
+        text-align: left;
+        margin-left: 1rem;
+        font-size: 12px;
+    }
+    .top1 {
+        font-size: 11px;
+    }
+    .dropbtn a, .dropbtn i{
+        font-size: medium;
+    }
+    .top2 {
+        font-size: 10px;
+    }
+    .btn button{
+        font-size: medium;
+    }
 }

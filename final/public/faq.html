@@ -14,21 +14,21 @@
     <title>Frequently Ask Question</title>
 </head>
 <body>
-    <div class="row top">
-        <div class="col-7 reg">
+    <div class="row top g-0">
+        <div class="col-5 col-sm-6 col-lg-7 reg">
             <h3>Pandi Local Civil Registry</h3>
         </div>
         <div class="col-1 home">
-            <a href="./index.html"><b>Home</b></a>
+            <a href="./index.html" id="home"><b>Home</b></a>
         </div>
         <div class="col-1 about">
-            <a href="./aboutUs.html"><b>About Us</b></a>
+            <a href="./aboutUs.html" id="about"><b>About Us</b></a>
         </div>
         <div class="col-1 faq">
-            <a href="./faq.html"><b>FAQ</b></a>
+            <a href="./faq.html" id="faq"><b>FAQ</b></a>
         </div>
-        <div class="col-1 log" id="log">
-            <a id="login" href="./login.html"><b>Login</b></a>
+        <div class="col-1" id="log">
+            <button id="login" class="log"><b>Login</b></button>
         </div>
 
         <div class="col-12 space"></div>
@@ -37,8 +37,16 @@
 
     <hr>
 
-    <div class="row bg">
-        <div class="col-6 t2">
+    <div class="row bg g-0 justify-content-center">
+        <div class="col-11 col-md-4 t1">
+            <div class="subt1">
+                <span><span class="h2">FREQUENTLY</span> <br> <span class="h3">ASK QUESTION</span></span><br>
+            </div>
+            <span style="color: rgb(153, 82, 0); font-size: .8rem;">MGA KADASALANG TANONG SA LOCAL CIVIL REGISTRAR</span>
+            <img src="faq3.png" alt="" style="width: 90%; margin-bottom: 1rem;">
+        </div>
+
+        <div class="col-11 col-md-7 col-lg-6 t2">
             <table id="FAQtable">
                 <!-- <tr>
                     <td>
@@ -57,15 +65,6 @@
                 </tr> -->
             </table>
         </div>
-
-        <div class="col-4 t1">
-            <div class="subt1">
-                <span><span class="h2">FREQUENTLY</span> <br> <span class="h3">ASK QUESTION</span></span><br>
-            </div>
-            <span style="color: rgb(153, 82, 0); font-size: .8rem;">MGA KADASALANG TANONG SA LOCAL CIVIL REGISTRAR</span>
-            <img src="faq3.png" alt="" style="width: 90%; margin-bottom: 1rem;">
-        </div>
-        
     </div>
     
 
@@ -85,12 +84,9 @@
     }
 
 
-    log.addEventListener('mouseover', ()=> {
-        log.style.backgroundImage = 'linear-gradient(to bottom right, green, black)';
+    log.addEventListener('click', ()=> {
+        window.location.href = './login.html';
     })
-    log.addEventListener('mouseout', ()=> {
-        log.style.backgroundImage = 'linear-gradient(to bottom right, yellow, green)';
-    });
 
     (async () => {
         const rawResponse = await fetch('api/getFAQ', {
@@ -145,6 +141,28 @@
         }
     })()
 
+</script>
+
+<script> // change to icon
+    const home = document.getElementById('home');
+    const about = document.getElementById('about');
+    const faq = document.getElementById('faq');
+
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            home.innerHTML = '<i class="bi bi-house-fill"></i>';
+            about.innerHTML = '<i class="bi bi-info-lg"></i>';
+            faq.innerHTML = '<i class="bi bi-question-lg"></i>';
+        } else {
+            home.innerHTML = '<b>Home</b>';
+            about.innerHTML = '<b>About Us</b>';
+            faq.innerHTML = '<b>FAQ</b>';
+        }
+    }
+
+    var x = window.matchMedia("(max-width: 768px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
 </script>
 
 </html>

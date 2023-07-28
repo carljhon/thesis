@@ -14,8 +14,8 @@
     <title>Pandi Online Local Civil Registrar</title>
 </head>
 <body>
-    <div class="row">
-        <div class="col-8 reg">
+    <div class="row g-0">
+        <div class="col-12 col-sm-8 g-0 reg">
             <h3>Pandi Local Civil Registry</h3>
         </div>
         <div class="col-1 faq">
@@ -29,20 +29,26 @@
 
     <hr>
 
-    <div class="con">
-        <div class="row bg">
+    <div class="con g-0">
+        <div class="row g-0 bg justify-content-center">
 
-            <div class="col-12 logo">
+            <div class="col-12 g-0 logo">
                 <img src="logo.png" alt="">
             </div>
-            <div class="col-4 mv">
+            <div class="col-9 log_sub" id="log">
+                <a id="login_sub" href="./login.html"><b>Login</b></a>
+            </div>
+            <div class="col-9 col-sm-4 mv">
                 <a href="./misionVision.html">MISSION & VISION</a>
             </div>
-            <div class="col-4 lr">
+            <div class="col-9 col-sm-4 lr">
                 <a href="login.html">LOGIN & REGISTER</a>
             </div>
-            <div class="col-4 pay">
+            <div class="col-9 col-sm-4 pay">
                 <a href="aboutUs.html">ABOUT US</a>
+            </div>
+            <div class="col-9 faq_sub">
+                <a href="./faq.html">FAQ</a>
             </div>
             <div class="col-12 space2"></div>
         </div>
@@ -53,10 +59,14 @@
 <script>
     const log = document.getElementById('log')
     const login = document.getElementById('login')
+    const login_sub = document.getElementById('login_sub')
 
     if(sessionStorage.username != undefined){
         login.innerHTML = sessionStorage.username
         login.href = './documentUser.html'
+
+        login_sub.innerHTML = `<b>${sessionStorage.username}</b>`
+        login_sub.href = './documentUser.html'
     }
 
     log.addEventListener('mouseover', ()=> {

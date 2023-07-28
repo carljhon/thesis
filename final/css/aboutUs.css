@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 1.2vw;
 }
 
 body {
@@ -34,24 +33,20 @@ body {
 .about {
     text-align: center;
     margin-top: 1rem;
-    font-size: 1em;
 }
 .faq {
     margin-top: 1rem;
-    font-size: 1em;
 }
 .log {
     text-align: center;
     margin-top: 0.5em;
     padding-top: 0.5em;
-    font-size: 1em;
     background-image: linear-gradient(to bottom right, yellow, green);
     border-radius: 5px;
     color: white;
 }
-.log a{
-    text-decoration: none;
-    color: white;
+#log button {
+    padding: 15%;
 }
 
 .about h1::after{
@@ -72,13 +67,38 @@ body {
     margin-bottom: 10%;
     font-weight: 590;
 }
-.History {
-    margin-left: auto;
+.LCR {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .howOur {
-    margin-right: auto;
+    margin-bottom: 3rem;
 }
-.LCR {
-    margin-left: 3rem;
-    margin-right: 3rem;
+
+/* lg */
+@media screen and (max-width: 992px) { 
+    .reg {
+        padding-left: 5%;
+        padding-top: 1rem;
+    }
+}
+
+/* sm */
+@media screen and (max-width: 576px) { 
+    #log button {
+        padding: 30%;
+    }
+    .vision img{
+        width: 80%;
+    }
+    .mission img{
+        width: 80%;
+    }
+
+    .visionContent p, h1{
+        padding-right: 1rem;
+    }
+    .missionContent p, h1{
+        padding-left: 3rem;
+    }
 }
