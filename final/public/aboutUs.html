@@ -27,7 +27,7 @@
         <div class="col-1 faq">
             <a href="./faq.html" id="faq"><b>FAQ</b></a>
         </div>
-        <div class="col-1" id="log">
+        <div class="col-1 log1" id="log">
             <button id="login" class="log"><b>Login</b></button>
         </div>
 
@@ -59,12 +59,17 @@
             <p>Sa pagtutulungan ng bawat researcher, nag-isip kami ng mas madaliang paraan kung paano mapadali ang pag reregister isa opisina 
                 ng Local Civil Registry. Ito ang dahilan kung bakit kami nakagawa nag Online Local Civil Registry.</p>
         </div>
+
+        <div class="col-12" id="sub_log">
+            <button id="login"><b>Login</b></button>
+        </div>
     </div>
     
 
 </body>
 <script>
     const log = document.getElementById('log')
+    const sub_log = document.getElementById('sub_log')
     const login = document.getElementById('login')
 
     if(sessionStorage.username != undefined){
@@ -73,6 +78,9 @@
     }
 
     log.addEventListener('click', ()=> {
+        window.location.href = './login.html';
+    })
+    sub_log.addEventListener('click', ()=> {
         window.location.href = './login.html';
     })
 

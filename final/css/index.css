@@ -121,12 +121,14 @@ body {
         display: none;
     }
 
-    .mv, .pay, .faq_sub, .log_sub{
+    .mv a, .pay a, .faq_sub a, .log_sub a{
         text-align: center;
-        color: white;
-        border: 1px solid white;
         padding: 10px;
         margin: 5px;
+        display: block;
+        color: white;
+        background-color: rgba(128, 128, 128, 0.523);
+        border-radius: 10px;
     }
 
     .faq_sub, .log_sub {

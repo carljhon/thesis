@@ -51,6 +51,20 @@ body {
 #log button {
     padding: 15%;
 }
+#sub_log{
+    display: none;
+    text-align: center;
+}
+#sub_log button {
+    margin-top: 2rem;
+    border-radius: 10px;
+    border: 0;
+    margin-bottom: 10%;
+    padding: 1em;
+    padding-left: 37vw;
+    padding-right: 37vw;
+    margin-bottom: 10%;
+}
 
 .t1 {
     background-image: linear-gradient(to bottom right, #6cf2f7, #fccd90, #fff0a5, #8adc62, #26dc66, rgb(76, 188, 175));
@@ -120,9 +134,16 @@ td {
 
 /* sm */
 @media screen and (max-width: 576px) { 
-    #log button {
-        padding: 30%;
+    .home {
+        margin-left: auto;
     }
+    .home, .faq, .about{
+        font-size: 1.3em;
+    }
+    .top a{
+        color: rgb(0, 85, 0);
+    }
+
     .vision img{
         width: 80%;
     }
@@ -135,5 +156,12 @@ td {
     }
     .missionContent p, h1{
         padding-left: 3rem;
+    }
+
+    .log1{
+        display: none;
+    }
+    #sub_log{
+        display: inline-block;
     }
 }

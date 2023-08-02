@@ -28,7 +28,7 @@
         <div class="col-1 faq">
             <a href="./faq.html" id="faq"><b>FAQ</b></a>
         </div>
-        <div class="col-1" id="log">
+        <div class="col-1 log1" id="log">
             <button id="login" class="log"><b>Login</b></button>
         </div>
 
@@ -39,23 +39,27 @@
     <hr>
 
     <div class="con g-0">
-        <div class="row bg1">
-            <div class="col-4 mission">
+        <div class="row bg1 g-0">
+            <div class="col-12 col-sm-4 mission">
                 <img src="vision.png" alt="">
             </div>
-            <div class="col-8 missionContent">
+            <div class="col-12 col-sm-8 missionContent">
                 <h1>MISSION</h1>
                 <p>Deliver all civil register services <br> for every constintuent <br> to become dimanic and productive <br> participants of the comunity</p>
             </div>
             <div class="col-12 middle"></div>
         </div>
-        <div class="row">
-            <div class="col-6 visionContent">
+        <div class="row g-0">
+            <div class="col-12 col-sm-6 visionContent">
                 <h1>VISION</h1>
                 <p>to be responsive authority <br> on quality civil registration</p>
             </div>
-            <div class="col-4 vision">
+            <div class="col-12 col-sm-4 vision">
                 <img src="visionary.png" alt="">
+            </div>
+
+            <div class="col-12" id="sub_log">
+                <button id="login"><b>Login</b></button>
             </div>
         </div>
     </div>
@@ -64,6 +68,7 @@
 
 <script>
     const log = document.getElementById('log')
+    const sub_log = document.getElementById('sub_log')
     const login = document.getElementById('login')
 
     if(sessionStorage.username != undefined){
@@ -72,6 +77,9 @@
     }
 
     log.addEventListener('click', ()=> {
+        window.location.href = './login.html';
+    })
+    sub_log.addEventListener('click', ()=> {
         window.location.href = './login.html';
     })
 </script>

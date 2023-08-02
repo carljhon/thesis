@@ -48,6 +48,20 @@ body {
 #log button {
     padding: 15%;
 }
+#sub_log{
+    display: none;
+    text-align: center;
+}
+#sub_log button {
+    margin-top: 2rem;
+    border-radius: 10px;
+    border: 0;
+    margin-bottom: 10%;
+    padding: 1em;
+    padding-left: 37vw;
+    padding-right: 37vw;
+    margin-bottom: 10%;
+}
 
 .about h1::after{
     content: "______";
@@ -85,9 +99,16 @@ body {
 
 /* sm */
 @media screen and (max-width: 576px) { 
-    #log button {
-        padding: 30%;
+    .home {
+        margin-left: auto;
     }
+    .home, .faq, .about{
+        font-size: 1.3em;
+    }
+    .top a{
+        color: rgb(0, 85, 0);
+    }
+
     .vision img{
         width: 80%;
     }
@@ -100,5 +121,16 @@ body {
     }
     .missionContent p, h1{
         padding-left: 3rem;
+    }
+
+    .about h1{
+        padding: 0;
+    }
+
+    .log1{
+        display: none;
+    }
+    #sub_log{
+        display: inline-block;
     }
 }

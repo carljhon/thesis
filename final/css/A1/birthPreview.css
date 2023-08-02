@@ -24,6 +24,10 @@ body {
     margin-left: 1rem;
     font-size: 80%;
 }
+.subt1 i {
+    display: none;
+    margin-left: 1rem;
+}
 .menulist {
     text-align: left;
     padding: .3rem;
@@ -55,6 +59,10 @@ body {
 .t1 h4 {
     font-size: 1.6vw;
 }
+#menu {
+    margin-left: 1rem; 
+    display: none;
+}
 
 .dropbtn {
     color: green;
@@ -63,6 +71,9 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
+    margin-left: auto; 
+    margin-right: 5%;
+    text-align: right;
 }
 .dropdown-content {
     display: none;
@@ -80,6 +91,15 @@ body {
     display: block;
 }
 .dropdown-content a:hover {background-color: #ddd;}
+.dropbtn a{
+    margin-right: 1rem; 
+    color: green; 
+    font-size: 1.6vw;
+}
+.dropbtn i{
+    cursor: pointer; 
+    font-size: 1.6vw;
+}
 .t {
     height: 91vh;
     overflow: auto;
@@ -136,4 +156,54 @@ body {
     border: solid rgb(0, 90, 0) 2px;
     color: rgb(0, 58, 0);
     font-size: 1.2vw;
+}
+
+/* sm */
+@media screen and (max-width: 575px) { 
+    .top1 {
+        display: none;
+    }
+    .t1 h4 {
+        margin-left: 0.5rem;
+    }
+    #menu {
+        display: inline-block;
+    }
+    .subt1 i {
+        display: inline-block;
+    }
+    .menulist, .active{
+        text-align: left;
+        padding-left: 3rem;
+        font-size: medium;
+    }
+    .btn button{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+/* md */
+@media screen and (max-width: 767px) { 
+    .subt1 h5, .t1 h4 {
+        font-size: medium;
+    }
+    .subt2 p{
+        margin-top: 2rem;
+        text-align: left;
+        margin-left: 1rem;
+        font-size: 12px;
+    }
+    .top1 {
+        font-size: 11px;
+    }
+    .dropbtn a, .dropbtn i{
+        font-size: medium;
+    }
+    .top2 {
+        font-size: 10px;
+    }
+    .btn button{
+        font-size: medium;
+    }
 }
